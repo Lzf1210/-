@@ -8,7 +8,7 @@ import center from './observer'
 import './rem'
 import './reset.css'
 import './iconstyle/iconfont.css'
-import './iconstyle/iconfont'
+import './iconstyle/iconfont.js'
 import './iconstyle/demo.css'
 
 Vue.config.productionTip = false

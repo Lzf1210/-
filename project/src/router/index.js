@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Home from '../components/home/home.vue'
-import Discount from '../components/discount/discount.vue'
+import Discounts from '../components/discounts/discounts.vue'
 import Goodscart from '../components/goodscart/goodscart.vue'
 import Classify from '../components/classify/classify.vue'
 import Mine from '../components/mine/mine.vue'
@@ -25,9 +25,9 @@ const router =  new Router({
         
       },
       {
-        path: "/discount",
-        name:"discount",
-        component: Discount,
+        path: "/discounts",
+        name:"discounts",
+        component: Discounts,
       }, 
       {
         name:"goodscart",

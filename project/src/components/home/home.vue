@@ -22,18 +22,19 @@ export default {
     background: red;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    padding: 0 0.32rem;
+    justify-content: space-around;
 }
 .header>input{
     width: 5.12rem;
     height: 0.6rem;
     background: #EFEFEF;
-    border-radius: 22px;
+    border-radius: 20px;
     font-family: .PingFangSC-Regular;
     font-size: 12px;
     color: #999999;
     letter-spacing: 0;
     padding-left: 11.2%;
+    border:0;
+    outline:none
 }
 </style>
