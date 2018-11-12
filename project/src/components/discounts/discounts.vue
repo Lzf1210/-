@@ -1,13 +1,24 @@
 <template>
+	<div class="discounts">
+		<cheap-com></cheap-com>
+		<router-view></router-view>
+	</div>
     
 </template>
 
 <script>
-export default {
-
-}
+	import Cheap from "./cheap";
+	export default {
+		components: {
+			"cheap-com": Cheap,
+		},
+        
+    }
+	
 </script>
 
-<style>
-
+<style scoped>
+.discounts{
+    height: 100%;
+}
 </style>
