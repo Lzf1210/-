@@ -1,14 +1,16 @@
 <template>
-  <div id="app">
-    <router-view></router-view>
-    <footer-com></footer-com>
+    <div id="app">
     
-  </div>
+        <footer-com></footer-com>
+		<router-view></router-view>
+    </div>
+
 </template>
 
 <script>
 
 import Footer from "./components/footer"
+
 export default {
     components : {
         "footer-com" : Footer
@@ -18,5 +20,11 @@ export default {
 </script>
 
 <style>
-
+/* #app{
+	width: 100%;
+	height: 100%;
+} */
+.page{
+	padding-top:.98rem;
+}
 </style>

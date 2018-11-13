@@ -1,6 +1,6 @@
 <template>
-    <div class="index">
-        <div class="header">
+    <div class="home page">
+        <div class="home-header">
             <img src="./img/Page 1 Copy 2.png" alt="">
             <input type="text" placeholder="想吃点什么吗?">
             <img src="./img/Group 2.png" alt="">
@@ -15,16 +15,24 @@ export default {
 }
 </script>
 
-<style>
-.header{
+<style scoped>
+.home{
+	width: 100%;
+	height: 100%;
+}
+.home>.home-header{
     width: 100%;
     height: 0.88rem;
     background: red;
     display: flex;
     align-items: center;
     justify-content: space-around;
+	position: fixed;
+	left:0;
+	top:0;
+	/* z-index: 10; */
 }
-.header>input{
+.home>.home-header>input{
     width: 5.12rem;
     height: 0.6rem;
     background: #EFEFEF;
