@@ -1,17 +1,17 @@
 <template>
-    <div class="home page">
-        <div class="home-header">
-            <img src="./img/Page 1 Copy 2.png" alt="">
-            <input type="text" placeholder="想吃点什么吗?">
-            <img src="./img/Group 2.png" alt="">
-        </div>
+    <div class="home">
+        <header-com></header-com>
         <router-view></router-view>
+
     </div>
 </template>
 
 <script>
+import header from './header.vue'
 export default {
-
+    components:{
+        'header-com':header
+    }
 }
 </script>
 
