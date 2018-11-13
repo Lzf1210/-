@@ -1,15 +1,10 @@
 <template>
-<<<<<<< HEAD
-    <div class="home">
-        <header-com></header-com>
-=======
     <div class="home page">
         <div class="home-header">
             <img src="./img/Page 1 Copy 2.png" alt="">
             <input type="text" placeholder="想吃点什么吗?">
             <img src="./img/Group 2.png" alt="">
         </div>
->>>>>>> master
         <router-view></router-view>
 
     </div>
@@ -24,11 +19,6 @@ export default {
 }
 </script>
 
-<<<<<<< HEAD
-<style>
-.home{
-    padding-top: .4rem;
-=======
 <style scoped>
 .home{
 	width: 100%;
@@ -58,6 +48,5 @@ export default {
     padding-left: 11.2%;
     border:0;
     outline:none
->>>>>>> master
 }
 </style>
