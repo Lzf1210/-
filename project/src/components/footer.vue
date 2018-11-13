@@ -62,7 +62,8 @@ export default {
     position: fixed;
     left: 0;
     bottom:0;
-    border-top:1px solid #B1B1B1
+    border-top:1px solid #B1B1B1;
+    z-index: 10;
 }
 .footer > ul {
   display: flex;
