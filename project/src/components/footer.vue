@@ -1,20 +1,29 @@
 <template>
-    <div class="footer">
-        <ul>
-            <li v-for="(item,index) in navs" @click="changeBg(index)"
-                :class="active == index?'active':''">
-                <router-link :to="{name:item.name}">
-                    <i :class="'iconfont' + ' ' +item.img"></i>
-                    {{item.title}}        
-                </router-link>
-                
-            </li>
-        </ul>
-    </div>
+		<div class="footer">
+					<ul>
+							<li v-for="(item,index) in navs" @click="changeBg(index)"
+									:class="active == index?'active':''">
+									<router-link :to="{name:item.name}">
+											<i :class="'iconfont' + ' ' +item.img"></i>
+											{{item.title}}        
+									</router-link>
+									
+							</li>
+					</ul>
+			</div>
+			
+		
+		
+    
+		
+		
 </template>
 
 <script>
+import home from "./home/home.vue" 
+
 export default {
+	
     data() {
         return {
             navs: [
@@ -62,7 +71,9 @@ export default {
     position: fixed;
     left: 0;
     bottom:0;
-    border-top:1px solid #B1B1B1
+    border-top:1px solid #C7D3DB;
+		background: #FFFFFF;
+		z-index: 2;
 }
 .footer > ul {
   display: flex;
