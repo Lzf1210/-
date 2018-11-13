@@ -1,15 +1,6 @@
 <template>
-<<<<<<< HEAD
-    <div class="home page">
-        <div class="home-header">
-            <img src="./img/Page 1 Copy 2.png" alt="">
-            <input type="text" placeholder="想吃点什么吗?">
-            <img src="./img/Group 2.png" alt="">
-        </div>
-=======
     <div class="home">
         <header-com></header-com>
->>>>>>> master
         <router-view></router-view>
 
     </div>
