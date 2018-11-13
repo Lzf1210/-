@@ -1,6 +1,7 @@
 <template>
     <div class="content_T">
         <div class="content">
+            <banner-com></banner-com>
             <div class="content_c">
                 <img src="static/home/img/6@2x.png">
                 <p>高堂菜谱</p>
@@ -30,17 +31,22 @@
 </template>
 
 <script>
+import banner from './banner';
 export default {
-
+    components:{
+        'banner-com':banner,
+    },
 }
 </script>
 
 <style scoped>
-
+.content_T{
+    height:100%;
+    padding-bottom: 3.4rem;
+}
 .content{
-    height:400px;
+    height:100%;
     overflow:auto;
-    padding-bottom: .98rem;
 }
 .content>.content_c{
     margin-top: .2rem;

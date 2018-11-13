@@ -1,14 +1,14 @@
 <template>
     <div class="banner">
         <div class="swiper-container">
-    <div class="swiper-wrapper">
-        <div class="swiper-slide" v-for="(item,index) in banner_list">
-            <img :src="item"/>
+            <div class="swiper-wrapper">
+              <div class="swiper-slide" v-for="(item,index) in banner_list">
+                <img :src="item"/>
+              </div>
+            </div>
+            <!-- 如果需要分页器 -->
+            <div class="swiper-pagination"></div>
         </div>
-    </div>
-    <!-- 如果需要分页器 -->
-    <div class="swiper-pagination"></div>
-</div>
     </div>
 </template>
 
@@ -36,8 +36,9 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .swiper-slide > img {
   width: 100%;
 }
 </style>
+  
