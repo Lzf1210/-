@@ -18,17 +18,17 @@ export default {
         return {
             server : [
                 {
-                    name : "like",
+                    // name : "like",
                     img : "../../../static/img/xihuan.png",
                     title : "我喜欢的"
                 },
                 {
-                    name : "service",
+                    // name : "service",
                     img : "../../../static/img/kefu.png",
                     title : "客服"
                 },
                 {
-                    name : "recommend",
+                    // name : "recommend",
                     img : "../../../static/img/tuijian.png",
                     title : "推荐有礼"
                 }
@@ -39,8 +39,8 @@ export default {
 </script>
 
 <style>
-.mineServer{height:4.4rem;background: #fff;margin-bottom:4%}
-.mineServer>h2{height:.88rem;width:100%;padding: 0 4.3%;font-size:.32rem;color:#666666;line-height: .88rem;border-bottom:2px solid #F1F1F1;font-family: "宋体"}
+.mineServer{height:2.56rem;background: #fff;margin-bottom:4%}
+.mineServer>h2{height:.88rem;width:100%;padding: 0 4.3%;font-size:.32rem;color:#666666;line-height: .88rem;border-bottom:2px solid #F1F1F1;font-weight: 300;font-family: PingFangSC-Regular}
 .choose{height:1.76rem;display: flex;}
 .choose>li{height:100%;width:20%;display: flex;flex-direction: column;text-align: center;justify-content: center}
 .choose>li>a{font-size:.25rem;color:#666666;display: block;}
