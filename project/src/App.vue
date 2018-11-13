@@ -20,11 +20,9 @@ export default {
 </script>
 
 <style>
-/* #app{
-	width: 100%;
-	height: 100%;
-} */
-.page{
-	padding-top:.98rem;
+#app{
+  width: 100%;
+  height: 100%;
 }
+.page{padding-top:.98rem}
 </style>
