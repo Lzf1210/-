@@ -1,10 +1,11 @@
-import Vue from "Vue"
-import Vuex from "Vuex"
+import Vue from "vue"
+import Vuex from "vuex"
 import home from "./home"
 import classify from "./classify"
 import discounts from "./discounts"
 import goodscart from "./goodscart"
 import mine from "./mine"
+import axios from "axios"
 Vue.use(Vuex)
 
 const state = {
