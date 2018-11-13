@@ -23,10 +23,10 @@
 		},
         data(){
             return {
-//                  comName:"sales-com",
-//                  activeIndex:1,
-                    comName:"times-com",
-                    activeIndex:2,
+                 comName:"sales-com",
+                 activeIndex:1,
+//                     comName:"times-com",
+//                     activeIndex:2,
             }
         },
         methods:{
