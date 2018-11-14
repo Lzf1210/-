@@ -5,11 +5,8 @@ import classify from "./classify"
 import discounts from "./discounts"
 import goodscart from "./goodscart"
 import mine from "./mine"
-<<<<<<< HEAD
 import axios from "axios";
-=======
-import axios from "axios"
->>>>>>> hjq
+
 Vue.use(Vuex)
 
 const state = {
