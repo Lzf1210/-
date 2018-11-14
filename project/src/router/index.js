@@ -1,7 +1,12 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Home from '../components/home/home.vue'
+
 import Discounts from '../components/discounts/discounts.vue'
+import sales from '../components/discounts/sales.vue'
+import times from '../components/discounts/times.vue'
+import cheap from '../components/discounts/cheap.vue'
+
 import Goodscart from '../components/goodscart/goodscart.vue'
 import Classify from '../components/classify/classify.vue'
 import Mine from '../components/mine/mine.vue'
@@ -124,6 +129,19 @@ const router = new Router({
 			path: "/discounts",
 			name: "discounts",
 			component: Discounts,
+            children:[
+                {
+                    path: "/discounts/sales",
+                    name: "sales",
+                    component: sales,
+                },
+                {
+                	path: "/discounts/times",
+                	name: "times",
+                	component: times,
+                },
+                
+            ]
 		},
 		{
 			name: "goodscart",

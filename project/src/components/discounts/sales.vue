@@ -1,44 +1,55 @@
 <template>
-	<div class="sales">
-		<div class="sales-top">
-			<p class="p1">美烹</p>
-			<p class="p2">促销专区 爆款直降</p>
-			<p class="p3"></p>
-		</div>
-		<span>热门单品价格直降，购买超划算</span>
-		<div class="salesGoods">
-			<div class="goods" v-for="(item,index) in imgList">
-           
-				<img :src="item.img">
-				<!-- <img v-lazy="item"> -->
-				<h3>生菜</h3>
-				<h4>￥15.6</h4>
-				<h5>立即购买</h5>
-				<h6>特惠</h6>
-				<p>￥12</p>
-				<div class="shu"></div>
-			</div>
+	<div class="wrapper" ref="salesWrapper">
+		<div class="content">
+			<div class="sales">
 
+				<div class="sales-top">
+					<p class="p1">美烹</p>
+					<p class="p2">促销专区 爆款直降</p>
+					<p class="p3"></p>
+				</div>
+				<span>热门单品价格直降，购买超划算</span>
+				<div class="salesGoods">
+					<div class="goods" v-for="(item,index) in imgList">
+                        <div>
+                            <img :src="item.goodsDetail" >
+                        </div>
+						
+						<!-- <img v-lazy="item"> -->
+						<h3>{{item.goodsName}}</h3>
+						<h4>{{item.goodsPrice}}</h4>
+						<h5>立即购买</h5>
+						<h6>特惠</h6>
+						<p>￥{{item.goodsDiscountsPrice}}</p>
+						<div class="shu"></div>
+					</div>
+
+				</div>
+				<router-view></router-view>
+			</div>
 		</div>
 	</div>
-
-
 </template>
 
 <script>
-    import Vuex from "vuex";
+	import Vuex from "vuex";
+	import BScroll from "better-scroll";
 	export default {
 		data() {
 			return {
-				
+				pageNum:1
 			};
 		},
 		created() {
-			this.handleGetImg()
+			this.handleGetImg(this.pageNum)
 		},
+        watch: {
+          // 如果路由有变化，会再次执行该方法
+          "$route": "handleGetImg"
+        },
 		computed: {
 			...Vuex.mapState({
-				imgList:state => state.discounts.imgList,
+				imgList: state => state.discounts.imgList,
 
 			})
 		},
@@ -46,14 +57,45 @@
 			...Vuex.mapActions({
 				handleGetImg: "discounts/handleGetImg"
 			}),
-		}
+		},
+		mounted() {
+			this.scroll = new BScroll(this.$refs.salesWrapper, {
+				click: true,
+				// tap: true,
+				pullUpLoad: true
+			});
+
+			this.scroll.on("pullingUp", () => {
+				this.handleGetImg(++this.pageNum)
+
+			})
+
+		},
+        updated () {
+        	//重新计算高度
+        	this.scroll.refresh();
+        	//当数据加载完毕以后通知better-scroll
+        	this.scroll.finishPullUp();
+        }
 	}
 </script>
 
 <style scoped>
+    *{
+        text-decoration:none;
+    }
+	.wrapper {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		width: 100%;
+		overflow: hidden;
+	}
+
 	.sales {
-		padding: .64rem .32rem .98rem;
+		padding: 1.47rem .32rem .98rem;
 		height: 100%;
+		overflow: auto;
 	}
 
 	.sales-top {
@@ -122,7 +164,7 @@
 		background: #FCEEE5;
 	}
 
-	.goods img {
+	.goods>div>img {
 		height: 3.4rem;
 		width: 3rem;
 		margin-top: .14rem;

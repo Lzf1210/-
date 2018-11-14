@@ -33,7 +33,7 @@ export default {
                     img : "icon-fenlei"
                 },
                 {
-                    name : "discounts",
+                    name : "sales",
                     title : "优惠",
                     img : "icon-youhuifangshi"
                 },
