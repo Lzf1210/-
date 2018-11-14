@@ -3,7 +3,7 @@
 	<div class="carbottom" v-show="show">
 		<input type="checkbox" :checked="allSelect" @click="handleAllToggleSelected()"/>
 		<span>全选</span>
-		<span>{{goodsCount.goodsNumPrice | sum}}</span>
+		<span>&yen; {{goodsCount.goodsNumPrice | sum}}</span>
 		<span>去结算{{'('+goodsCount.goodsNumCount+')'}}</span>
 	</div>
 	<div class="cartbottom" v-show="show == false">
@@ -48,7 +48,7 @@
 		},
 		filters:{
 			sum:function(val){
-				var result = "￥" + val;
+				var result =  val;
 				return result;
 			}
 		}

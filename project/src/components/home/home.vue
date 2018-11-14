@@ -1,5 +1,5 @@
 <template>
-    <div class="home">
+    <div id="home">
         <header-com></header-com>
         <router-view></router-view>
     </div>
@@ -23,7 +23,7 @@ export default {
 </script>
 
 <style scoped>
-.home{
+#home{
 	width: 100%;
 	height: 100%;
     padding-top: 0.4rem;

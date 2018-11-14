@@ -21,12 +21,12 @@ export default {
         return {
             orders : [
                 {
-                    // name : "payment",
+                    name : "payment",
                     img : "../../../static/img/daifukuan.png",
                     title : "待付款"
                 },
                 {
-                    // name : "shipments",
+                    name : "shipments",
                     img : "../../../static/img/daifahuo.png",
                     title : "待发货"
                 },

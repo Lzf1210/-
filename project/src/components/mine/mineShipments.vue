@@ -1,8 +1,16 @@
 <template>
-	<div class="wrapper" ref="wrapper">
-	<div class="cartgoodsdetails content">
+    <div class="shipments">
+        <div class="top"></div>
+        <div class="title">
+            <p @click="back()">
+                <img src="../../../static/img/back.png" alt="">
+            </p>
+            <h2>待发货</h2>
+        </div>
+        <div class="wrapper" ref="wrapper">
+        <div class="cartgoodsdetails content">
 		<div class="cartgoodsdetail" v-for="(item,index) in goodsList">
-			<input type="checkbox" :checked="item.flag" @change="handleToggle(index)"/>
+			<!-- <input type="checkbox" :checked="item.flag"/> -->
 			<div class="cart_center">
 				<div class="cart_left">
 					<img :src="item.img"/>
@@ -10,92 +18,74 @@
 				<div class="goodsinfo">
 					<span>{{item.goodsName}}</span>
 					<span>{{item.goodsSize}}</span>
-				    <span>{{item.goodsPrice | sum}}</span>
+				    <span>￥{{item.goodsPrice | sum}}</span>
 				</div>
 				<div class="cart_right">
-					<span @click="handleReduce(index)">-</span>
+					<!-- <span @click="handleReduce(index)">-</span>
 					<span>{{item.num}}</span>
-					<span @click="handleAdd(index)">+</span>
+					<span @click="handleAdd(index)">+</span> -->
 				</div>
 			</div>
-			<div class="cart_bottom">
-				好食狂欢节-
-			</div>
+			
 		</div>
 	</div>
-	</div>
-		
-	
+
+        </div>
+    </div>
 </template>
 
 <script>
-	import Vuex from "vuex";
-	import axios from "axios";
-	import BScroll from "better-scroll"
-	export default{
-		created(){
-			this.handleGetGoods();
-// 			axios({
-// 				method:"delete",
-// 				url:"http://localhost:3000/goods/13",
-// 				
-// 			}).then((data)=>{
-// 				console.log(data);
-// ...			});
-		},
-		computed:{
-			...Vuex.mapState({
-				goodsList:state=>state.goodscart.goodsList
-			})
-		},
-		methods:{
+import Vuex from "vuex";
+import BScroll from "better-scroll"
+export default {
+    created() {
+        this.handleGetGoods();
+    },
+    methods : {
+        back(){
+            this.$router.back("/mine")
+        },
 			...Vuex.mapActions({
-				handleGetGoods:"goodscart/handleGetGoods"
+				handleGetGoods:"mine/handleGetGoods"
 				
-			}),
-			...Vuex.mapMutations({
-				handleToggle:"goodscart/handleToggle",
-				handleReduce:"goodscart/handleReduce",
-				handleAdd:"goodscart/handleAdd"
 			})
-		},
-		filters:{
-			sum:function(val){
-				var result = "￥" + val;
-				return result;
-			}
-		},
-		mounted(){
-			this.scroll = new BScroll(this.$refs.wrapper,{
-				click:true,
-				pullUpload:true
-			});
+    },
+    computed:{
+			...Vuex.mapState({
+				goodsList:state=>state.mine.goodsList
+			})
+	},
+    mounted(){
+			 new BScroll(this.$refs.wrapper)
 		}
-		
-	}
+}
 </script>
 
 <style scoped>
-	.wrapper{
+.top{height:.4rem;width:100%;background: #fff}
+.shipments{height:100%;width:100%;position: absolute;left:0;z-index: 2;background: #fcfcfc}
+.shipments>.title>h2{margin-left:40.5%;font-size:.34rem;font-family:PingFangSC-Regular}
+.shipments>.title{height:.88rem;width:100%;display: flex;padding:0 4.4%;align-items: center;border-bottom:2px solid #E1E1E1;background: #fff}
+.shipments>.content{height:100%;background: red}
+.wrapper{
 		overflow: hidden;
 		position: absolute;
 		top: 1.3rem;
-		bottom:2.1rem;
+		bottom:0rem;
 		width: 100%;
-		
 	}
 	.cartgoodsdetails{
 		position: absolute;
-		top: 1.3rem;
+		/* top: 1.3rem; */
 		left: 0;
 		width: 100%;
 		z-index: 1;
 		overflow: auto;
-		
+		/* background: #fff */
 	}
 	.cartgoodsdetails>.cartgoodsdetail{
 		width: 100%;
-		height: 3.28rem;
+		height: 2.28rem;
 		overflow: hidden;
 		border-bottom: 1px solid #C7D3DB;
 		display: flex;
@@ -111,10 +101,11 @@
 	.cartgoodsdetails>.cartgoodsdetail>.cart_center{
 		width:6.38rem;
 		height: 1.6rem;
-		background: #FFFFFF;
+		/* background: #FCFCFC; */
 		margin-left: 0.32rem;
 		margin-top: 0.32rem;
 		display: flex;
+       
 	}
 	.cartgoodsdetail>.cart_center>.cart_left{
 		width: 1.6rem;
@@ -130,7 +121,7 @@
 		height: 1.6rem;
 		display: flex;
 		flex-direction: column;
-		background: #FFFFFF;
+		/* background: #FCFCFC */
 	}
 	.cartgoodsdetail>.cart_center>.goodsinfo>span:nth-of-type(1){
 		font-size: 16px;
@@ -146,39 +137,14 @@
 		color: #BE141C;
 	}
 	.cartgoodsdetails>.cartgoodsdetail>.cart_center>.cart_right{
-		height: 0.50rem;
+		/* height: 0.50rem;
 		width:1.56rem;
 		background: #FFFFFF;
 		margin-top: 1.08rem;
 		border: 1px solid #C0C0C0;
-		display: flex;
+		display: flex; */
 	}
-	.cartgoodsdetails>.cartgoodsdetail>.cart_center>.cart_right>span{
-		line-height: 0.50rem;
-		color: #888888;
-		text-align: center;
-	}
-	.cartgoodsdetails>.cartgoodsdetail>.cart_center>.cart_right>span:nth-of-type(1){
-		display: block;
-		height: 0.50rem;
-		width: 0.50rem;
-		border-right: 1px solid #C0C0C0;
-		font-size: 13px;
-	}
-	.cartgoodsdetails>.cartgoodsdetail>.cart_center>.cart_right>span:nth-of-type(3){
-		display: block;
-		height: 0.50rem;
-		width: 0.50rem;
-		border-left: 1px solid #C0C0C0;
-		font-size: 13px;
-	}
-	.cartgoodsdetails>.cartgoodsdetail>.cart_center>.cart_right>span:nth-of-type(2){
-		display: block;
-		height: 0.50rem;
-		width: 0.56rem;
-		font-size: 13px;
-	}
-	.cartgoodsdetails>.cartgoodsdetail>.cart_bottom{
+	/* .cartgoodsdetails>.cartgoodsdetail>.cart_bottom{
 		width: 6.06rem;
 		height: 0.72rem;
 		background: #FFE5C7;
@@ -190,6 +156,7 @@
 		font-size: 14px;
 		color: #222222;
 		font-family: .PingFangSC-Medium;
-	}
+	} */
 	
+
 </style>

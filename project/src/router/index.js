@@ -6,13 +6,9 @@ import Goodscart from '../components/goodscart/goodscart.vue'
 import Classify from '../components/classify/classify.vue'
 import Mine from '../components/mine/mine.vue'
 import Site from '../components/mine/site.vue'
-import payment from '../components/mine/mineOrder.vue'
-import Mine from '../components/mine/mine.vue' 
+import payment from '../components/mine/minePayment.vue'
 
-import Site from '../components/mine/site.vue'
-import payment from '../components/mine/mineOrder.vue'
-// import Mine from '../components/mine/mine.vue'
-// import Mine from '../components/mine/mine.vue'
+import shipments from '../components/mine/mineShipments.vue'
 // import Mine from '../components/mine/mine.vue'
 // import Mine from '../components/mine/mine.vue'
 
@@ -138,18 +134,9 @@ const router = new Router({
 			name: "mine",
 			path: "/mine",
 			component: Mine,
-			children: [{
-					path: "/payment",
-					name: "payment",
-					component: payment,
-				},
+			children: [
 
-				// {
-				//   path: "/shipments",
-				//   name:"shipments",
-				//   component: shipments,
-
-				// },
+				
 				// {
 				//   path: "/receiving",
 				//   name:"receiving",
@@ -166,6 +153,16 @@ const router = new Router({
 				//   component: serve
 				// }
 			]
+		},
+		{
+			path: "/payment",
+			name: "payment",
+			component: payment,
+		},
+		{
+			path: "/shipments",
+			name:"shipments",
+			component: shipments,
 		},
 		{
 			path: "/site",
