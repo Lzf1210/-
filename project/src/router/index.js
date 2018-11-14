@@ -5,6 +5,7 @@ import Discounts from '../components/discounts/discounts.vue'
 import Goodscart from '../components/goodscart/goodscart.vue'
 import Classify from '../components/classify/classify.vue'
 import Mine from '../components/mine/mine.vue'
+import Goodsdetail from '../components/goodsdetail/goodsdetail.vue'
 Vue.use(Router)
 
 const router =  new Router({
@@ -38,6 +39,11 @@ const router =  new Router({
         name:"mine",
         path: "/mine",
         component: Mine
+      },
+      {
+      	name:"goodsdetail",
+        path:"/goodsdetail",
+        component:Goodsdetail,
       },
       {
         //匹配所有
