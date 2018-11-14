@@ -16,7 +16,7 @@
                 :class="activeIndex == index?'active':''"
                 @click="hanleActiveIndex(index)"
                 >
-                <router-link :to="{name:item.name}">{{item.title}}</router-link>
+                <router-link :to="{name:item.name,query:{id:item.id}}">{{item.title}}</router-link>
                 </li>
             </ul>
             <!--  -->
@@ -94,64 +94,78 @@ export default {
       navs_home: [
         {
           title: "精选",
-          name: "jingx"
+          name: "jingx",
+          id:5,
         },
         {
           title: "全部商品",
-          name: "goodsa"
+          name: "goodsa",
+          id:6,
         },
         {
           title: "厨房调味",
-          name: "tiaowei"
+          name: "tiaowei",
+           id:1,
           
         },
         {
           title: "粮油副食",
-          name: "fushi"
+          name: "fushi",
+           id:2,
         },
         {
           title: "休闲小食",
-          name: "xiaoshi"
+          name: "xiaoshi",
+           id:3,
         },
         {
           title: "安心果蔬",
-          name: "guoshu"
+          name: "guoshu",
+           id:4,
         }
       ],
       goodsTypeName: [
         {
           title: "全部品类",
           name: "allgoods",
+           id:1,
         },
         {
           title: "调味组合",
-          name: "group"
+          name: "group",
+           id:2,
         },
         {
           title: "酿造酱油",
-          name: "soy"
+          name: "soy",
+           id:3,
         },
         {
           title: "调味酱料",
-          name: "sauce"
+          name: "sauce",
+           id:4,
         },
         {
           title: "调味作料",
-          name: "seasoning"
+          name: "seasoning",
+           id:5,
         },
         {
           title: "发酵食醋",
-          name: "vinegar"
+          name: "vinegar",
+           id:6,
         }
       ],
       sort: [
         {
           title: "价格低到高",
-          name: "btt"
+          name: "btt",
+           id:1,
         },
         {
           title: "价格高到低",
-          name: "ttb"
+          name: "ttb",
+           id:2,
         }
       ],
       // nav
@@ -256,6 +270,7 @@ export default {
   methods: {
     hanleActiveIndex(index) {
       this.activeIndex = index;
+      
     },
     handleSortIndex(index) {
       this.sortIndex = index;

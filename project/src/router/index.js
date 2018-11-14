@@ -5,15 +5,13 @@ import Discounts from '../components/discounts/discounts.vue'
 import Goodscart from '../components/goodscart/goodscart.vue'
 import Classify from '../components/classify/classify.vue'
 import Mine from '../components/mine/mine.vue'
-<<<<<<< HEAD
-<<<<<<< HEAD
+
 import Site from '../components/mine/site.vue'
 import payment from '../components/mine/mineOrder.vue'
 // import Mine from '../components/mine/mine.vue'
 // import Mine from '../components/mine/mine.vue'
 // import Mine from '../components/mine/mine.vue'
 // import Mine from '../components/mine/mine.vue'
-=======
 
 // home
 import jingx from '../components/home/content_jingx.vue'
@@ -32,10 +30,10 @@ const router =  new Router({
     routes: [
       {
         path:"/",
-        redirect:"/home"
+        redirect:"/home/fushi"
       },
       {
-        path: "/home",
+        path: "/home/fushi",
         name:"home",
         component: Home,
         children:[
