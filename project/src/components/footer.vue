@@ -10,13 +10,8 @@
 									
 							</li>
 					</ul>
-			</div>
-			
-		
-		
-    
-		
-		
+		</div>
+      
 </template>
 
 <script>
@@ -38,7 +33,7 @@ export default {
                     img : "icon-fenlei"
                 },
                 {
-                    name : "discounts",
+                    name : "sales",
                     title : "优惠",
                     img : "icon-youhuifangshi"
                 },
@@ -66,6 +61,7 @@ export default {
 
 <style scoped>
 .footer{
+    background: #fff;
     height:.98rem;
     width: 100%;
     position: fixed;

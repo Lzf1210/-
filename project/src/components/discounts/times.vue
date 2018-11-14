@@ -1,5 +1,6 @@
 <template>
 	<div class="times">
+        
 		<div class="time-top">
 			<p class="p1">美烹</p>
 			<p class="p2">开启健康好时光</p>
@@ -84,6 +85,7 @@
 	.times {
 		padding: 1.47rem 0 .98rem 0;
 		height: 100%;
+        overflow: auto;
 	}
 
 	.time-top {

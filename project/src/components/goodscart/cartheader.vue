@@ -12,8 +12,7 @@
 <script>
 	import cartgoodsdetails from "./cartgoodsdetails.vue"
 	import cartbottom from "./cartbottom.vue"
-	import editordetails from "./editordetails.vue"
-  import ediorbottom from "./editorbottom.vue"
+
 export default {
    data(){
 		 return{
@@ -23,16 +22,17 @@ export default {
 	 methods:{
 		 handleSend(){
 			 this.show = false;
+			 this.observer.$emit("change",false)
 		 },
 		 handleBack(){
 			 this.show = true;
+			 this.observer.$emit("change1",true)
 		 }
 	 },
 	  components:{
 	 		"cartgoodsdetails-com":cartgoodsdetails,
 	 		"cartbottom-com":cartbottom,
-	    "editordetails-com":editordetails,
-      "ediorbottom-com":ediorbottom
+
 	 	},
 }
 </script>
@@ -49,6 +49,7 @@ export default {
 .goodscart>.cart-head{
 	width: 100%;
 	height: 0.4rem;
+	background: white;
 }
 .goodscart>.cart-header{
 	width: 100%;

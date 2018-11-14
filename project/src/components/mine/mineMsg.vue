@@ -44,7 +44,7 @@ export default {
 .nom{height:1.6rem;width:100%;margin:5.4% 0 6.1%;display: flex;}
 .mineImg{width:1.6rem;height:1.6rem;margin:0 4.3%;}
 .mineImg>img{width:100%;}
-.mineName{width:30%;font-size:.30rem;display: flex;justify-content:space-around;flex-direction: column;color:#fff;font-family:PingFangSC-Regular}
+.mineName{width:30%;font-size:.30rem;display: flex;justify-content:space-around;flex-direction: column;color:#fff;font-family:PingFangSC-Regular;font-weight: 300;letter-spacing:1px}
 .coupon{height:1rem;display: flex;justify-content: space-around;align-items: center;}
 .coupon>li{width:33%;text-align: center;}
 .coupon>li>p:nth-child(1){font-size:.32rem;color:#EFB31F}
