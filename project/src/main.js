@@ -11,8 +11,19 @@ import './iconstyle/iconfont.css'
 import './iconstyle/iconfont.js'
 import './iconstyle/demo.css'
 
+//图片懒加载（测试）
+// import VueLazyLoad from 'vue-lazyload'
+// 
+// Vue.use(VueLazyload);
+
+
+
+
+
+
 Vue.config.productionTip = false
 Vue.prototype.observer  = center;
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
