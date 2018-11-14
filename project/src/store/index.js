@@ -9,29 +9,29 @@ import axios from "axios"
 Vue.use(Vuex)
 
 const state = {
-
+	
 }
 const mutations = {
-
+	
 }
 const actions = {
-
+	
 }
 const getters = {
 
 }
 
-const Store = new Vuex.Store({
-    state,
-    mutations,
-    actions,
-    getters,
-    modules: {
-        home,
-        classify,
-        discounts,
-        goodscart,
-        mine
-    }
+const store = new Vuex.Store({
+	state,
+	mutations,
+	actions,
+	getters,
+	modules: {
+		home,
+		classify,
+		discounts,
+		goodscart,
+		mine
+	}
 })
-export default Store;
+export default store;

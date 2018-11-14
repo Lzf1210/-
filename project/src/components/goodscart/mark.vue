@@ -19,31 +19,38 @@
 	export default{
 		data(){
 			return{
-				show:true
+				show:false
 			}
 		},
 		methods:{
 			handleout(){
 				this.show = false;
 			}
+		},
+		created(){
+			this.observer.$on("change2",(val)=>{
+				this.show = val;
+			})
 		}
 	}
 </script>
 
 <style scoped>
 .mark{
-	margin-top: 0.4rem;
+	margin-top: 0.5rem;
 	position: fixed;
 	width: 100%;
 	height: 100%;
 	background: gray;
+	opacity: 1;
+	z-index: 3;
 }
 .mark > .pay{
 	width: 100%;
 	height: 6.28rem;
 	background:white;
-	margin-top: 81%;
-	z-index: 3;
+	margin-top: 88%;
+	z-index: 4;
 }
 .mark>.pay>.payhead{
 	width: 100%;

@@ -1,6 +1,8 @@
 <template>
     <div id="app">
-    
+        <!-- <div class="top">
+
+        </div> -->
         <footer-com></footer-com>
 		<router-view></router-view>
     </div>
@@ -27,4 +29,5 @@ export default {
 .page{
 	padding-top:.98rem;
 }
+
 </style>
