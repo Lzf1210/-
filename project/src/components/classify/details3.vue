@@ -9,34 +9,48 @@
 			<div class="borderr"></div>
 		</div>
 		<ul>
-			<li>
-				<img src="../../../static/classifyImg/details3_01.png" alt="">
-				<P>全部</P>
+			<li v-for="(item,index) in lists">
+				<img :src="item.imgsrc"/>
+				<p>{{item.name}}</p>
 			</li>
-			<li>
-				<img src="../../../static/classifyImg/details3_02.png" alt="">
-				<p>新鲜水果</p>
-			</li>
-			<li>
-				<img src="../../../static/classifyImg/details3_03.png" alt="">
-				<p>叶菜类</p>
-			</li>
-			<li>
-				<img src="../../../static/classifyImg/details3_04.png" alt="">
-				<p>豆制品类</p>
-			</li>
-			<li>
-				<img src="../../../static/classifyImg/details3_05.png" alt="">
-				<p>茄果瓜花</p>
-			</li>
-			
 		</ul>
 		
 	</div>
 </template>
 
 <script>
-	
+	export default{
+		data(){
+			return {
+				lists : [
+					{
+						imgsrc:"../../../static/classifyImg/details3_01.png",
+						name : "全部",
+						id:1
+							
+					},
+					{
+						imgsrc:"../../../static/classifyImg/details3_02.png",
+						name:"新鲜水果",
+						
+					},
+					{
+						imgsrc:"../../../static/classifyImg/details3_03.png",
+						name:"叶菜类",
+					},
+					{
+						imgsrc:"../../../static/classifyImg/details3_04.png",
+						name:"豆制品类",
+					},
+					{
+						imgsrc:"../../../static/classifyImg/details3_05.png",
+						name:"茄果瓜花",
+					},
+					
+				]
+			}
+		}
+	}
 	
 </script>
 

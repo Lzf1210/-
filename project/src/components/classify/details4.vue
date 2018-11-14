@@ -9,27 +9,40 @@
 			<div class="borderr"></div>
 		</div>
 		<ul>
-			<li>
-				<img src="../../../static/classifyImg/details4_01.png" alt="">
-				<P>全部</P>
+			<li v-for="(item,index) in lists">
+				<img :src="item.imgsrc"/>
+				<p>{{item.name}}</p>
 			</li>
-			<li>
-				<img src="../../../static/classifyImg/details4_02.png" alt="">
-				<p>鱼虾冻品</p>
-			</li>
-			<li>
-				<img src="../../../static/classifyImg/details4_03.png" alt="">
-				<p>速食海鲜</p>
-			</li>
-			
-			
 		</ul>
 		
 	</div>
 </template>
 
 <script>
-	
+	export default{
+		data(){
+			return {
+				lists : [
+					{
+						imgsrc:"../../../static/classifyImg/details4_01.png",
+						name : "全部",
+						id:1
+							
+					},
+					{
+						imgsrc:"../../../static/classifyImg/details4_02.png",
+						name:"鱼虾冻品",
+						
+					},
+					{
+						imgsrc:"../../../static/classifyImg/details4_03.png",
+						// name:"干果蜜饯",
+					}
+					
+				]
+			}
+		}
+	}
 	
 </script>
 
@@ -87,12 +100,13 @@
 	}
 	.details4>ul>li>img{
 		width: 1.2rem;
-		height: 1.2rem;
+		/* height: 1.2rem; */
 	}
 	.details4>ul>li>p{
 		padding-top: .16rem;
 		font-family: PingFangSC-Regular;
 		font-size: 14px;
 		color: #222222;
+		// font-weight: 600;
 	}
 </style>
