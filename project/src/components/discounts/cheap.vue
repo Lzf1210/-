@@ -25,8 +25,6 @@
             return {
                  comName:"sales-com",
                  activeIndex:1,
-//                     comName:"times-com",
-//                     activeIndex:2,
             }
         },
         methods:{
@@ -53,7 +51,11 @@
 }    
 .header{
     width: 100%;
-   
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 10;
+    background: #fff;
     
 }
 .header div{

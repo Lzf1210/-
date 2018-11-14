@@ -1,4 +1,5 @@
 <template>
+	<div class="wrapper" ref="wrapper">
 	<div class="sales">
 		<div class="sales-top">
 			<p class="p1">美烹</p>
@@ -8,7 +9,7 @@
 		<span>热门单品价格直降，购买超划算</span>
 		<div class="salesGoods">
 			<div class="goods" v-for="(item,index) in imgList">
-           
+
 				<img :src="item.img">
 				<!-- <img v-lazy="item"> -->
 				<h3>生菜</h3>
@@ -21,24 +22,24 @@
 
 		</div>
 	</div>
-
-
+	</div>
 </template>
 
 <script>
-    import Vuex from "vuex";
+	import Vuex from "vuex";
+	import BScroll from "better-scroll";
 	export default {
 		data() {
 			return {
-				
+				pageNum: 0
 			};
 		},
 		created() {
-			this.handleGetImg()
+			this.handleGetImg(this.pageNum)
 		},
 		computed: {
 			...Vuex.mapState({
-				imgList:state => state.discounts.imgList,
+				imgList: state => state.discounts.imgList,
 
 			})
 		},
@@ -46,15 +47,44 @@
 			...Vuex.mapActions({
 				handleGetImg: "discounts/handleGetImg"
 			}),
+		},
+		mounted() {
+            //第一个参数是滚动元素的外盒子 第二个参数是配置项
+            this.scroll = new BScroll(this.$refs.wrapper, {
+                click: true,
+                pullUpLoad: true
+            })
+
+            //当用户上拉时触发的事件
+            this.scroll.on("pullingUp", () => {
+                this.handleGetImg(++this.pageNum)
+            })
+        },
+        updated() {
+            //重新计算高度
+            this.scroll.refresh();
+            //当数据加载完毕以后通知better-scroll
+            this.scroll.finishPullUp();
 		}
 	}
 </script>
 
 <style scoped>
+	.wrapper {
+		
+		height: 100%;
+		position: absolute;
+		z-index: 1;
+		width: 100%;
+		overflow: hidden;
+	}
+
 	.sales {
-		padding: .64rem .32rem .98rem;
+		padding: 1.47rem .32rem .98rem;
 		height: 100%;
 	}
+
+
 
 	.sales-top {
 		border: .02rem solid #260A0A;

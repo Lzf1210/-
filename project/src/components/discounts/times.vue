@@ -82,7 +82,7 @@
         font-weight:normal
     }
 	.times {
-		padding: .59rem 0 .98rem 0;
+		padding: 1.47rem 0 .98rem 0;
 		height: 100%;
 	}
 
