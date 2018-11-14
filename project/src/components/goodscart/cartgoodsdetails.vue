@@ -1,41 +1,21 @@
 <template>
-	<div class="cartgoodsdetails">
-		<div class="cartgoodsdetail">
-			<input type="checkbox"/>
+	<div class="wrapper" ref="wrapper">
+	<div class="cartgoodsdetails content">
+		<div class="cartgoodsdetail" v-for="(item,index) in goodsList">
+			<input type="checkbox" :checked="item.flag" @change="handleToggle(index)"/>
 			<div class="cart_center">
 				<div class="cart_left">
-					<img src="../../../static/img/草莓醋.png"/>
+					<img :src="item.img"/>
 				</div>
 				<div class="goodsinfo">
-					<span>一果泡醋草莓醋</span>
-					<span>410g/瓶</span>
-				    <span>¥28.80</span>
+					<span>{{item.goodsName}}</span>
+					<span>{{item.goodsSize}}</span>
+				    <span>{{item.goodsPrice | sum}}</span>
 				</div>
 				<div class="cart_right">
-					<span>-</span>
-					<span>1</span>
-					<span>+</span>
-				</div>
-			</div>
-			<div class="cart_bottom">
-				好食狂欢节-
-			</div>
-		</div>
-		<div class="cartgoodsdetail">
-			<input type="checkbox"/>
-			<div class="cart_center">
-				<div class="cart_left">
-					<img src="../../../static/img/脆冬枣.png"/>
-				</div>
-				<div class="goodsinfo">
-					<span>脆冬枣</span>
-					<span>100g/袋</span>
-					<span>¥11.52</span>
-				</div>
-				<div class="cart_right">
-					<span>-</span>
-					<span>1</span>
-					<span>+</span>
+					<span @click="handleReduce(index)">-</span>
+					<span>{{item.num}}</span>
+					<span @click="handleAdd(index)">+</span>
 				</div>
 			</div>
 			<div class="cart_bottom">
@@ -43,19 +23,72 @@
 			</div>
 		</div>
 	</div>
+	</div>
+		
+	
 </template>
 
 <script>
-	
+	import Vuex from "vuex";
+	import axios from "axios";
+	import BScroll from "better-scroll"
+	export default{
+		created(){
+			this.handleGetGoods();
+// 			axios({
+// 				method:"delete",
+// 				url:"http://localhost:3000/goods/13",
+// 				
+// 			}).then((data)=>{
+// 				console.log(data);
+// ...			});
+		},
+		computed:{
+			...Vuex.mapState({
+				goodsList:state=>state.goodscart.goodsList
+			})
+		},
+		methods:{
+			...Vuex.mapActions({
+				handleGetGoods:"goodscart/handleGetGoods"
+				
+			}),
+			...Vuex.mapMutations({
+				handleToggle:"goodscart/handleToggle",
+				handleReduce:"goodscart/handleReduce",
+				handleAdd:"goodscart/handleAdd"
+			})
+		},
+		filters:{
+			sum:function(val){
+				var result = "￥" + val;
+				return result;
+			}
+		},
+		mounted(){
+			this.scroll = new BScroll(this.$refs.wrapper,{
+				click:true,
+				pullUpload:true
+			});
+		}
+		
+	}
 </script>
 
 <style scoped>
+	.wrapper{
+		overflow: hidden;
+		height: 100%;
+        margin-top: 1.3rem;
+		margin-bottom: 1.3rem;
+	}
 	.cartgoodsdetails{
 		position: absolute;
 		top: 1.3rem;
 		left: 0;
 		width: 100%;
 		z-index: 1;
+		overflow: auto;
 		
 	}
 	.cartgoodsdetails>.cartgoodsdetail{

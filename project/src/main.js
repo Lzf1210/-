@@ -11,7 +11,6 @@ import './iconstyle/iconfont.css'
 import './iconstyle/iconfont.js'
 import './iconstyle/demo.css'
 
-<<<<<<< HEAD
 //图片懒加载（测试）
 // import VueLazyLoad from 'vue-lazyload'
 // 
@@ -23,13 +22,11 @@ import './iconstyle/demo.css'
 
 
 Vue.config.productionTip = false
-=======
 import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
 Vue.use(ElementUI);
 Vue.config.productionTip = false;
 
->>>>>>> wp
 Vue.prototype.observer  = center;
 
 /* eslint-disable no-new */
