@@ -1,4 +1,5 @@
 <template>
+<<<<<<< HEAD
 	<div class="wrapper" ref="salesWrapper">
 		<div class="content">
 			<div class="sales">
@@ -34,6 +35,36 @@
 <script>
 	import Vuex from "vuex";
 	import BScroll from "better-scroll";
+=======
+	<div class="sales">
+		<div class="sales-top">
+			<p class="p1">美烹</p>
+			<p class="p2">促销专区 爆款直降</p>
+			<p class="p3"></p>
+		</div>
+		<span>热门单品价格直降，购买超划算</span>
+		<div class="salesGoods">
+			<div class="goods" v-for="(item,index) in imgList">
+           
+				<img :src="item.img">
+				<!-- <img v-lazy="item"> -->
+				<h3>生菜</h3>
+				<h4>￥15.6</h4>
+				<h5>立即购买</h5>
+				<h6>特惠</h6>
+				<p>￥12</p>
+				<div class="shu"></div>
+			</div>
+
+		</div>
+	</div>
+
+
+</template>
+
+<script>
+    import Vuex from "vuex";
+>>>>>>> hjq
 	export default {
 		data() {
 			return {
@@ -41,6 +72,7 @@
 			};
 		},
 		created() {
+<<<<<<< HEAD
 			this.handleGetImg(this.pageNum)
 		},
         watch: {
@@ -50,6 +82,13 @@
 		computed: {
 			...Vuex.mapState({
 				imgList: state => state.discounts.imgList,
+=======
+			this.handleGetImg()
+		},
+		computed: {
+			...Vuex.mapState({
+				imgList:state => state.discounts.imgList,
+>>>>>>> hjq
 
 			})
 		},
@@ -57,6 +96,7 @@
 			...Vuex.mapActions({
 				handleGetImg: "discounts/handleGetImg"
 			}),
+<<<<<<< HEAD
 		},
 		mounted() {
 			this.scroll = new BScroll(this.$refs.salesWrapper, {
@@ -77,10 +117,14 @@
         	//当数据加载完毕以后通知better-scroll
         	this.scroll.finishPullUp();
         }
+=======
+		}
+>>>>>>> hjq
 	}
 </script>
 
 <style scoped>
+<<<<<<< HEAD
     *{
         text-decoration:none;
     }
@@ -96,6 +140,11 @@
 		padding: 1.47rem .32rem .98rem;
 		height: 100%;
 		overflow: auto;
+=======
+	.sales {
+		padding: .64rem .32rem .98rem;
+		height: 100%;
+>>>>>>> hjq
 	}
 
 	.sales-top {
@@ -145,6 +194,7 @@
 		font-family: PingFangSC-Medium, sans-serif;
 		display: block;
 	}
+<<<<<<< HEAD
 
 	.salesGoods {
 		width: 100%;
@@ -153,6 +203,16 @@
 		flex-wrap: wrap;
 	}
 
+=======
+
+	.salesGoods {
+		width: 100%;
+		display: flex;
+		justify-content: space-between;
+		flex-wrap: wrap;
+	}
+
+>>>>>>> hjq
 	.goods {
 		width: 3.28rem;
 		height: 5.92rem;
@@ -164,7 +224,11 @@
 		background: #FCEEE5;
 	}
 
+<<<<<<< HEAD
 	.goods>div>img {
+=======
+	.goods img {
+>>>>>>> hjq
 		height: 3.4rem;
 		width: 3rem;
 		margin-top: .14rem;

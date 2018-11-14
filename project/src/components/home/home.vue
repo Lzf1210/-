@@ -1,5 +1,9 @@
 <template>
+<<<<<<< HEAD
     <div id="home">
+=======
+    <div class="home">
+>>>>>>> hjq
         <header-com></header-com>
         <router-view></router-view>
     </div>

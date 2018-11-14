@@ -5,11 +5,11 @@
 			<input type="checkbox" :checked="item.flag" @change="handleToggle(index)"/>
 			<div class="cart_center">
 				<div class="cart_left">
-					<img :src="item.img"/>
+					<img :src="item.img" @click="handleId(item.id)"/>
 				</div>
 				<div class="goodsinfo">
 					<span>{{item.goodsName}}</span>
-					<span>{{item.goodsSize}}</span>
+					<span>{{item.goodsDetail}}</span>
 				    <span>{{item.goodsPrice | sum}}</span>
 				</div>
 				<div class="cart_right">
@@ -35,13 +35,19 @@
 	export default{
 		created(){
 			this.handleGetGoods();
-// 			axios({
-// 				method:"delete",
-// 				url:"http://localhost:3000/goods/13",
-// 				
-// 			}).then((data)=>{
-// 				console.log(data);
-// ...			});
+			axios({
+				method:"post",
+				url:"http://localhost:3000/goods",
+				data:{
+					"img": "static/img/草莓醋.png",
+					"goodsName": "酱油",
+					"goodsSize": "410g/瓶",
+					"goodsPrice": 28.8,
+					"num": 12
+				}
+			}).then((data)=>{
+				console.log(data);
+			});
 		},
 		computed:{
 			...Vuex.mapState({
@@ -57,7 +63,10 @@
 				handleToggle:"goodscart/handleToggle",
 				handleReduce:"goodscart/handleReduce",
 				handleAdd:"goodscart/handleAdd"
-			})
+			}),
+			handleId(val){
+				this.$router.push({name:"goodsdetail",params:{id:val}})
+			}
 		},
 		filters:{
 			sum:function(val){
@@ -79,10 +88,16 @@
 	.wrapper{
 		overflow: hidden;
 		position: absolute;
+<<<<<<< HEAD
 		top: 1.3rem;
 		bottom:2.1rem;
 		width: 100%;
 		
+=======
+		top: 1.2rem;
+		bottom:2.1rem;
+		width: 100%;
+>>>>>>> hjq
 	}
 	.cartgoodsdetails{
 		position: absolute;

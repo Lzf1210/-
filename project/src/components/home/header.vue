@@ -72,7 +72,11 @@
     </div>
 </template>
 
+<<<<<<< HEAD
 <script scoped>
+=======
+<script>
+>>>>>>> hjq
 export default {
   components: {},
   filters:{

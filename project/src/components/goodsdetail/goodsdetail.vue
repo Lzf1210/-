@@ -1,5 +1,14 @@
 <template>
+<<<<<<< HEAD
 	<div class="goodsdetail">
+=======
+	<div>
+		<div class="head"></div>
+	
+	<div 	class="wrapper" ref="wrapper">
+	<div class="goodsdetail content">
+		
+>>>>>>> hjq
 		<div class="swiper-container">
 		    <div class="swiper-wrapper">
 		        <div class="swiper-slide" v-for="(item,index) in src">
@@ -141,17 +150,29 @@
 			<p>食材和食品都有严谨的挑选过程，排除非必要性的加工过程，尽量保护食材的原有味道。味噌是由发酵过的大豆（黄豆）制成，主要为糊状。是一种调味料，也被用作为汤底。</p>
 		</div>
 		<img src="static/goodsimg/味增汤2.png"/>
+<<<<<<< HEAD
 		<goodsfooter></goodsfooter>
+=======
+	</div>
+	</div>
+>>>>>>> hjq
 	</div>
 </template>
 
 <script>
 	 import "../../../node_modules/swiper/dist/css/swiper.css"
 	 import Swiper from "swiper"
+<<<<<<< HEAD
 	 import Goodsfooter from "./goodsdetailfooter/goodsdetailfooter.vue"
 	 export default{
 	 	components:{
 	 		Goodsfooter
+=======
+	 import BScroll from "better-scroll"
+	 export default{
+	 	components:{
+	 		
+>>>>>>> hjq
 	 	},
 	 	data(){
 	 		return{
@@ -167,14 +188,46 @@
 			    pagination: {
 			      el: '.swiper-pagination',
 			    }
+<<<<<<< HEAD
 			 }) 
 	 	}
+=======
+			 });
+				this.scroll = new BScroll(this.$refs.wrapper,{
+					click:true,
+				});
+	 	},
+		created(){
+			console.log(this.$route.params.id)
+		}
+>>>>>>> hjq
 	 }
 </script>
 
 <style scoped>
+<<<<<<< HEAD
 .goodsdetail{
 	padding-top: 0.4rem;
+=======
+	.head{
+		position: fixed;
+		top: 0;
+		width: 100%;
+		height: 0.4rem;
+		background: yellow;
+		z-index: 2;
+	}
+	.wrapper{
+		overflow: hidden;
+		position: absolute;
+		top: 0.8rem;
+		bottom:.98rem;
+		width: 100%;
+		/* height:100% */
+	}
+.goodsdetail{
+	/* padding-top: 0.4rem; */
+>>>>>>> hjq
 	background: #F8F8F8;
 	height: 100%;
 	width: 100%;
@@ -182,6 +235,10 @@
 	z-index: 2;
 	overflow: auto;
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> hjq
 .swiper-container {
 	width: 100%;
 }

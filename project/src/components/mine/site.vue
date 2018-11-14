@@ -2,7 +2,11 @@
     <div class="site">
         <div class="top"></div>
         <div class="title">
+<<<<<<< HEAD
             <p @click="back()">
+=======
+            <p>
+>>>>>>> hjq
                 <img src="../../../static/img/back.png" alt="">
             </p>
             <p>
@@ -30,13 +34,18 @@
                 <input type="text" id="detail" name="detail" >
             </p>
             <p>
+<<<<<<< HEAD
                 <label for="addressType">地址类型</label>
+=======
+                <label for="detail">地址类型</label>
+>>>>>>> hjq
                 <button type="button" v-for="(item,index) in title"  
                     @click="changeBg(index)"
 					:class="changeIndex == index?'changeActive':''">{{item}}</button>
             </p>
             <p>
                 <label for="detail">设为默认地址</label>
+<<<<<<< HEAD
                 <el-switch
                     v-model="value1"
                     active-color="orange"
@@ -49,6 +58,11 @@
             </div>
         </form>
         
+=======
+                
+            </p>
+        </form>
+>>>>>>> hjq
     </div>
 
 </template>
@@ -59,16 +73,22 @@ export default {
         return {
             title:["公司","家"],
             changeIndex : 0,
+<<<<<<< HEAD
             value1: true,
             value2: true
+=======
+>>>>>>> hjq
         }
     },
     methods : {
         changeBg(index){
             this.changeIndex = index;
+<<<<<<< HEAD
         },
         back(){
             this.$router.back("/mine")
+=======
+>>>>>>> hjq
         }
     }
 }
@@ -85,9 +105,13 @@ export default {
 .site>form>p>label{width:1.92rem;font-size:.31rem;color:#222222;font-family: PingFangSC-Regular}
 .site>form>p:nth-child(5) button{width:1.2rem;height:.6rem;border:0;margin-right:8%;background:#fff;color:#BA8750;outline: none;border:1px solid #BA8750;font-size:.28rem;font-family: PingFangSC-Regular}
 .site>form>p:nth-child(5) .changeActive{background:#BA8750;color:#fff}
+<<<<<<< HEAD
 .site>form>p:nth-child(6){padding-top:4.8%;border:0;}
 .el-switch{margin-left: 4rem;}
 .deladdress{height:1.44rem;width:100%;border-top:2px solid #E1E1E1;margin-top:50%;display: flex;justify-content: center;align-items: center}
 .deladdress>button{height:.88rem;width:6.86rem;background: #3E2020;color:#fff;border:0;font-size:.32rem;font-family: PingFangSC-Regular;outline: none}
+=======
+.site>form>p:nth-child(6){padding-top:4.8%}
+>>>>>>> hjq
 </style>
 
