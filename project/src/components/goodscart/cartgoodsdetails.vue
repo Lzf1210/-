@@ -1,4 +1,4 @@
-﻿<template>
+<template>
 	<div class="wrapper" ref="wrapper">
 	<div class="cartgoodsdetails content">
 		<div class="cartgoodsdetail" v-for="(item,index) in goodsList">
@@ -41,7 +41,7 @@
 // 				
 // 			}).then((data)=>{
 // 				console.log(data);
-// 、、			});
+// ...			});
 		},
 		computed:{
 			...Vuex.mapState({
