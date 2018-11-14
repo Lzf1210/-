@@ -6,6 +6,7 @@ import Goodscart from '../components/goodscart/goodscart.vue'
 import Classify from '../components/classify/classify.vue'
 import Mine from '../components/mine/mine.vue'
 <<<<<<< HEAD
+<<<<<<< HEAD
 import Site from '../components/mine/site.vue'
 import payment from '../components/mine/mineOrder.vue'
 // import Mine from '../components/mine/mine.vue'
@@ -22,7 +23,9 @@ import fushi from '../components/home/content_fushi.vue'
 import xiaoshi from '../components/home/content_xiaoshi.vue'
 import guoshu from '../components/home/content_guoshu.vue'
 
->>>>>>> wp
+
+import Goodsdetail from '../components/goodsdetail/goodsdetail.vue'
+
 Vue.use(Router)
 
 const router =  new Router({
@@ -122,6 +125,11 @@ const router =  new Router({
         path : "/site",
         name:"site",
         component : Site
+      },
+      {
+      	name:"goodsdetail",
+        path:"/goodsdetail",
+        component:Goodsdetail,
       },
       {
         //匹配所有
