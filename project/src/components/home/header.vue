@@ -128,44 +128,44 @@ export default {
         {
           title: "全部品类",
           name: "allgoods",
-           id:1,
+           id:7,
         },
         {
           title: "调味组合",
           name: "group",
-           id:2,
+           id:8,
         },
         {
           title: "酿造酱油",
           name: "soy",
-           id:3,
+           id:9,
         },
         {
           title: "调味酱料",
           name: "sauce",
-           id:4,
+           id:10,
         },
         {
           title: "调味作料",
           name: "seasoning",
-           id:5,
+           id:11,
         },
         {
           title: "发酵食醋",
           name: "vinegar",
-           id:6,
+           id:12,
         }
       ],
       sort: [
         {
           title: "价格低到高",
           name: "btt",
-           id:1,
+           id:13,
         },
         {
           title: "价格高到低",
           name: "ttb",
-           id:2,
+           id:14,
         }
       ],
       // nav
