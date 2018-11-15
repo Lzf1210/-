@@ -54,18 +54,10 @@ export default {
 .top{height:.4rem;width:100%;background:#3E1E1F;}
 .mine {
     width: 100%;
-<<<<<<< HEAD
-=======
-    
->>>>>>> hjq
 }
 .mine-com {
     width: 100%;
     height:100%;
 }
 .mineAll{width:100%;position: fixed;overflow: auto;height:8.38rem;background: #f0eff5;}
-<<<<<<< HEAD
-=======
-
->>>>>>> hjq
 </style>
