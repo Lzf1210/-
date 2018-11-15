@@ -30,6 +30,7 @@ import fushi from '../components/home/content_fushi.vue'
 import xiaoshi from '../components/home/content_xiaoshi.vue'
 import guoshu from '../components/home/content_guoshu.vue'
 
+import Goods from '../components/goodsdetail/goods.vue'
 import Goodsdetail from '../components/goodsdetail/goodsdetail.vue'
 
 // classify
@@ -47,7 +48,7 @@ Vue.use(Router)
 const router = new Router({
 	routes: [{
 			path: "/",
-			redirect: "/home"
+			redirect: "/home/fushi"
 		},
 		{
 			path: "/home",
@@ -190,6 +191,11 @@ const router = new Router({
 			path: "/site",
 			name: "site",
 			component: Site
+		},
+		{
+			name:"goods",
+			path:"/goods",
+			component:Goods
 		},
 		{
 			name: "goodsdetail",

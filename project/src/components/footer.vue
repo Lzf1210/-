@@ -23,7 +23,7 @@ export default {
         return {
             navs: [
                 {
-                    name : "home",
+                    name : "fushi",
                     title : "首页",
                     img : "icon-icon4"
                 },

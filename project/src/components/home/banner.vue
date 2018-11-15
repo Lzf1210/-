@@ -18,7 +18,7 @@ import "../../../node_modules/swiper/dist/css/swiper.css";
 export default {
   data() {
     return{
-      banner_list:['static/home/img/9@2x.png','static/home/img/9@2x.png','static/home/img/9@2x.png']
+      banner_list:['static/home/img/9@2x.png','static/home/img/Rectangle10@2x.png','static/home/img/9@2x.png']
     };
   },
   mounted() {

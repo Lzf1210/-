@@ -1,4 +1,4 @@
-﻿{
+{
   "goods": [
     {
       "img": "static/img/黄豆酱.png",
@@ -79,138 +79,546 @@
       "goodsPrice": 28.8,
       "num": 1,
       "id": 31
+    },
+    {
+      "img": "static/img/草莓醋.png",
+      "goodsName": "酱油",
+      "goodsSize": "410g/瓶",
+      "goodsPrice": 28.8,
+      "num": 12,
+      "id": 32
+    },
+    {
+      "img": "static/img/草莓醋.png",
+      "goodsName": "酱油",
+      "goodsSize": "410g/瓶",
+      "goodsPrice": 28.8,
+      "num": 12,
+      "id": 33
+    },
+    {
+      "img": "static/img/草莓醋.png",
+      "goodsName": "酱油",
+      "goodsSize": "410g/瓶",
+      "goodsPrice": 28.8,
+      "num": 12,
+      "id": 34
+    },
+    {
+      "img": "static/img/草莓醋.png",
+      "goodsName": "酱油",
+      "goodsSize": "410g/瓶",
+      "goodsPrice": 28.8,
+      "num": 12,
+      "id": 35
+    },
+    {
+      "img": "static/img/草莓醋.png",
+      "goodsName": "酱油",
+      "goodsSize": "410g/瓶",
+      "goodsPrice": 28.8,
+      "num": 12,
+      "id": 36
+    },
+    {
+      "img": "static/img/草莓醋.png",
+      "goodsName": "酱油",
+      "goodsSize": "410g/瓶",
+      "goodsPrice": 28.8,
+      "num": 12,
+      "id": 37
+    },
+    {
+      "img": "static/img/草莓醋.png",
+      "goodsName": "酱油",
+      "goodsSize": "410g/瓶",
+      "goodsPrice": 28.8,
+      "num": 12,
+      "id": 38
+    },
+    {
+      "img": "static/img/草莓醋.png",
+      "goodsName": "酱油",
+      "goodsSize": "410g/瓶",
+      "goodsPrice": 28.8,
+      "num": 12,
+      "id": 39
+    },
+    {
+      "img": "static/img/草莓醋.png",
+      "goodsName": "酱油",
+      "goodsSize": "410g/瓶",
+      "goodsPrice": 28.8,
+      "num": 12,
+      "id": 40
+    },
+    {
+      "img": "static/img/草莓醋.png",
+      "goodsName": "酱油",
+      "goodsSize": "410g/瓶",
+      "goodsPrice": 28.8,
+      "num": 12,
+      "id": 41
+    },
+    {
+      "img": "static/img/草莓醋.png",
+      "goodsName": "酱油",
+      "goodsSize": "410g/瓶",
+      "goodsPrice": 28.8,
+      "num": 12,
+      "id": 42
+    },
+    {
+      "img": "static/img/草莓醋.png",
+      "goodsName": "酱油",
+      "goodsSize": "410g/瓶",
+      "goodsPrice": 28.8,
+      "num": 12,
+      "id": 43
     }
   ],
- 
-	"imgs": [{
-			"id": 1,
-			"goodsName": "海天酱油",
-			"goodsDetail": "../../../static/discounts/images/生菜@2x.png",
-			"goodsPrice": 11,
-			"goodsDiscountsPrice": 10,
-			"saveTime": 0,
-			"manufacture": null,
-			"goodsNo": null,
-			"goodsStandNo": null,
-			"status": 0
-
-		},
-		{
-			"id": 2,
-			"goodsName": "海天酱油",
-			"goodsDetail": "../../../static/discounts/images/生菜@2x.png",
-			"goodsPrice": 11,
-			"goodsDiscountsPrice": 10,
-			"saveTime": 0,
-			"manufacture": null,
-			"goodsNo": null,
-			"goodsStandNo": null,
-			"status": 0
-
-		},
-		{
-			"id": 3,
-			"goodsName": "海天酱油",
-			"goodsDetail": "../../../static/discounts/images/生菜@2x.png",
-			"goodsPrice": 11,
-			"goodsDiscountsPrice": 10,
-			"saveTime": 0,
-			"manufacture": null,
-			"goodsNo": null,
-			"goodsStandNo": null,
-			"status": 0
-
-		},
-		{
-			"id": 1,
-			"goodsName": "海天酱油",
-			"goodsDetail": "../../../static/discounts/images/生菜@2x.png",
-			"goodsPrice": 11,
-			"goodsDiscountsPrice": 10,
-			"saveTime": 0,
-			"manufacture": null,
-			"goodsNo": null,
-			"goodsStandNo": null,
-			"status": 0
-
-		},
-		{
-			"id": 4,
-			"goodsName": "海天酱油",
-			"goodsDetail": "../../../static/discounts/images/生菜@2x.png",
-			"goodsPrice": 11,
-			"goodsDiscountsPrice": 10,
-			"saveTime": 0,
-			"manufacture": null,
-			"goodsNo": null,
-			"goodsStandNo": null,
-			"status": 0
-
-		},
-		{
-			"id": 5,
-			"goodsName": "海天酱油",
-			"goodsDetail": "../../../static/discounts/images/生菜@2x.png",
-			"goodsPrice": 11,
-			"goodsDiscountsPrice": 10,
-			"saveTime": 0,
-			"manufacture": null,
-			"goodsNo": null,
-			"goodsStandNo": null,
-			"status": 0
-
-		},
-		{
-			"id": 6,
-			"goodsName": "海天酱油",
-			"goodsDetail": "../../../static/discounts/images/生菜@2x.png",
-			"goodsPrice": 11,
-			"goodsDiscountsPrice": 10,
-			"saveTime": 0,
-			"manufacture": null,
-			"goodsNo": null,
-			"goodsStandNo": null,
-			"status": 0
-
-		},
-		{
-			"id": 7,
-			"goodsName": "海天酱油",
-			"goodsDetail": "../../../static/discounts/images/生菜@2x.png",
-			"goodsPrice": 11,
-			"goodsDiscountsPrice": 10,
-			"saveTime": 0,
-			"manufacture": null,
-			"goodsNo": null,
-			"goodsStandNo": null,
-			"status": 0
-
-		},
-		{
-			"id": 8,
-			"goodsName": "海天酱油",
-			"goodsDetail": "../../../static/discounts/images/生菜@2x.png",
-			"goodsPrice": 11,
-			"goodsDiscountsPrice": 10,
-			"saveTime": 0,
-			"manufacture": null,
-			"goodsNo": null,
-			"goodsStandNo": null,
-			"status": 0
-
-		},
-		{
-			"id": 9,
-			"goodsName": "海天酱油",
-			"goodsDetail": "../../../static/discounts/images/生菜@2x.png",
-			"goodsPrice": 11,
-			"goodsDiscountsPrice": 10,
-			"saveTime": 0,
-			"manufacture": null,
-			"goodsNo": null,
-			"goodsStandNo": null,
-			"status": 0
-
-		}
-	]
+  "imgs": [
+    {
+      "id": 1,
+      "goodsName": "海天酱油",
+      "goodsDetail": "../../../static/discounts/images/生菜@2x.png",
+      "goodsPrice": 11,
+      "goodsDiscountsPrice": 10,
+      "saveTime": 0,
+      "manufacture": null,
+      "goodsNo": null,
+      "goodsStandNo": null,
+      "status": 0
+    },
+    {
+      "id": 2,
+      "goodsName": "海天酱油",
+      "goodsDetail": "../../../static/discounts/images/生菜@2x.png",
+      "goodsPrice": 11,
+      "goodsDiscountsPrice": 10,
+      "saveTime": 0,
+      "manufacture": null,
+      "goodsNo": null,
+      "goodsStandNo": null,
+      "status": 0
+    },
+    {
+      "id": 3,
+      "goodsName": "海天酱油",
+      "goodsDetail": "../../../static/discounts/images/生菜@2x.png",
+      "goodsPrice": 11,
+      "goodsDiscountsPrice": 10,
+      "saveTime": 0,
+      "manufacture": null,
+      "goodsNo": null,
+      "goodsStandNo": null,
+      "status": 0
+    },
+    {
+      "id": 1,
+      "goodsName": "海天酱油",
+      "goodsDetail": "../../../static/discounts/images/生菜@2x.png",
+      "goodsPrice": 11,
+      "goodsDiscountsPrice": 10,
+      "saveTime": 0,
+      "manufacture": null,
+      "goodsNo": null,
+      "goodsStandNo": null,
+      "status": 0
+    },
+    {
+      "id": 4,
+      "goodsName": "海天酱油",
+      "goodsDetail": "../../../static/discounts/images/生菜@2x.png",
+      "goodsPrice": 11,
+      "goodsDiscountsPrice": 10,
+      "saveTime": 0,
+      "manufacture": null,
+      "goodsNo": null,
+      "goodsStandNo": null,
+      "status": 0
+    },
+    {
+      "id": 5,
+      "goodsName": "海天酱油",
+      "goodsDetail": "../../../static/discounts/images/生菜@2x.png",
+      "goodsPrice": 11,
+      "goodsDiscountsPrice": 10,
+      "saveTime": 0,
+      "manufacture": null,
+      "goodsNo": null,
+      "goodsStandNo": null,
+      "status": 0
+    },
+    {
+      "id": 6,
+      "goodsName": "海天酱油",
+      "goodsDetail": "../../../static/discounts/images/生菜@2x.png",
+      "goodsPrice": 11,
+      "goodsDiscountsPrice": 10,
+      "saveTime": 0,
+      "manufacture": null,
+      "goodsNo": null,
+      "goodsStandNo": null,
+      "status": 0
+    },
+    {
+      "id": 7,
+      "goodsName": "海天酱油",
+      "goodsDetail": "../../../static/discounts/images/生菜@2x.png",
+      "goodsPrice": 11,
+      "goodsDiscountsPrice": 10,
+      "saveTime": 0,
+      "manufacture": null,
+      "goodsNo": null,
+      "goodsStandNo": null,
+      "status": 0
+    },
+    {
+      "id": 8,
+      "goodsName": "海天酱油",
+      "goodsDetail": "../../../static/discounts/images/生菜@2x.png",
+      "goodsPrice": 11,
+      "goodsDiscountsPrice": 10,
+      "saveTime": 0,
+      "manufacture": null,
+      "goodsNo": null,
+      "goodsStandNo": null,
+      "status": 0
+    },
+    {
+      "id": 9,
+      "goodsName": "海天酱油",
+      "goodsDetail": "../../../static/discounts/images/生菜@2x.png",
+      "goodsPrice": 11,
+      "goodsDiscountsPrice": 10,
+      "saveTime": 0,
+      "manufacture": null,
+      "goodsNo": null,
+      "goodsStandNo": null,
+      "status": 0
+    }
+  ],
+  "home_fushi": [
+    {
+      "imageList": "static/img/草莓醋.png",
+      "goodsName": "一果泡醋草莓醋",
+      "goodsDetail": "410g/瓶",
+      "goodsPrice": 28.8,
+      "id": 1
+    },
+    {
+      "imageList": "static/img/草莓醋.png",
+      "goodsName": "一果泡醋草莓醋",
+      "goodsDetail": "410g/瓶",
+      "goodsPrice": 28.8,
+      "id": 2
+    },
+    {
+      "imageList": "static/img/草莓醋.png",
+      "goodsName": "一果泡醋草莓醋",
+      "goodsDetail": "410g/瓶",
+      "goodsPrice": 28.8,
+      "id": 3
+    },
+    {
+      "imageList": "static/img/草莓醋.png",
+      "goodsName": "一果泡醋草莓醋",
+      "goodsDetail": "410g/瓶",
+      "goodsPrice": 28.8,
+      "id": 4
+    },
+    {
+      "imageList": "static/img/草莓醋.png",
+      "goodsName": "一果泡醋草莓醋",
+      "goodsDetail": "410g/瓶",
+      "goodsPrice": 28.8,
+      "id": 5
+    },
+    {
+      "imageList": "static/img/草莓醋.png",
+      "goodsName": "一果泡醋草莓醋",
+      "goodsDetail": "410g/瓶",
+      "goodsPrice": 28.8,
+      "id": 6
+    }
+  ],
+  "home_tiaowei": [
+    {
+      "imageList": "static/img/酱油.png",
+      "goodsName": "酱油",
+      "goodsDetail": "410g/瓶",
+      "goodsPrice": 28.8,
+      "id": 1
+    },
+    {
+      "imageList": "static/img/酱油.png",
+      "goodsName": "酱油",
+      "goodsDetail": "410g/瓶",
+      "goodsPrice": 28.8,
+      "id": 2
+    },
+    {
+      "imageList": "static/img/酱油.png",
+      "goodsName": "酱油",
+      "goodsDetail": "410g/瓶",
+      "goodsPrice": 28.8,
+      "id": 3
+    },
+    {
+      "imageList": "static/img/酱油.png",
+      "goodsName": "酱油",
+      "goodsDetail": "410g/瓶",
+      "goodsPrice": 28.8,
+      "id": 4
+    },
+    {
+      "imageList": "static/img/酱油.png",
+      "goodsName": "酱油",
+      "goodsDetail": "410g/瓶",
+      "goodsPrice": 28.8,
+      "id": 5
+    },
+    {
+      "imageList": "static/img/酱油.png",
+      "goodsName": "酱油",
+      "goodsDetail": "410g/瓶",
+      "goodsPrice": 28.8,
+      "id": 6
+    }
+  ],
+  "home_xiaoshi": [
+    {
+      "imageList": "static/img/黄豆酱.png",
+      "goodsName": "黄豆酱",
+      "goodsDetail": "200g/瓶",
+      "goodsPrice": 13,
+      "id": 1
+    },
+    {
+      "imageList": "static/img/黄豆酱.png",
+      "goodsName": "黄豆酱",
+      "goodsDetail": "200g/瓶",
+      "goodsPrice": 13,
+      "id": 2
+    },
+    {
+      "imageList": "static/img/黄豆酱.png",
+      "goodsName": "黄豆酱",
+      "goodsDetail": "200g/瓶",
+      "goodsPrice": 13,
+      "id": 3
+    },
+    {
+      "imageList": "static/img/黄豆酱.png",
+      "goodsName": "黄豆酱",
+      "goodsDetail": "200g/瓶",
+      "goodsPrice": 13,
+      "id": 4
+    },
+    {
+      "imageList": "static/img/黄豆酱.png",
+      "goodsName": "黄豆酱",
+      "goodsDetail": "200g/瓶",
+      "goodsPrice": 13,
+      "id": 5
+    },
+    {
+      "imageList": "static/img/黄豆酱.png",
+      "goodsName": "黄豆酱",
+      "goodsDetail": "200g/瓶",
+      "goodsPrice": 13,
+      "id": 6
+    }
+  ],
+  "home_guoshu": [
+    {
+      "imageList": "static/img/酱油.png",
+      "goodsName": "酱油",
+      "goodsDetail": "410g/瓶",
+      "goodsPrice": 28.8,
+      "id": 1
+    },
+    {
+      "imageList": "static/img/酱油.png",
+      "goodsName": "酱油",
+      "goodsDetail": "410g/瓶",
+      "goodsPrice": 28.8,
+      "id": 2
+    },
+    {
+      "imageList": "static/img/酱油.png",
+      "goodsName": "酱油",
+      "goodsDetail": "410g/瓶",
+      "goodsPrice": 28.8,
+      "id": 3
+    },
+    {
+      "imageList": "static/img/酱油.png",
+      "goodsName": "酱油",
+      "goodsDetail": "410g/瓶",
+      "goodsPrice": 28.8,
+      "id": 4
+    },
+    {
+      "imageList": "static/img/酱油.png",
+      "goodsName": "酱油",
+      "goodsDetail": "410g/瓶",
+      "goodsPrice": 28.8,
+      "id": 5
+    },
+    {
+      "imageList": "static/img/酱油.png",
+      "goodsName": "酱油",
+      "goodsDetail": "410g/瓶",
+      "goodsPrice": 28.8,
+      "id": 6
+    }
+  ],
+  "goodsa": [
+    {
+      "imageList": "static/img/黄豆酱.png",
+      "goodsName": "黄豆酱",
+      "goodsDetail": "200g/瓶",
+      "goodsPrice": 13,
+      "num": 1,
+      "id": 3
+    },
+    {
+      "imageList": "static/img/草莓醋.png",
+      "goodsName": "一果泡醋草莓醋",
+      "goodsDetail": "410g/瓶",
+      "goodsPrice": 28.8,
+      "num": 1,
+      "id": 5
+    },
+    {
+      "imageList": "static/img/草莓醋.png",
+      "goodsName": "一果泡醋草莓醋",
+      "goodsDetail": "410g/瓶",
+      "goodsPrice": 28.8,
+      "num": 1,
+      "id": 6
+    },
+    {
+      "imageList": "static/img/草莓醋.png",
+      "goodsName": "一果泡醋草莓醋",
+      "goodsDetail": "410g/瓶",
+      "goodsPrice": 28.8,
+      "num": 1,
+      "id": 7
+    },
+    {
+      "imageList": "static/img/酱油.png",
+      "goodsName": "酱油",
+      "goodsDetail": "410g/瓶",
+      "goodsPrice": 28.8,
+      "num": 1,
+      "id": 8
+    },
+    {
+      "imageList": "static/img/酱油.png",
+      "goodsName": "酱油",
+      "goodsDetail": "410g/瓶",
+      "goodsPrice": 28.8,
+      "num": 1,
+      "id": 9
+    },
+    {
+      "imageList": "static/img/酱油.png",
+      "goodsName": "酱油",
+      "goodsDetail": "410g/瓶",
+      "goodsPrice": 28.8,
+      "num": 1,
+      "id": 10
+    },
+    {
+      "imageList": "static/img/酱油.png",
+      "goodsName": "酱油",
+      "goodsDetail": "410g/瓶",
+      "goodsPrice": 28.8,
+      "num": 1,
+      "id": 11
+    },
+    {
+      "imageList": "static/img/酱油.png",
+      "goodsName": "酱油",
+      "goodsDetail": "410g/瓶",
+      "goodsPrice": 28.8,
+      "num": 1,
+      "id": 12
+    },
+    {
+      "imageList": "static/img/酱油.png",
+      "goodsName": "酱油",
+      "goodsDetail": "410g/瓶",
+      "goodsPrice": 28.8,
+      "num": 1,
+      "id": 31
+    },
+    {
+      "imageList": "static/img/草莓醋.png",
+      "goodsName": "酱油",
+      "goodsDetail": "410g/瓶",
+      "goodsPrice": 28.8,
+      "num": 12,
+      "id": 32
+    },
+    {
+      "imageList": "static/img/草莓醋.png",
+      "goodsName": "酱油",
+      "goodsDetail": "410g/瓶",
+      "goodsPrice": 28.8,
+      "num": 12,
+      "id": 33
+    },
+    {
+      "imageList": "static/img/草莓醋.png",
+      "goodsName": "酱油",
+      "goodsDetail": "410g/瓶",
+      "goodsPrice": 28.8,
+      "num": 12,
+      "id": 34
+    },
+    {
+      "imageList": "static/img/草莓醋.png",
+      "goodsName": "酱油",
+      "goodsDetail": "410g/瓶",
+      "goodsPrice": 28.8,
+      "num": 12,
+      "id": 35
+    },
+    {
+      "imageList": "static/img/草莓醋.png",
+      "goodsName": "酱油",
+      "goodsDetail": "410g/瓶",
+      "goodsPrice": 28.8,
+      "num": 12,
+      "id": 36
+    },
+    {
+      "imageList": "static/img/草莓醋.png",
+      "goodsName": "酱油",
+      "goodsDetail": "410g/瓶",
+      "goodsPrice": 28.8,
+      "num": 12,
+      "id": 37
+    },
+    {
+      "imageList": "static/img/草莓醋.png",
+      "goodsName": "酱油",
+      "goodsDetail": "410g/瓶",
+      "goodsPrice": 28.8,
+      "num": 12,
+      "id": 38
+    },
+    {
+      "imageList": "static/img/草莓醋.png",
+      "goodsName": "酱油",
+      "goodsDetail": "410g/瓶",
+      "goodsPrice": 28.8,
+      "num": 12,
+      "id": 39
+    }
+  ]
 }
