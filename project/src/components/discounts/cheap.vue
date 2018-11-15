@@ -37,38 +37,12 @@
                 activeIndex:0,
 			}
 		},
-<<<<<<< HEAD
 		methods: {
 			handleToggle(params) {
 				this.activeIndex = params;
 
 			}
 		}
-=======
-        data(){
-            return {
-                 comName:"sales-com",
-                 activeIndex:1,
-//                     comName:"times-com",
-//                     activeIndex:2,
-            }
-        },
-        methods:{
-            handleToggle(params){
-                this.activeIndex = params;
-                switch(this.activeIndex){
-                    case 1:
-                        this.comName ="sales-com";
-                        break;
-                    case 2:
-                        this.comName ="times-com";
-                        break;
-                    default:
-                        break;
-                }
-        }
-    }
->>>>>>> hjq
 	}
 </script>
 

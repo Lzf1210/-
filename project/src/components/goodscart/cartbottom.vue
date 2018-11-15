@@ -3,13 +3,8 @@
 	<div class="carbottom" v-show="show">
 		<input type="checkbox" :checked="allSelect" @click="handleAllToggleSelected()"/>
 		<span>全选</span>
-<<<<<<< HEAD
-		<span>&yen; {{goodsCount.goodsNumPrice | sum}}</span>
-		<span>去结算{{'('+goodsCount.goodsNumCount+')'}}</span>
-=======
 		<span>{{goodsCount.goodsNumPrice | sum}}</span>
 		<span @click="handleGoPay()">去结算{{'('+goodsCount.goodsNumCount+')'}}</span>
->>>>>>> hjq
 	</div>
 	<div class="cartbottom" v-show="show == false">
 		<input type="checkbox" :checked="allSelect" @click="handleAllToggleSelected()"/>

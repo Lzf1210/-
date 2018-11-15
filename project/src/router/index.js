@@ -20,8 +20,7 @@ import shipments from '../components/mine/mineShipments.vue'
 
 
 
-import Site from '../components/mine/site.vue'
-import payment from '../components/mine/mineOrder.vue'
+
 
 
 import jingx from '../components/home/content_jingx.vue'

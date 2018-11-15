@@ -88,16 +88,9 @@
 	.wrapper{
 		overflow: hidden;
 		position: absolute;
-<<<<<<< HEAD
-		top: 1.3rem;
-		bottom:2.1rem;
-		width: 100%;
-		
-=======
 		top: 1.2rem;
 		bottom:2.1rem;
 		width: 100%;
->>>>>>> hjq
 	}
 	.cartgoodsdetails{
 		position: absolute;
