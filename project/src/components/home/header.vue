@@ -13,7 +13,7 @@
             <ul>
                 <li 
                 v-for="(item,index) in navs_home"
-                :class="activeIndex == index?'active':''"
+                :class="activeIndex == index?'homeActive':''"
                 @click="hanleActiveIndex(index)"
                 >
                 <router-link :to="{name:item.name}">{{item.title}}</router-link>
@@ -335,7 +335,7 @@ export default {
   letter-spacing: 0;
 }
 /* 导航栏点击效果 */
-.active {
+.homeActive {
   border-bottom: 2px solid #ba874f;
   color: #bb884a;
 }

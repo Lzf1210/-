@@ -2,7 +2,7 @@
 		<div class="footer">
 					<ul>
 							<li v-for="(item,index) in navs" @click="changeBg(index)"
-									:class="active == index?'active':''">
+									:class="active == index?'footerActive':''">
 									<router-link :to="{name:item.name}">
 											<i :class="'iconfont' + ' ' +item.img"></i>
 											{{item.title}}        
@@ -28,7 +28,7 @@ export default {
                     img : "icon-icon4"
                 },
                 {
-                    name : "classify",
+                    name : "details",
                     title : "分类",
                     img : "icon-fenlei"
                 },
@@ -93,7 +93,7 @@ export default {
    font-size:20px;
    line-height: 22px;
 }
-.footer>ul>.active a{
+.footer>ul>.footerActive a{
     color:#EFB31F;
 }
 </style>
