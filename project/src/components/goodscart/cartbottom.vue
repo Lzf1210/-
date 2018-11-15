@@ -4,12 +4,12 @@
 		<input type="checkbox" :checked="allSelect" @click="handleAllToggleSelected()"/>
 		<span>全选</span>
 		<span>{{goodsCount.goodsNumPrice | sum}}</span>
-		<span>去结算{{'('+goodsCount.goodsNumCount+')'}}</span>
+		<span @click="handleGoPay()">去结算{{'('+goodsCount.goodsNumCount+')'}}</span>
 	</div>
 	<div class="cartbottom" v-show="show == false">
 		<input type="checkbox" :checked="allSelect" @click="handleAllToggleSelected()"/>
 		<span>全选</span>
-		<span>删除所选</span>
+		<span @click="handleGoodsDel()">删除所选</span>
 		<span>加入喜欢</span>
 		
 	</div>
@@ -26,16 +26,23 @@
 		},
 		computed:{
 			...Vuex.mapState({
-				allSelect:state=>state.goodscart.allSelect
+				allSelect:state=>state.goodscart.allSelect,
+				list:state=>state.goodscart.list
 			}),
 			...Vuex.mapGetters({
 				goodsCount:"goodscart/goodsCount"
 			})
 		},
 		methods:{
+			...Vuex.mapActions({
+				handleGoodsDel:"goodscart/handleGoodsDel"
+			}),
 			...Vuex.mapMutations({
-			handleAllToggleSelected:"goodscart/handleAllToggleSelected"
-			})
+			handleAllToggleSelected:"goodscart/handleAllToggleSelected"		
+			}),
+			handleGoPay(){
+				this.observer.$emit("change2",true)
+			}
 			
 		},
 		created(){
@@ -48,7 +55,7 @@
 		},
 		filters:{
 			sum:function(val){
-				var result = "￥" + val;
+				var result =  val;
 				return result;
 			}
 		}

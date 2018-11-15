@@ -1,5 +1,10 @@
 <template>
-	<div class="goodsdetail">
+	<div>
+		<div class="head"></div>
+	
+	<div 	class="wrapper" ref="wrapper">
+	<div class="goodsdetail content">
+		
 		<div class="swiper-container">
 		    <div class="swiper-wrapper">
 		        <div class="swiper-slide" v-for="(item,index) in src">
@@ -141,17 +146,18 @@
 			<p>食材和食品都有严谨的挑选过程，排除非必要性的加工过程，尽量保护食材的原有味道。味噌是由发酵过的大豆（黄豆）制成，主要为糊状。是一种调味料，也被用作为汤底。</p>
 		</div>
 		<img src="static/goodsimg/味增汤2.png"/>
-		<goodsfooter></goodsfooter>
+	</div>
+	</div>
 	</div>
 </template>
 
 <script>
 	 import "../../../node_modules/swiper/dist/css/swiper.css"
 	 import Swiper from "swiper"
-	 import Goodsfooter from "./goodsdetailfooter/goodsdetailfooter.vue"
+	 import BScroll from "better-scroll"
 	 export default{
 	 	components:{
-	 		Goodsfooter
+	 		
 	 	},
 	 	data(){
 	 		return{
@@ -167,14 +173,36 @@
 			    pagination: {
 			      el: '.swiper-pagination',
 			    }
-			 }) 
-	 	}
+			 });
+				this.scroll = new BScroll(this.$refs.wrapper,{
+					click:true,
+				});
+	 	},
+		created(){
+			console.log(this.$route.params.id)
+		}
 	 }
 </script>
 
 <style scoped>
+	.head{
+		position: fixed;
+		top: 0;
+		width: 100%;
+		height: 0.4rem;
+		background: yellow;
+		z-index: 2;
+	}
+	.wrapper{
+		overflow: hidden;
+		position: absolute;
+		top: 0.8rem;
+		bottom:.98rem;
+		width: 100%;
+		/* height:100% */
+	}
 .goodsdetail{
-	padding-top: 0.4rem;
+	/* padding-top: 0.4rem; */
 	background: #F8F8F8;
 	height: 100%;
 	width: 100%;
@@ -200,7 +228,7 @@
 	line-height: .56rem;
 }
 .goodsmain ul li:nth-of-type(1){
-	font-family: .PingFangSC-Regular;
+	font-family:.PingFangSC-Regular;
 	font-size: 12px;
 	color: #696969;
 	letter-spacing: 0;

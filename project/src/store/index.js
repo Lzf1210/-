@@ -5,7 +5,10 @@ import classify from "./classify"
 import discounts from "./discounts"
 import goodscart from "./goodscart"
 import mine from "./mine"
-import axios from "axios";
+
+import axios from "axios"
+
+
 Vue.use(Vuex)
 
 const state = {
