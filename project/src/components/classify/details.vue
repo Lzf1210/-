@@ -9,29 +9,11 @@
 			<div class="borderr"></div>
 		</div>
 		<ul>
-			<li>
-				<img src="../../../static/classifyImg/details_01.png" alt="">
-				<P>全部</P>
-			</li>
-			<li>
-				<img src="../../../static/classifyImg/details_02.png" alt="">
-				<p>果干蜜饯</p>
-			</li>
-			<li>
-				<img src="../../../static/classifyImg/details_03.png" alt="">
-				<p>调味作料</p>
-			</li>
-			<li>
-				<img src="../../../static/classifyImg/details_04.png" alt="">
-				<p>调味酱料</p>
-			</li>
-			<li>
-				<img src="../../../static/classifyImg/details_05.png" alt="">
-				<p>调味组合</p>
-			</li>
-			<li>
-				<img src="../../../static/classifyImg/details_06.png" alt="">
-				<p>发酵食醋</p>
+			<li v-for="(item,index) in lists">
+				<!-- <router-link :to="{name:item.imgsrc}"> -->
+					<img  :src ="item.imgsrc"/>
+					<p>{{item.name}}</p>
+				<!-- </router-link> -->
 			</li>
 		</ul>
 		
@@ -40,6 +22,41 @@
 
 <script>
 	
+	export default{
+		data(){
+			return {
+				lists : [
+					{
+						imgsrc:"../../../static/classifyImg/details_01.png",
+						name : "全部",
+						id:1
+							
+					},
+					{
+						imgsrc:"../../../static/classifyImg/details_02.png",
+						name:"果干蜜饯",
+						
+					},
+					{
+						imgsrc:"../../../static/classifyImg/details_03.png",
+						name:"调味作料",
+					},
+					{
+						imgsrc:"../../../static/classifyImg/details_04.png",
+						name:"调味酱料",
+					},
+					{
+						imgsrc:"../../../static/classifyImg/details_05.png",
+						name:"调味组合",
+					},
+					{
+						imgsrc:"../../../static/classifyImg/details_06.png",
+						name:"发酵食醋",
+					}
+				]
+			}
+		}
+	}
 	
 </script>
 
@@ -104,5 +121,6 @@
 		font-family: PingFangSC-Regular;
 		font-size: 14px;
 		color: #222222;
+		
 	}
 </style>

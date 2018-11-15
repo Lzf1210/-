@@ -9,29 +9,9 @@
 			<div class="borderr"></div>
 		</div>
 		<ul>
-			<li>
-				<img src="../../../static/classifyImg/details1_01.png" alt="">
-				<P>全部</P>
-			</li>
-			<li>
-				<img src="../../../static/classifyImg/details1_02.png" alt="">
-				<p>安心米面</p>
-			</li>
-			<li>
-				<img src="../../../static/classifyImg/details1_03.png" alt="">
-				<p>南北干货</p>
-			</li>
-			<li>
-				<img src="../../../static/classifyImg/details1_04.png" alt="">
-				<p>火锅底料</p>
-			</li>
-			<li>
-				<img src="../../../static/classifyImg/details1_05.png" alt="">
-				<p>面点小食</p>
-			</li>
-			<li>
-				<img src="../../../static/classifyImg/details1_06.png" alt="">
-				<p>健康食油</p>
+			<li v-for="(item,index) in lists">
+				<img :src="item.imgsrc"/>
+				<p>{{item.name}}</p>
 			</li>
 		</ul>
 		
@@ -39,7 +19,41 @@
 </template>
 
 <script>
-	
+	export default{
+		data(){
+			return {
+				lists : [
+					{
+						imgsrc:"../../../static/classifyImg/details1_01.png",
+						name : "全部",
+						id:1
+							
+					},
+					{
+						imgsrc:"../../../static/classifyImg/details1_02.png",
+						name:"安心米面",
+						
+					},
+					{
+						imgsrc:"../../../static/classifyImg/details1_03.png",
+						name:"南北干货",
+					},
+					{
+						imgsrc:"../../../static/classifyImg/details1_04.png",
+						name:"火锅底料",
+					},
+					{
+						imgsrc:"../../../static/classifyImg/details1_05.png",
+						name:"面点小食",
+					},
+					{
+						imgsrc:"../../../static/classifyImg/details1_06.png",
+						name:"健康食油",
+					}
+				]
+			}
+		}
+	}
 	
 </script>
 

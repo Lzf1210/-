@@ -9,26 +9,40 @@
 			<div class="borderr"></div>
 		</div>
 		<ul>
-			<li>
-				<img src="../../../static/classifyImg/details6_01.png" alt="">
-				<P>全部</P>
+			<li v-for="(item,index) in lists">
+				<img :src="item.imgsrc"/>
+				<p>{{item.name}}</p>
 			</li>
-			<li>
-				<img src="../../../static/classifyImg/details6_02.png" alt="">
-				<p>厨房用品</p>
-			</li>
-			<li>
-				<img src="../../../static/classifyImg/details6_03.png" alt="">
-				<p>家庭日用</p>
-			</li>
-			
-			
 		</ul>
 		
 	</div>
 </template>
 
 <script>
+	export default{
+		data(){
+			return {
+				lists : [
+					{
+						imgsrc:"../../../static/classifyImg/details6_01.png",
+						name : "全部",
+						id:1
+							
+					},
+					{
+						imgsrc:"../../../static/classifyImg/details6_02.png",
+						name:"厨房用品",
+						
+					},
+					{
+						imgsrc:"../../../static/classifyImg/details6_03.png",
+						name:"家庭日用",
+					}
+					
+				]
+			}
+		}
+	}
 	
 	
 </script>
