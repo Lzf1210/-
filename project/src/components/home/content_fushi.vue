@@ -1,52 +1,90 @@
 <template>
-    <div class="content_T">
+<div class="con_c">
+    <div class="wrapper" ref="goodsWrapper">
         <div class="content">
-            <banner-com></banner-com>
-            <div class="content_c">
-                <img src="static/home/img/6@2x.png">
-                <p>高堂菜谱</p>
-                <p>150g/袋</p>
-                <p>￥18.80</p>
-            </div>
-            <div class="content_c">
-                <img src="static/home/img/6@2x.png">
-                <p>高堂菜谱</p>
-                <p>150g/袋</p>
-                <p>￥18.80</p>
-            </div>
-            <div class="content_c">
-                <img src="static/home/img/6@2x.png">
-                <p>高堂菜谱</p>
-                <p>150g/袋</p>
-                <p>￥18.80</p>
-            </div>
-            <div class="content_c">
-                <img src="static/home/img/6@2x.png">
-                <p>高堂菜谱</p>
-                <p>150g/袋</p>
-                <p>￥18.80</p>
-            </div>
+            
+                <banner-com></banner-com>
+                <div 
+                class="content_c" 
+                v-for="(item,index) in goodsa_fuhi"
+                >
+                    <img :src="item.img"/>
+                    <p>{{item.goodsName}}</p>
+                    <p>{{item.goodsSize}}</p>
+                    <p>{{item.goodsPrice | home_price}}</p>
+                </div>
+             </div>
         </div>
     </div>
 </template>
 
 <script>
 import banner from './banner';
+import Vuex from 'vuex';
+import BScroll from 'better-scroll';
 export default {
     components:{
         'banner-com':banner,
     },
+    data(){
+        return{
+            pageNum:1
+        }
+    },
+    filters:{
+        // 价格前加￥
+        "home_price":(val)=>{
+            return '￥' + val;
+        }
+    },
+    created(){
+        this.handleHome_fushiget(this.pageNum);
+    },
+    computed:{
+        ...Vuex.mapState({
+            goodsa_fuhi:state=>state.home.goodsa_fuhi
+        })
+    },
+    methods:{
+        ...Vuex.mapActions({
+            handleHome_fushiget:'home/handleHome_fushiget',
+        })
+    },
+    mounted() {
+			this.scroll = new BScroll(this.$refs.goodsWrapper, {
+				click: true,
+				// tap: true,
+				pullUpLoad: true
+			});
+			
+			this.scroll.on("pullingUp", () => {
+				this.handleHome_fushiget(++this.pageNum)
+				
+			})
+			
+        },
+    updated () {
+        //重新计算高度
+        this.scroll.refresh();
+        //当数据加载完毕以后通知better-scroll
+        this.scroll.finishPullUp();
+    }
+        
 }
 </script>
 
 <style scoped>
-.content_T{
-    height:100%;
-    padding-bottom: 3.4rem;
-}
 .content{
-    height:100%;
-    overflow:auto;
+    display:flex;
+    justify:space-around;
+    flex-wrap:wrap;
+}
+.wrapper{
+    position: absolute;
+    top: 2.68rem;
+    bottom: 0.98rem;
+    width: 100%;
+    overflow: hidden;
 }
 .content>.content_c{
     margin-top: .2rem;
