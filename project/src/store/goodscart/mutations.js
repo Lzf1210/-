@@ -1,3 +1,4 @@
+import state from "./state"
 import axios from "axios";
 export default {
    handleGetGoods(state,params){
@@ -34,21 +35,5 @@ export default {
    handleAdd(state,index){
    		state.goodsList[index].num++
    },
-// 	 handleGoodsDel(state,index){
-// 		  for(var i=0;i< state.goodsList.length;i++){
-// 		  		if(state.goodsList[i].flag){
-// 						state.list.push(state.goodsList[i].id);
-// 						console.log(state.list)
-//           }
-// 		  }
-// 			for(var a = 0;a < state.list.length;a++){
-// 			axios({
-// 							method:"delete",
-// 							url:"http://localhost:3000/goods/"+state.list[a],
-// 							
-// 						}).then((data)=>{
-// 							//console.log(data)		
-// 					});
-// 			}
-// 	 },
+ 
 }

@@ -1,9 +1,10 @@
 <template>
-	<div>
-		<div class="head"></div>
+	<div class="wrapper" ref="detailWrapper">
+        <div class="content">
+		
 	
-	<div 	class="wrapper" ref="wrapper">
-	<div class="goodsdetail content">
+	
+	<div class="goodsdetail">
 		
 		<div class="swiper-container">
 		    <div class="swiper-wrapper">
@@ -147,14 +148,19 @@
 		</div>
 		<img src="static/goodsimg/味增汤2.png"/>
 	</div>
+        
+        </div>
+				<div class="imgg">
+					<img src="../../../static/img/back.png" @click="handleBack()">
+				</div>
 	</div>
-	</div>
+    
 </template>
 
 <script>
 	 import "../../../node_modules/swiper/dist/css/swiper.css"
 	 import Swiper from "swiper"
-	 import BScroll from "better-scroll"
+     import BScroll from "better-scroll";
 	 export default{
 	 	components:{
 	 		
@@ -165,6 +171,11 @@
 	 		}
 	 	},
 	 	mounted(){
+            this.scroll = new BScroll(this.$refs.detailWrapper, {
+            	click: true,
+            	// tap: true,
+            	pullUpLoad: true
+            });
 	 		new Swiper ('.swiper-container', {
 			    direction: 'horizontal', // 垂直切换选项
 			    loop: false, // 循环模式选项
@@ -173,42 +184,39 @@
 			    pagination: {
 			      el: '.swiper-pagination',
 			    }
-			 });
-				this.scroll = new BScroll(this.$refs.wrapper,{
-					click:true,
-				});
+			});
+			
+            
 	 	},
 		created(){
 			console.log(this.$route.params.id)
+			// console.log(this.$route.params.num)
+		},
+		methods:{
+			handleBack(){
+				this.$router.back()
+			}
 		}
 	 }
 </script>
 
 <style scoped>
-	.head{
-		position: fixed;
-		top: 0;
-		width: 100%;
-		height: 0.4rem;
-		background: yellow;
-		z-index: 2;
-	}
-	.wrapper{
-		overflow: hidden;
-		position: absolute;
-		top: 0.8rem;
-		bottom:.98rem;
-		width: 100%;
-		/* height:100% */
-	}
+    .wrapper {
+    		position: absolute;
+    		top: 0.4rem;
+    		bottom: .98rem;
+    		width: 100%;
+    		overflow: hidden;
+    }
+	
 .goodsdetail{
 	/* padding-top: 0.4rem; */
 	background: #F8F8F8;
 	height: 100%;
 	width: 100%;
-	position: fixed;
-	z-index: 2;
-	overflow: auto;
+	/* position: fixed;
+	z-index: 2;*/
+	overflow: auto; 
 }
 .swiper-container {
 	width: 100%;
@@ -370,5 +378,16 @@
 	color: #888888;
 	letter-spacing: 0;
 	line-height: 30px;
+}
+.wrapper .imgg{
+	position: fixed;
+	top: 0.6rem;
+	left: 0.4rem;
+	width: 0.6rem;
+	height: 0.6rem;
+}
+.wrapper .imgg>img{
+	width: 0.4rem;
+	height: 0.4rem;
 }
 </style>

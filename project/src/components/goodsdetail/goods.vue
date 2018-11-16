@@ -1,6 +1,6 @@
 <template>
 	<div class="goods">
-		
+		<div class="head"></div>
 		<goodsdetail-com></goodsdetail-com>
 		<goodsdetailfooter-com></goodsdetailfooter-com>
 	</div>
@@ -29,6 +29,11 @@
 		left:0;
 		top:0;
 		z-index: 2;
+	}
+	.head{
+		width: 100%;
+		height: 0.4rem;
+		background: white;
 	}
 	
 </style>

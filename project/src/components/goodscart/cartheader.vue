@@ -60,21 +60,21 @@ export default {
 .goodscart>.cart-header span:nth-of-type(1){
 	font-size: 18px;
 	line-height:.87rem ;
-	color: #000000;
+	color: ##000000;
 	font-family: PingFangSC-Regular;
 	padding-left: 3.2rem;
 }
 .goodscart>.cart-header span:nth-of-type(2){
 	font-size: 18px;
 	line-height:.87rem ;
-	color: #000000;
+	color: ##000000;
 	font-family: .PingFangSC-Regular;
 	padding-left:2.12rem;
 }
 .goodscart>.cart-header span:nth-of-type(3){
 	font-size: 18px;
 	line-height:.87rem ;
-	color: #000000;
+	color: ##000000;
 	font-family: .PingFangSC-Regular;
 	padding-left:2.12rem;
 }
