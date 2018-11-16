@@ -1,7 +1,7 @@
 <template>
     <div id="home">
         <header-com></header-com>
-        <router-view></router-view>
+         <router-view></router-view>
         <!-- <keep-alive>
             <component :is="comName"></component>
         </keep-alive> -->

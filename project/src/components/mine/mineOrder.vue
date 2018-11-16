@@ -1,12 +1,11 @@
 <template>
     <div class="mineOrder">
-        <h2>
-            全部订单
-            <span>&gt;</span>
-        </h2>
+        <router-link :to="{name:'allOrderheader',query:{id:-1}}">
+            <h2>全部订单<span>&gt;</span></h2>
+        </router-link>
         <ul class="orderSelect">
             <li v-for="(item,index) in orders">
-                <router-link :to="{name:item.name}">
+                <router-link :to="{name:item.name,query:{id:index}}">
                     <img :src="item.img">
                     {{item.title}}
                 </router-link>
@@ -47,13 +46,19 @@ export default {
                 }
             ]
         }
+    },
+    methods : {
+        allOrder(){
+            this.$router.push("/allOrderheader")
+            
+        }
     }
 }
 </script>
 
 <style>
 .mineOrder{height:2.65rem;width:100%;background: #fff;margin:3% 0 4%;}
-.mineOrder>h2{height:.88rem;width:100%;padding: 0 4.3%;font-size:.32rem;color:#666666;line-height: .88rem;border-bottom:2px solid #F1F1F1;font-weight: 300;font-family:PingFangSC-Regular;}
+.mineOrder>h2{height:.88rem;width:100%;padding: 0 4.3%;font-size:.32rem;color:#666666;line-height: .88rem;border-bottom:2px solid #F1F1F1;font-family:PingFangSC-Regular;font-weight: 200}
 .mineOrder>h2>span{float:right}
 .orderSelect{height:1.76rem;display: flex;}
 .orderSelect>li{width:20%;display: flex;flex-direction: column;align-self: center;align-items: center}

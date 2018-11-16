@@ -11,14 +11,14 @@
 				<span>热门单品价格直降，购买超划算</span>
 				<div class="salesGoods">
 					<div class="goods" v-for="(item,index) in imgList">
-                        <div>
-                            <img :src="item.goodsDetail" >
-                        </div>
-						
-						<!-- <img v-lazy="item"> -->
+                        <router-link :to='{name:"goods",params:{id:item.id}}'>
+                            <img :src="item.goodsDetail" class="imgs">
+                        </router-link>
 						<h3>{{item.goodsName}}</h3>
 						<h4>{{item.goodsPrice}}</h4>
-						<h5>立即购买</h5>
+                        <router-link :to='{name:"goods",params:{id:item.id}}'>
+                        	<h5>立即购买</h5>
+                        </router-link>
 						<h6>特惠</h6>
 						<p>￥{{item.goodsDiscountsPrice}}</p>
 						<div class="shu"></div>
@@ -43,10 +43,6 @@
 		created() {
 			this.handleGetImg(this.pageNum)
 		},
-        watch: {
-          // 如果路由有变化，会再次执行该方法
-          "$route": "handleGetImg"
-        },
 		computed: {
 			...Vuex.mapState({
 				imgList: state => state.discounts.imgList,
@@ -57,6 +53,7 @@
 			...Vuex.mapActions({
 				handleGetImg: "discounts/handleGetImg"
 			}),
+            
 		},
 		mounted() {
 			this.scroll = new BScroll(this.$refs.salesWrapper, {
@@ -164,7 +161,7 @@
 		background: #FCEEE5;
 	}
 
-	.goods>div>img {
+	.goods .imgs{
 		height: 3.4rem;
 		width: 3rem;
 		margin-top: .14rem;

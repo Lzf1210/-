@@ -31,6 +31,38 @@
       "goodsPrice": 28.8,
       "num": 1,
       "id": 31
+    },
+    {
+      "img": "static/img/草莓醋.png",
+      "goodsName": "酱油",
+      "goodsSize": "410g/瓶",
+      "goodsPrice": 28.8,
+      "num": 12,
+      "id": 32
+    },
+    {
+      "img": "static/img/草莓醋.png",
+      "goodsName": "酱油",
+      "goodsSize": "410g/瓶",
+      "goodsPrice": 28.8,
+      "num": 12,
+      "id": 33
+    },
+    {
+      "img": "static/img/草莓醋.png",
+      "goodsName": "酱油",
+      "goodsSize": "410g/瓶",
+      "goodsPrice": 28.8,
+      "num": 12,
+      "id": 34
+    },
+    {
+      "img": "static/img/草莓醋.png",
+      "goodsName": "酱油",
+      "goodsSize": "410g/瓶",
+      "goodsPrice": 28.8,
+      "num": 12,
+      "id": 35
     }
   ],
   "imgs": [

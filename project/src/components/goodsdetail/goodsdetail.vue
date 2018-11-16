@@ -48,93 +48,146 @@
 						<div>
 							<img src="static/goodsimg/3.png"/>
 						</div>
-						<p>发酵食品</p>
-					</li>
-					<li>
-						<div>
-							<img src="static/goodsimg/4.png"/>
-						</div>
-						<p>国际保证</p>
-					</li>
-				</ul>
-			</div>
-			<div class="alldetail">
-				<p>详情</p>
-				<ul>
-					<li>
-						<span>品名</span>
-					</li>
-					<li>
-						<span>规格</span>
-					</li>
-					<li>
-						<span>保存方式</span>
-					</li>
-					<li>
-						<span>保质期</span>
-					</li>
-					<li>
-						<span>制造商</span>
-					</li>
-					<li>
-						<span>生产许可证</span>
-					</li>
-					<li>
-						<span>产地</span>
-					</li>
-					<li>
-						<span>生产标准号</span>
-					</li>
-					<li>
-						<span>箱规</span>
-					</li>
-					<li>
-						<span>食用方法</span>
-					</li>
-				</ul>
-				<ul>
-					<li>
-						<span>豆腐味味噌汤</span>
-					</li>
-					<li>
-						<span>19g/盒</span>
-					</li>
-					<li>
-						<span>低温保存</span>
-					</li>
-					<li>
-						<span>360天</span>
-					</li>
-					<li>
-						<span>山东欣和神州一食品有限公司</span>
-					</li>
-					<li>
-						<span>SC107655684654649</span>
-					</li>
-					<li>
-						<span>山东省烟台市</span>
-					</li>
-					<li>
-						<span>Q/ASE 00002S</span>
-					</li>
-					<li>
-						<span>24盒/箱</span>
-					</li>
-					<li>
-						<span>可依据个人口味加入热水冲调，放置2-3分钟后食用。</span>
-					</li>
-				</ul>
-				<div class="jifen">可抵用积分数 157</div>
+					</div>
+					<!-- 如果需要分页器 -->
+					<div class="swiper-pagination" style="z-index: 9999;"></div>
+				</div>
+				<div class="goodsmain">
+					<ul>
+						<li>竹笙</li>
+						<li>豆腐脑味味增汤</li>
+						<li><span>￥3.42</span><del>￥3.42</del></li>
+					</ul>
+					<div class="huodong">
+						<span>活动</span>
+						<span>好食狂化节-全场9折</span>
+					</div>
+				</div>
+				<div class="detail">
+					<div class="fangxin">
+						<p>为什么他让人放心</p>
+					</div>
+					<div class="tubiao">
+						<ul>
+							<li>
+								<div>
+									<img src="static/goodsimg/1.png" />
+								</div>
+								<p>非转基因</p>
+							</li>
+							<li>
+								<div>
+									<img src="static/goodsimg/2.png" />
+								</div>
+								<p>产地直供</p>
+							</li>
+							<li>
+								<div>
+									<img src="static/goodsimg/3.png" />
+								</div>
+								<p>发酵食品</p>
+							</li>
+							<li>
+								<div>
+									<img src="static/goodsimg/4.png" />
+								</div>
+								<p>国际保证</p>
+							</li>
+						</ul>
+					</div>
+					<div class="alldetail">
+						<p>详情</p>
+						<ul>
+							<li>
+								<span>品名</span>
+							</li>
+							<li>
+								<span>规格</span>
+							</li>
+							<li>
+								<span>保存方式</span>
+							</li>
+							<li>
+								<span>保质期</span>
+							</li>
+							<li>
+								<span>制造商</span>
+							</li>
+							<li>
+								<span>生产许可证</span>
+							</li>
+							<li>
+								<span>产地</span>
+							</li>
+							<li>
+								<span>生产标准号</span>
+							</li>
+							<li>
+								<span>箱规</span>
+							</li>
+							<li>
+								<span>食用方法</span>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<span>豆腐味味噌汤</span>
+							</li>
+							<li>
+								<span>19g/盒</span>
+							</li>
+							<li>
+								<span>低温保存</span>
+							</li>
+							<li>
+								<span>360天</span>
+							</li>
+							<li>
+								<span>山东欣和神州一食品有限公司</span>
+							</li>
+							<li>
+								<span>SC107655684654649</span>
+							</li>
+							<li>
+								<span>山东省烟台市</span>
+							</li>
+							<li>
+								<span>Q/ASE 00002S</span>
+							</li>
+							<li>
+								<span>24盒/箱</span>
+							</li>
+							<li>
+								<span>可依据个人口味加入热水冲调，放置2-3分钟后食用。</span>
+							</li>
+						</ul>
+						<div class="jifen">可抵用积分数 157</div>
+					</div>
+				</div>
+				<div class="chanpin">
+					<h1>美烹的产品</h1>
+					<p>美烹生鲜我们提供每日食用的食物与食品。这些食材不稀奇也不难购买，却值得被细细品尝与分享。我们尝试在稀疏平常的日子里去细细探索他们的魅力。所以我们倾注了大量时间挑选每一款食材为您提供最大的便利。这个过程就好比酿造，不能着急不能分心。因此，我们的每一个员工都是匠心酿造者，效法酵素及酿造的精神寻觅好食，将那些被忙碌中忽略的美食一一挖掘在您的眼前。</p>
+				</div>
+				<img src="static/goodsimg/味噌汤.png" />
+				<div class="chanpin">
+					<h1>美烹的每一克</h1>
+					<p>平凡的原料有着不平凡的价值。所展示的食材生活中随处可见，但是它的每一克都有着你想不到的价值。味噌是一种调味品，以营养丰富味道独特而风靡日本。</p>
+				</div>
+				<img src="static/goodsimg/豆腐.png" />
+				<div class="chanpin">
+					<h1>美烹的工艺</h1>
+					<p>食材和食品都有严谨的挑选过程，排除非必要性的加工过程，尽量保护食材的原有味道。味噌是由发酵过的大豆（黄豆）制成，主要为糊状。是一种调味料，也被用作为汤底。</p>
+				</div>
+				<img src="static/goodsimg/豆腐汤.png" />
+				<div class="chanpin">
+					<h1>美烹的工艺</h1>
+					<p>食材和食品都有严谨的挑选过程，排除非必要性的加工过程，尽量保护食材的原有味道。味噌是由发酵过的大豆（黄豆）制成，主要为糊状。是一种调味料，也被用作为汤底。</p>
+				</div>
+				<img src="static/goodsimg/味增汤2.png" />
 			</div>
 		</div>
-		<div class="chanpin">
-				<h1>美烹的产品</h1>
-				<p>美烹生鲜我们提供每日食用的食物与食品。这些食材不稀奇也不难购买，却值得被细细品尝与分享。我们尝试在稀疏平常的日子里去细细探索他们的魅力。所以我们倾注了大量时间挑选每一款食材为您提供最大的便利。这个过程就好比酿造，不能着急不能分心。因此，我们的每一个员工都是匠心酿造者，效法酵素及酿造的精神寻觅好食，将那些被忙碌中忽略的美食一一挖掘在您的眼前。</p>
-		</div>
-		<img src="static/goodsimg/味噌汤.png"/>
-		<div class="chanpin">
-			<h1>美烹的每一克</h1>
-			<p>平凡的原料有着不平凡的价值。所展示的食材生活中随处可见，但是它的每一克都有着你想不到的价值。味噌是一种调味品，以营养丰富味道独特而风靡日本。</p>
+		<div class="imgg">
+			<img src="../../../static/img/back.png" @click="handleBack()">
 		</div>
 		<img src="static/goodsimg/豆腐.png"/>
 		<div class="chanpin">
@@ -190,7 +243,10 @@
 	 	},
 		created(){
 			console.log(this.$route.params.id)
+<<<<<<< HEAD
 			// console.log(this.$route.params.num)
+=======
+>>>>>>> wp
 		},
 		methods:{
 			handleBack(){
@@ -390,4 +446,8 @@
 	width: 0.4rem;
 	height: 0.4rem;
 }
+<<<<<<< HEAD
 </style>
+=======
+</style>
+>>>>>>> wp

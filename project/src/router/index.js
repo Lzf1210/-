@@ -10,13 +10,12 @@ import cheap from '../components/discounts/cheap.vue'
 import Goodscart from '../components/goodscart/goodscart.vue'
 import Classify from '../components/classify/classify.vue'
 import Mine from '../components/mine/mine.vue'
-
+import allOrderheader from '../components/mine/allOrderheader.vue'
 import Site from '../components/mine/site.vue'
 import payment from '../components/mine/minePayment.vue'
+import allorder from '../components/mine/allorder.vue'
 
 import shipments from '../components/mine/mineShipments.vue'
-// import Mine from '../components/mine/mine.vue'
-// import Mine from '../components/mine/mine.vue'
 
 
 
@@ -31,8 +30,12 @@ import xiaoshi from '../components/home/content_xiaoshi.vue'
 import guoshu from '../components/home/content_guoshu.vue'
 
 import Goods from '../components/goodsdetail/goods.vue'
+<<<<<<< HEAD
 
 import goPay from '../components/goodscart/goPay.vue'
+=======
+import Goodsdetail from '../components/goodsdetail/goodsdetail.vue'
+>>>>>>> wp
 
 // classify
 import details from "../components/classify/details.vue"
@@ -49,7 +52,7 @@ Vue.use(Router)
 const router = new Router({
 	routes: [{
 			path: "/",
-			redirect: "/home"
+			redirect: "/home/fushi"
 		},
 		{
 			path: "/home",
@@ -92,9 +95,8 @@ const router = new Router({
 			name: "classify",
 			component: Classify,
 			children: [
-
 				{
-					path: "details",
+					path: "/classify/details",
 					name: "details",
 					component: details,
 				},
@@ -179,15 +181,28 @@ const router = new Router({
 			]
 		},
 		{
-			path: "/payment",
-			name: "payment",
-			component: payment,
+			path: "/allOrderheader",
+			name: "allOrderheader",
+			component: allOrderheader,
+			children : [			
+				{
+					path: "/allOrderheader",
+					name: "allOrderheader",
+					component: allorder,
+				},
+				{
+					path: "/payment",
+					name: "payment",
+					component: payment,
+				},
+				// {
+				// 	path: "/shipments",
+				// 	name:"shipments",
+				// 	component: shipments,
+				// },
+			]
 		},
-		{
-			path: "/shipments",
-			name:"shipments",
-			component: shipments,
-		},
+		
 		{
 			path: "/site",
 			name: "site",

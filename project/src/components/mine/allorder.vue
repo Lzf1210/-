@@ -1,5 +1,5 @@
 <template>
-    <div class="payment" >
+    <div class="allorder">
         <div class="wrapper" ref="wrapper">
         	<div class="cartgoodsdetails content">
 				<div class="cartgoodsdetail" v-for="(item,index) in goodsList">
@@ -24,14 +24,8 @@
 import Vuex from "vuex";
 import BScroll from "better-scroll"
 export default {
-	data(){
-		return {
-			payment : index,
-		}
-	},
     created() {
-		this.handleGetGoods();
-		// this.$route.query.id=;
+        this.handleGetGoods();
     },
     methods : {
 			...Vuex.mapActions({
@@ -51,7 +45,7 @@ export default {
 </script>
 
 <style scoped>
-.payment>.content{height:100%;}
+.allorder>.content{height:100%;}
 .wrapper{
 		overflow: hidden;
 		position: absolute;
