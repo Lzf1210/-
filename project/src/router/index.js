@@ -30,12 +30,8 @@ import xiaoshi from '../components/home/content_xiaoshi.vue'
 import guoshu from '../components/home/content_guoshu.vue'
 
 import Goods from '../components/goodsdetail/goods.vue'
-<<<<<<< HEAD
 
 import goPay from '../components/goodscart/goPay.vue'
-=======
-import Goodsdetail from '../components/goodsdetail/goodsdetail.vue'
->>>>>>> wp
 
 // classify
 import details from "../components/classify/details.vue"

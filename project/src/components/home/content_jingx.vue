@@ -1,24 +1,42 @@
 <template>
-    <div>
-        精选页面紧张进行中，敬请期待。。。
-    </div>
-</template>
-
-<script>
-export default {
-
-}
-</script>
-
-<style>
-
-</style><template>
 <div class="con_c">
     <div class="wrapper" ref="goodsWrapper">
         <div class="content">
-            
             <banner-com></banner-com>
-            <div 
+            <div class="nav_jx">
+                <div>
+                    <img src="static/home/img/Page1-1.png" alt="">
+                    <a href="##">美烹宅配</a>
+                </div>
+                <div>
+                    <img src="static/home/img/Page2-1.png" alt="">
+                    <a href="##">美烹新品</a>
+                </div>
+                <div>
+                    <img src="static/home/img/Page3-1.png" alt="">
+                    <a href="##">美烹环保</a>
+                </div>
+                <div>
+                    <img src="static/home/img/Page4-1.png" alt="">
+                    <a href="##">企业团购</a>
+                </div>
+                <div>
+                    <img src="static/home/img/Page5-1.png" alt="">
+                    <a href="##">美烹优惠</a>
+                </div>
+            </div>
+                <div class="jx_ccc"></div>
+            <div class="jx_ad">
+                公告:欣和自营电商平台，品质保障
+            </div>
+                 <div class="jx_ccc"></div>
+            <p class="jx_con">美烹好食</p>
+                <div class="jx_haoshi">
+                    <a href="##"><img src="static/home/img/Rectangle6Copy@2x(2).png" alt=""></a>
+                    <a href="##"><img src="static/home/img/Rectangle6Copy@2x(1).png" alt=""></a>
+                </div>
+            <p class="jx_con" @click="handle_chanpin()">明星产品></p>
+                <div 
             class="content_c" 
             v-for="(item,index) in home_fushi"
             @click="handleGo()"
@@ -28,22 +46,48 @@ export default {
                 <p>{{item.goodsDetail}}</p>
                 <p>{{item.goodsPrice | home_price}}</p>
             </div>
+            <p class="jx_con" @click="handle_tiaowei()">厨房调味></p>
+                <div 
+            class="content_c" 
+            v-for="(item,index) in home_fushi"
+            @click="handleGo()"
+            >
+                <img :src="item.imageList"/>
+                <p>{{item.goodsName}}</p>
+                <p>{{item.goodsDetail}}</p>
+                <p>{{item.goodsPrice | home_price}}</p>
+            </div>
+            <p class="jx_con" @click="handle_guoshu()">安心果蔬></p>
+                <div 
+            class="content_c" 
+            v-for="(item,index) in home_fushi"
+            @click="handleGo()"
+            >
+                <img :src="item.imageList"/>
+                <p>{{item.goodsName}}</p>
+                <p>{{item.goodsDetail}}</p>
+                <p>{{item.goodsPrice | home_price}}</p>
+            </div>
+            
         </div>
     </div>
+    
 </div>
 </template>
 
 <script>
-import banner from './banner';
+import banner from './banner_jx';
 import Vuex from 'vuex';
 import BScroll from 'better-scroll';
+import contentfushi from './content_fushi'
 export default {
     components:{
         'banner-com':banner,
+        'contentfushi-com':contentfushi
     },
     data(){
         return{
-            pageNum:1
+            pageNum:1 
         }
     },
     filters:{
@@ -65,8 +109,17 @@ export default {
             handleHome_fushiget:'home/handleHome_fushiget',
         }),
         handleGo(){
-            this.$router.push('/goods')
-        }
+            this.$router.push('/goods/:id')
+        },
+        handle_tiaowei(){
+            this.$router.push('/home/tiaowei')
+        },
+        handle_chanpin(){
+             this.$router.push('/home/fushi')
+        },
+        handle_guoshu(){
+            this.$router.push('/home/guoshu')
+        },
     },
     mounted() {
 			this.scroll = new BScroll(this.$refs.goodsWrapper, {
@@ -135,5 +188,57 @@ export default {
     line-height: .4rem;
 }
 
+
+    /* 写死部分 */
+.nav_jx{
+    width: 100%;
+    height: 1.4rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: #ffffff;
+}
+.nav_jx>div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+.jx_ccc{
+    width: 100%;
+    height: .1rem;
+    background: #ECECEC;
+}
+    /* 公告 */
+.jx_ad{
+    width: 100%;
+    height: 0.8rem;
+    background:#fff;
+    line-height: .8rem;
+    padding-left: .32rem;
+}
+    /* 文字分类 */
+.jx_con{
+    font-family: PingFangSC-Regular;
+    font-size: 14px;
+    color: #222222;
+    letter-spacing: 0;
+    width: 100%;
+    height: 1.4rem;
+    text-align: center;
+    line-height: 1.4rem;
+}
+    /* 明星好食 */
+.jx_haoshi{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center
+}
+.jx_haoshi>a>img{
+    width: 3.22rem;
+    height: 2rem;
+}
 </style>
 
