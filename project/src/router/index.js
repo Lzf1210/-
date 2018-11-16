@@ -9,16 +9,19 @@ import cheap from '../components/discounts/cheap.vue'
 
 import Goodscart from '../components/goodscart/goodscart.vue'
 import Classify from '../components/classify/classify.vue'
+
+
 import Mine from '../components/mine/mine.vue'
+import login from '../components/mine/login.vue'
 import allOrderheader from '../components/mine/allOrderheader.vue'
 import Site from '../components/mine/site.vue'
 import payment from '../components/mine/minePayment.vue'
 import allorder from '../components/mine/allorder.vue'
-
 import shipments from '../components/mine/mineShipments.vue'
+import receiving from '../components/mine/mineReceiving.vue'
 
-
-
+import myself from '../components/mine/myself.vue'
+import safety from '../components/mine/safety.vue'
 
 
 
@@ -30,12 +33,8 @@ import xiaoshi from '../components/home/content_xiaoshi.vue'
 import guoshu from '../components/home/content_guoshu.vue'
 
 import Goods from '../components/goodsdetail/goods.vue'
-<<<<<<< HEAD
 
 import goPay from '../components/goodscart/goPay.vue'
-=======
-import Goodsdetail from '../components/goodsdetail/goodsdetail.vue'
->>>>>>> wp
 
 // classify
 import details from "../components/classify/details.vue"
@@ -161,13 +160,9 @@ const router = new Router({
 			path: "/mine",
 			component: Mine,
 			children: [
-
 				
-				// {
-				//   path: "/receiving",
-				//   name:"receiving",
-				//   component: receiving,
-				// }, 
+				
+				
 				// {
 				//   name:"evaluate",
 				//   path: "/evaluate",
@@ -179,6 +174,21 @@ const router = new Router({
 				//   component: serve
 				// }
 			]
+		},
+		{
+			path: "/myself",
+			name: "myself",
+			component: myself,
+		},
+		{
+			path: "/site",
+			name: "site",
+			component: Site,
+		},
+		{
+			path: "/safety",
+			name: "safety",
+			component: safety,
 		},
 		{
 			path: "/allOrderheader",
@@ -195,13 +205,19 @@ const router = new Router({
 					name: "payment",
 					component: payment,
 				},
-				// {
-				// 	path: "/shipments",
-				// 	name:"shipments",
-				// 	component: shipments,
-				// },
+				{
+					path: "/shipments",
+					name:"shipments",
+					component: shipments,
+				},
+				{
+				  path: "/receiving",
+				  name:"receiving",
+				  component: receiving,
+				}, 
 			]
 		},
+
 		
 		{
 			path: "/site",
@@ -218,6 +234,12 @@ const router = new Router({
 			path:"/gopay",
 			component:goPay
 		},
+		{
+			name:"login",
+			path:"/login",
+			component:login
+		},
+		
 		{
 			//匹配所有
 			path: "**",

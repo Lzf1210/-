@@ -18,7 +18,7 @@ export default {
             this.observer.$emit("handleTwoChange",false)
         },
         exit(){
-            
+            this.$router.push("/login");
         }
     }
 }

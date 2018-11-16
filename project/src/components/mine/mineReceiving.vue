@@ -1,21 +1,23 @@
 <template>
-    <div class="payment" >
+    <div class="receiving">
         <div class="wrapper" ref="wrapper">
-        	<div class="cartgoodsdetails content">
-				<div class="cartgoodsdetail" v-for="(item,index) in goodsList">
-					<!-- <input type="checkbox" :checked="item.flag"/> -->
-					<div class="cart_center">
-						<div class="cart_left">
-							<img :src="item.img"/>
-						</div>
-						<div class="goodsinfo">
-							<span>{{item.goodsName}}</span>
-							<span>{{item.goodsSize}}</span>
-							<span>{{item.goodsPrice | sum}}</span>
-						</div>
-					</div>
+        <div class="cartgoodsdetails content">
+		<div class="cartgoodsdetail" v-for="(item,index) in goodsList">
+			<!-- <input type="checkbox" :checked="item.flag"/> -->
+			<div class="cart_center">
+				<div class="cart_left">
+					<img :src="item.img"/>
+				</div>
+				<div class="goodsinfo">
+					<span>{{item.goodsName}}</span>
+					<span>{{item.goodsSize}}</span>
+				    <span>{{item.goodsPrice | sum}}</span>
 				</div>
 			</div>
+			
+		</div>
+	</div>
+
         </div>
     </div>
 </template>
@@ -24,16 +26,13 @@
 import Vuex from "vuex";
 import BScroll from "better-scroll"
 export default {
-	data(){
-		return {
-			
-		}
-	},
     created() {
-		this.handleGetGoods();
-		
+        this.handleGetGoods();
     },
     methods : {
+        back(){
+            this.$router.back("/mine")
+        },
 			...Vuex.mapActions({
 				handleGetGoods:"mine/handleGetGoods"
 				
@@ -57,7 +56,8 @@ export default {
 </script>
 
 <style scoped>
-.payment>.content{height:100%;}
+
+.receiving>.content{height:100%;background: red}
 .wrapper{
 		overflow: hidden;
 		position: absolute;
@@ -72,7 +72,7 @@ export default {
 		width: 100%;
 		z-index: 1;
 		overflow: auto;
-		background: #FCFCFC
+		/* background: #fff */
 	}
 	.cartgoodsdetails>.cartgoodsdetail{
 		width: 100%;
@@ -92,7 +92,7 @@ export default {
 	.cartgoodsdetails>.cartgoodsdetail>.cart_center{
 		width:6.38rem;
 		height: 1.6rem;
-		background: #FCFCFC;
+		/* background: #FCFCFC; */
 		margin-left: 0.32rem;
 		margin-top: 0.32rem;
 		display: flex;
@@ -112,7 +112,7 @@ export default {
 		height: 1.6rem;
 		display: flex;
 		flex-direction: column;
-		background: #FCFCFC
+		/* background: #FCFCFC */
 	}
 	.cartgoodsdetail>.cart_center>.goodsinfo>span:nth-of-type(1){
 		font-size: 16px;
@@ -127,6 +127,7 @@ export default {
 		font-size: 16px;
 		color: #BE141C;
 	}
+
 	
 
 </style>

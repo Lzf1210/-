@@ -35,11 +35,11 @@ export default {
                     title : "待付款"
                 },
                 {
-                    // name : "shipments",
+                    name : "shipments",
                     title : "待发货"
                 },
                 {
-                    // name : "receiving",
+                    name : "receiving",
                     title : "待收货"
                 },
                 {
@@ -53,18 +53,17 @@ export default {
     },
     methods : {
         back(){
-            this.$router.back("/mine")
+            this.$router.push("/mine")
         },
         changeBg(index){
             this.activeIndex = index
         }
     },
     created(){
-        console.log(this.$route.query.id)
         if(this.$route.query.id < 0){
              this.activeIndex=0;
         }else{
-           this.activeIndex=this.$route.query.id+1;
+           this.activeIndex = this.$route.query.id+1;
         }
        
     }

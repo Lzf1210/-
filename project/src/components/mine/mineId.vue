@@ -26,7 +26,7 @@ export default {
         return {
             account : [
                 {
-                    name : "info",
+                    name : "myself",
                     img : "../../../static/img/gerenxinxi.png",
                     title : "个人信息"
                 },
@@ -36,7 +36,7 @@ export default {
                     title : "收货地址"
                 },
                 {
-                    // name : "safety",
+                    name : "safety",
                     img : "../../../static/img/anquanzhongxin.png",
                     title : "安全中心"
                 },
@@ -45,11 +45,6 @@ export default {
                     img : "../../../static/img/shezhi.png",
                     title : "设置"
                 },
-                // {
-                //     // name : "esc",
-                //     img : "../../../static/img/tuichu.png",
-                //     title : "退出登录"
-                // }
             ],
             show : false
         }

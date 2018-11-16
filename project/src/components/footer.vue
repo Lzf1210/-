@@ -82,7 +82,7 @@ export default {
 .footer>ul>li>a{
     height: 100%;
     display: block;
-    color: #222222;
+    color: #3f2021;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -93,7 +93,8 @@ export default {
    font-size:20px;
    line-height: 22px;
 }
-.footer>ul>.footerActive a{
-    color:#EFB31F;
+.footer>ul>.footerActive .iconfont{
+    color:#3f2021;
+    
 }
 </style>

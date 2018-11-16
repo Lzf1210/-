@@ -1,7 +1,8 @@
 <template>
     <div class="mineOrder">
         <router-link :to="{name:'allOrderheader',query:{id:-1}}">
-            <h2>全部订单<span>&gt;</span></h2>
+            <h2>
+                全部订单<span>&gt;</span></h2>
         </router-link>
         <ul class="orderSelect">
             <li v-for="(item,index) in orders">
@@ -30,7 +31,7 @@ export default {
                     title : "待发货"
                 },
                 {
-                    // name : "receiving",
+                    name : "receiving",
                     img : "../../../static/img/daishouhuo.png",
                     title : "待收货"
                 },
@@ -58,8 +59,9 @@ export default {
 
 <style>
 .mineOrder{height:2.65rem;width:100%;background: #fff;margin:3% 0 4%;}
-.mineOrder>h2{height:.88rem;width:100%;padding: 0 4.3%;font-size:.32rem;color:#666666;line-height: .88rem;border-bottom:2px solid #F1F1F1;font-family:PingFangSC-Regular;font-weight: 200}
-.mineOrder>h2>span{float:right}
+.mineOrder>a{text-decoration: none}
+.mineOrder>a>h2{height:.88rem;width:100%;padding: 0 4.3%;font-size:.32rem;color:#666666;line-height: .88rem;border-bottom:2px solid #F1F1F1;font-family:PingFangSC-Regular;font-weight: 200;}
+.mineOrder>a>h2>span{float:right}
 .orderSelect{height:1.76rem;display: flex;}
 .orderSelect>li{width:20%;display: flex;flex-direction: column;align-self: center;align-items: center}
 .orderSelect>li:last-child a{padding-bottom:3%;}

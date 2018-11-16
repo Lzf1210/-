@@ -1,12 +1,5 @@
 <template>
     <div class="shipments">
-        <div class="top"></div>
-        <div class="title">
-            <p @click="back()">
-                <img src="../../../static/img/back.png" alt="">
-            </p>
-            <h2>待发货</h2>
-        </div>
         <div class="wrapper" ref="wrapper">
         <div class="cartgoodsdetails content">
 		<div class="cartgoodsdetail" v-for="(item,index) in goodsList">
@@ -18,12 +11,7 @@
 				<div class="goodsinfo">
 					<span>{{item.goodsName}}</span>
 					<span>{{item.goodsSize}}</span>
-				    <span>￥{{item.goodsPrice | sum}}</span>
-				</div>
-				<div class="cart_right">
-					<!-- <span @click="handleReduce(index)">-</span>
-					<span>{{item.num}}</span>
-					<span @click="handleAdd(index)">+</span> -->
+				    <span>{{item.goodsPrice | sum}}</span>
 				</div>
 			</div>
 			
@@ -55,6 +43,12 @@ export default {
 				goodsList:state=>state.mine.goodsList
 			})
 	},
+	filters:{
+			sum:function(val){
+				var result = "￥" + val;
+				return result;
+			}
+		},
     mounted(){
 			 new BScroll(this.$refs.wrapper)
 		}
@@ -62,15 +56,12 @@ export default {
 </script>
 
 <style scoped>
-.top{height:.4rem;width:100%;background: #fff}
-.shipments{height:100%;width:100%;position: absolute;left:0;z-index: 2;background: #fcfcfc}
-.shipments>.title>h2{margin-left:40.5%;font-size:.34rem;font-family:PingFangSC-Regular}
-.shipments>.title{height:.88rem;width:100%;display: flex;padding:0 4.4%;align-items: center;border-bottom:2px solid #E1E1E1;background: #fff}
+
 .shipments>.content{height:100%;background: red}
 .wrapper{
 		overflow: hidden;
 		position: absolute;
-		top: 1.3rem;
+		top: 2.2rem;
 		bottom:0rem;
 		width: 100%;
 	}
