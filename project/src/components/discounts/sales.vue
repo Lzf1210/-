@@ -11,12 +11,12 @@
 				<span>热门单品价格直降，购买超划算</span>
 				<div class="salesGoods">
 					<div class="goods" v-for="(item,index) in imgList">
-                        <router-link :to='{name:"goods",params:{id:item.id}}'>
+                        <router-link :to='{name:"goods",params:{id:item.id,goodsName:item.goodsName,goodsDetail:item.goodsDetail,goodsDiscountsPrice:item.goodsDiscountsPrice}}'>
                             <img :src="item.goodsDetail" class="imgs">
                         </router-link>
 						<h3>{{item.goodsName}}</h3>
 						<h4>{{item.goodsPrice}}</h4>
-                        <router-link :to='{name:"goods",params:{id:item.id}}'>
+                        <router-link :to='{name:"goods",params:{id:item.id,goodsName:item.goodsName,goodsDetail:item.goodsDetail,goodsDiscountsPrice:item.goodsDiscountsPrice}}'>
                         	<h5>立即购买</h5>
                         </router-link>
 						<h6>特惠</h6>
@@ -41,7 +41,7 @@
 			};
 		},
 		created() {
-			this.handleGetImg(this.pageNum)
+			this.handleGetImg(this.pageNum) //页面加载前从数据库获取详情信息    
 		},
 		computed: {
 			...Vuex.mapState({

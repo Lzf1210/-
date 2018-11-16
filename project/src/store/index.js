@@ -5,6 +5,7 @@ import classify from "./classify"
 import discounts from "./discounts"
 import goodscart from "./goodscart"
 import mine from "./mine"
+import goodsdetail from './goodsdetail'
 
 import axios from "axios"
 
@@ -34,6 +35,7 @@ const store = new Vuex.Store({
 		classify,
 		discounts,
 		goodscart,
+        goodsdetail,
 		mine
 	}
 })

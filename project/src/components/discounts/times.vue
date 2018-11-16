@@ -93,7 +93,7 @@
 	}
     .wrapper {
             position: absolute;
-            top: 0;
+            top: 0.4rem;
             bottom: 0;
             width: 100%;
             overflow: hidden;
