@@ -29,7 +29,7 @@ import fushi from '../components/home/content_fushi.vue'
 import xiaoshi from '../components/home/content_xiaoshi.vue'
 import guoshu from '../components/home/content_guoshu.vue'
 
-import Goodsdetail from '../components/goodsdetail/goodsdetail.vue'
+import Goods from '../components/goodsdetail/goods.vue'
 
 // classify
 import details from "../components/classify/details.vue"
@@ -203,9 +203,9 @@ const router = new Router({
 			component: Site
 		},
 		{
-			name: "goodsdetail",
-			path: "/goodsdetail",
-			component: Goodsdetail,
+			name: "goods",
+			path: "/goods",
+			component: Goods,
 		},
 		{
 			//匹配所有
