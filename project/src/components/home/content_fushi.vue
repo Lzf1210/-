@@ -3,19 +3,20 @@
     <div class="wrapper" ref="goodsWrapper">
         <div class="content">
             
-                <banner-com></banner-com>
-                <div 
-                class="content_c" 
-                v-for="(item,index) in goodsa_fuhi"
-                >
-                    <img :src="item.img"/>
-                    <p>{{item.goodsName}}</p>
-                    <p>{{item.goodsSize}}</p>
-                    <p>{{item.goodsPrice | home_price}}</p>
-                </div>
-             </div>
+            <banner-com></banner-com>
+            <div 
+            class="content_c" 
+            v-for="(item,index) in home_fushi"
+            @click="handleGo()"
+            >
+                <img :src="item.imageList"/>
+                <p>{{item.goodsName}}</p>
+                <p>{{item.goodsDetail}}</p>
+                <p>{{item.goodsPrice | home_price}}</p>
+            </div>
         </div>
     </div>
+</div>
 </template>
 
 <script>
@@ -42,13 +43,16 @@ export default {
     },
     computed:{
         ...Vuex.mapState({
-            goodsa_fuhi:state=>state.home.goodsa_fuhi
+            home_fushi:state=>state.home.home_fushi
         })
     },
     methods:{
         ...Vuex.mapActions({
             handleHome_fushiget:'home/handleHome_fushiget',
-        })
+        }),
+        handleGo(){
+            this.$router.push('/goods')
+        }
     },
     mounted() {
 			this.scroll = new BScroll(this.$refs.goodsWrapper, {
@@ -76,7 +80,7 @@ export default {
 <style scoped>
 .content{
     display:flex;
-    justify:space-around;
+    /* justify-content:space-around; */
     flex-wrap:wrap;
 }
 .wrapper{
