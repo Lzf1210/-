@@ -1,17 +1,17 @@
 <template>
 	<div class="goodsfooter">
 		<div>
-			<img src="static/goodsimg/Group 2.png"/>
+			<i class="iconfont icon-daohanggouwuche"></i>
 			<p>购物车</p>
 		</div>
 		<div>
 			<img src="static/goodsimg/Page1.png"/>
 			<p>喜欢</p>
 		</div>
-		<div>
+		<div class="bottom">
 			<span>-</span>
-			<input type="text"/>
-			<span>+</span>
+			<span>1</span>
+			<span @click="handleAdd()">+</span>
 		</div>
 		<div>
 			<p>加入购物车</p>
@@ -33,6 +33,9 @@
 	height: .98rem;
 	z-index: 3;
 	  
+}
+.goodsfooter i{
+	font-size: 0.35rem;
 }
 .goodsfooter div{
 	float: left;
@@ -83,5 +86,9 @@
 	letter-spacing: 0;
 	line-height: .92rem;
 	text-align: center;
+}
+.goodsfooter>.bottom>span{
+	width:0.18rem;
+	height: 0.15rem;
 }
 </style>

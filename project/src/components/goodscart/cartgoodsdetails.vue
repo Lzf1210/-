@@ -35,19 +35,19 @@
 	export default{
 		created(){
 			this.handleGetGoods();
-			axios({
-				method:"post",
-				url:"http://localhost:3000/goods",
-				data:{
-					"img": "static/img/草莓醋.png",
-					"goodsName": "酱油",
-					"goodsSize": "410g/瓶",
-					"goodsPrice": 28.8,
-					"num": 12
-				}
-			}).then((data)=>{
-				console.log(data);
-			});
+// 			axios({
+// 				method:"post",
+// 				url:"http://localhost:3000/goods",
+// 				data:{
+// 					"img": "static/img/草莓醋.png",
+// 					"goodsName": "酱油",
+// 					"goodsSize": "410g/瓶",
+// 					"goodsPrice": 28.8,
+// 					"num": 7
+// 				}
+// 			}).then((data)=>{
+// 				console.log(data);
+// 			});
 		},
 		computed:{
 			...Vuex.mapState({
@@ -65,7 +65,7 @@
 				handleAdd:"goodscart/handleAdd"
 			}),
 			handleId(val){
-				this.$router.push({name:"goodsdetail",params:{id:val}})
+				this.$router.push({name:"goods",params:{id:val}})
 			}
 		},
 		filters:{

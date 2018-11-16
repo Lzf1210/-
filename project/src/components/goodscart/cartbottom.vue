@@ -27,6 +27,7 @@
 		computed:{
 			...Vuex.mapState({
 				allSelect:state=>state.goodscart.allSelect,
+				goodsList:state=>state.goodscart.goodsList,
 				list:state=>state.goodscart.list
 			}),
 			...Vuex.mapGetters({
@@ -41,7 +42,11 @@
 			handleAllToggleSelected:"goodscart/handleAllToggleSelected"		
 			}),
 			handleGoPay(){
-				this.observer.$emit("change2",true)
+				for(var i=0;i< this.goodsList.length;i++){
+					if(this.goodsList[i].flag == true){
+					  this.observer.$emit("change2",true)
+					}
+				}
 			}
 			
 		},
@@ -55,7 +60,7 @@
 		},
 		filters:{
 			sum:function(val){
-				var result =  val;
+				var result = "￥" + val;
 				return result;
 			}
 		}
@@ -173,6 +178,7 @@
 		text-align: center;
 		line-height: 1.14rem;
 	}
-	
+	.bom-enter,.bom-leave-to{transform: translateY(200%);}
+	.bom-enter-active,.bom-leave-active{transition:all 1s}
 	
 </style>

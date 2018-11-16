@@ -1,5 +1,6 @@
 export default {
    allSelect:false,
    goodsList:[],
-   list:[]
+   list:[],
+   markShow:false
 }

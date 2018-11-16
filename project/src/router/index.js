@@ -31,6 +31,8 @@ import guoshu from '../components/home/content_guoshu.vue'
 
 import Goods from '../components/goodsdetail/goods.vue'
 
+import goPay from '../components/goodscart/goPay.vue'
+
 // classify
 import details from "../components/classify/details.vue"
 import details1 from "../components/classify/details1.vue"
@@ -204,8 +206,13 @@ const router = new Router({
 		},
 		{
 			name: "goods",
-			path: "/goods",
+			path: "/goods/:id",
 			component: Goods,
+		},
+		{
+			name:"goPay",
+			path:"/gopay",
+			component:goPay
 		},
 		{
 			//匹配所有

@@ -1,11 +1,52 @@
 <template>
 	<div class="wrapper" ref="detailWrapper">
-		<div class="content">
-			<div class="goodsdetail">
-				<div class="swiper-container">
-					<div class="swiper-wrapper">
-						<div class="swiper-slide" v-for="(item,index) in src">
-							<img :src="item" />
+        <div class="content">
+		
+	
+	
+	<div class="goodsdetail">
+		
+		<div class="swiper-container">
+		    <div class="swiper-wrapper">
+		        <div class="swiper-slide" v-for="(item,index) in src">
+		        	<img :src="item"/>
+		        </div>
+		    </div>
+		    <!-- 如果需要分页器 -->
+		   <div class="swiper-pagination" style="z-index: 9999;"></div>
+		</div>
+		<div class="goodsmain">
+			<ul>
+				<li>竹笙</li>
+				<li>豆腐脑味味增汤</li>
+				<li><span>￥3.42</span><del>￥3.42</del></li>
+			</ul>
+			<div class="huodong">
+				<span>活动</span>
+				<span>好食狂化节-全场9折</span>
+			</div>
+		</div>
+		<div class="detail">
+			<div class="fangxin">
+				<p>为什么他让人放心</p>
+			</div>
+			<div class="tubiao">
+				<ul>
+					<li>
+						<div>
+							<img src="static/goodsimg/1.png"/>
+						</div>
+						<p>非转基因</p>
+					</li>
+					<li>
+						<div>
+							<img src="static/goodsimg/2.png"/>
+						</div>
+						<p>产地直供</p>
+					</li>
+					<li>
+						<div>
+							<img src="static/goodsimg/3.png"/>
 						</div>
 					</div>
 					<!-- 如果需要分页器 -->
@@ -148,283 +189,258 @@
 		<div class="imgg">
 			<img src="../../../static/img/back.png" @click="handleBack()">
 		</div>
+		<img src="static/goodsimg/豆腐.png"/>
+		<div class="chanpin">
+			<h1>美烹的工艺</h1>
+			<p>食材和食品都有严谨的挑选过程，排除非必要性的加工过程，尽量保护食材的原有味道。味噌是由发酵过的大豆（黄豆）制成，主要为糊状。是一种调味料，也被用作为汤底。</p>
+		</div>
+		<img src="static/goodsimg/豆腐汤.png"/>
+		<div class="chanpin">
+			<h1>美烹的工艺</h1>
+			<p>食材和食品都有严谨的挑选过程，排除非必要性的加工过程，尽量保护食材的原有味道。味噌是由发酵过的大豆（黄豆）制成，主要为糊状。是一种调味料，也被用作为汤底。</p>
+		</div>
+		<img src="static/goodsimg/味增汤2.png"/>
 	</div>
-
+        
+        </div>
+				<div class="imgg">
+					<img src="../../../static/img/back.png" @click="handleBack()">
+				</div>
+	</div>
+    
 </template>
 
 <script>
-	import "../../../node_modules/swiper/dist/css/swiper.css"
-	import Swiper from "swiper"
-	import BScroll from "better-scroll";
-    import Vuex from "vuex";
-	export default {
-		components: {
-
-		},
-		data() {
-			return {
-				src: ["static/goodsimg/味噌汤.png", "static/goodsimg/味噌汤@2x.png", "static/goodsimg/味噌汤@3x.png"]
-			}
-		},
-        computed: {
-            ...Vuex.mapState({
-                imgList: state => state.goodsdetail.goodsDetailList,
-
-            })
-        },
-		mounted() {
-			this.scroll = new BScroll(this.$refs.detailWrapper, {
-				click: true,
-				// tap: true,
-				pullUpLoad: true
+	 import "../../../node_modules/swiper/dist/css/swiper.css"
+	 import Swiper from "swiper"
+     import BScroll from "better-scroll";
+	 export default{
+	 	components:{
+	 		
+	 	},
+	 	data(){
+	 		return{
+	 			src:["static/goodsimg/味噌汤.png","static/goodsimg/味噌汤@2x.png","static/goodsimg/味噌汤@3x.png"]
+	 		}
+	 	},
+	 	mounted(){
+            this.scroll = new BScroll(this.$refs.detailWrapper, {
+            	click: true,
+            	// tap: true,
+            	pullUpLoad: true
+            });
+	 		new Swiper ('.swiper-container', {
+			    direction: 'horizontal', // 垂直切换选项
+			    loop: false, // 循环模式选项
+			    
+			    // 如果需要分页器
+			    pagination: {
+			      el: '.swiper-pagination',
+			    }
 			});
-			new Swiper('.swiper-container', {
-				direction: 'horizontal', // 垂直切换选项
-				loop: false, // 循环模式选项
-
-				// 如果需要分页器
-				pagination: {
-					el: '.swiper-pagination',
-				}
-			});
-
-
+			
+            
+	 	},
+		created(){
+			console.log(this.$route.params.id)
+			// console.log(this.$route.params.num)
 		},
-		created() {
-			// console.log(this.$route.params)
-            this.handleGetDetail(this.$route.params)
-		},
-		methods: {
-			handleBack() {
+		methods:{
+			handleBack(){
 				this.$router.back()
-			},
-            ...Vuex.mapActions({
-        		handleGetDetail: "goodsdetail/handleGetDetail"
-        	}),
-		},
-	}
+			}
+		}
+	 }
 </script>
 
 <style scoped>
-	.wrapper {
-		position: absolute;
-		top: 0.4rem;
-		bottom: .98rem;
-		width: 100%;
-		overflow: hidden;
-	}
-
-	.goodsdetail {
-		/* padding-top: 0.4rem; */
-		background: #F8F8F8;
-		height: 100%;
-		width: 100%;
-		/* position: fixed;
+    .wrapper {
+    		position: absolute;
+    		top: 0.4rem;
+    		bottom: .98rem;
+    		width: 100%;
+    		overflow: hidden;
+    }
+	
+.goodsdetail{
+	/* padding-top: 0.4rem; */
+	background: #F8F8F8;
+	height: 100%;
+	width: 100%;
+	/* position: fixed;
 	z-index: 2;*/
-		overflow: auto;
-	}
-
-	.swiper-container {
-		width: 100%;
-	}
-
-	.swiper-container img {
-		width: 100%;
-	}
-
-	.goodsmain {
-		background: white;
-	}
-
-	.goodsmain ul {
-		padding: .32rem 0;
-		margin: 0 .32rem;
-		border-bottom: 1px solid #EEEEEE;
-	}
-
-	.goodsmain ul li {
-		line-height: .56rem;
-	}
-
-	.goodsmain ul li:nth-of-type(1) {
-		font-family: .PingFangSC-Regular;
-		font-size: 12px;
-		color: #696969;
-		letter-spacing: 0;
-	}
-
-	.goodsmain ul li:nth-of-type(2) {
-		font-family: .PingFangSC-Regular;
-		font-size: 16px;
-		color: #000000;
-		letter-spacing: 0;
-	}
-
-	.goodsmain ul li:nth-of-type(3) span:nth-of-type(1) {
-		font-family: .PingFang-SC-Medium;
-		font-size: 14px;
-		color: #BE141C;
-		letter-spacing: 0;
-	}
-
-	.goodsmain ul li:nth-of-type(3) del {
-		margin-left: 0.1rem;
-		font-family: .PingFangSC-Regular;
-		font-size: 12px;
-		color: #9B9B9B;
-		letter-spacing: 0;
-	}
-
-	.huodong {
-		height: .96rem;
-		padding: .32rem;
-		margin-bottom: .16rem;
-	}
-
-	.huodong span {
-		display: inline-block;
-	}
-
-	.huodong span:nth-of-type(1) {
-		background: #3F2021;
-		height: .42rem;
-		width: .6rem;
-		font-family: .PingFangSC-Regular;
-		font-size: 12px;
-		color: #FFFFFF;
-		letter-spacing: 0;
-		line-height: .42rem;
-		text-align: center;
-	}
-
-	.huodong span:nth-of-type(2) {
-		font-family: .PingFangSC-Regular;
-		font-size: 12px;
-		color: #422324;
-		letter-spacing: 0;
-	}
-
-	.detail {
-		background: #fff;
-	}
-
-	.fangxin p {
-		font-family: .PingFang-SC-Medium;
-		font-size: 14px;
-		color: #3F2021;
-		letter-spacing: 0;
-		height: .8rem;
-		line-height: .8rem;
-		padding: 0 .32rem;
-		border-bottom: 1px solid #E0E0E0;
-		;
-	}
-
-	.tubiao ul {
-		margin-left: .48rem;
-		padding: 0.56rem 0;
-		overflow: hidden;
-	}
-
-	.tubiao li {
-		float: left;
-		margin: 0 .24rem;
-	}
-
-	.tubiao li img {
-		width: .48rem;
-		height: .48rem;
-		margin-left: .32rem;
-	}
-
-	.tubiao li p {
-		font-family: .PingFang-SC-Medium;
-		font-size: 14px;
-		color: #3F2021;
-		letter-spacing: 0;
-		line-height: .8rem;
-		height: .8rem;
-	}
-
-	.alldetail p {
-		font-family: .PingFang-SC-Medium;
-		font-size: 14px;
-		color: #B88658;
-		letter-spacing: 0;
-		height: .8rem;
-		line-height: .8rem;
-		text-align: center;
-		border-bottom: 1px solid #E0E0E0;
-	}
-
-	.alldetail {
-		overflow: hidden;
-		margin-bottom: .16rem;
-	}
-
-	.alldetail ul {
-		float: left;
-	}
-
-	.alldetail ul:nth-of-type(1) {
-		margin-left: .32rem;
-		width: 1.76rem;
-	}
-
-	.alldetail ul:nth-of-type(2) {
-		width: 4.76rem;
-	}
-
-	.alldetail li {
-		font-family: .PingFang-SC-Medium;
-		font-size: 12px;
-		color: #000000;
-		letter-spacing: 0;
-		height: .68rem;
-		line-height: .34rem;
-	}
-
-	.alldetail .jifen {
-		clear: both;
-		margin-left: .32rem;
-		height: .68rem;
-		line-height: .68rem;
-	}
-
-	.chanpin {
-		padding: .32rem;
-		background: #FFF;
-	}
-
-	.chanpin h1 {
-		font-family: .PingFang-SC-Medium;
-		font-size: 14px;
-		color: #3D1E1F;
-		letter-spacing: 0;
-		line-height: .8rem;
-		height: .8rem;
-		text-align: center;
-		margin-bottom: .4rem;
-	}
-
-	.chanpin p {
-		font-family: .PingFang-SC-Medium;
-		font-size: 12px;
-		color: #888888;
-		letter-spacing: 0;
-		line-height: 30px;
-	}
-
-	.wrapper .imgg {
-		position: fixed;
-		top: 0.6rem;
-		left: 0.4rem;
-		width: 0.6rem;
-		height: 0.6rem;
-	}
-
-	.wrapper .imgg>img {
-		width: 0.4rem;
-		height: 0.4rem;
-	}
+	overflow: auto; 
+}
+.swiper-container {
+	width: 100%;
+}
+.swiper-container img{
+	width: 100%;
+}
+.goodsmain{
+	background: white;
+}
+.goodsmain ul{
+	padding: .32rem 0;
+	margin: 0 .32rem;
+	border-bottom: 1px solid #EEEEEE;
+}
+.goodsmain ul li{
+	line-height: .56rem;
+}
+.goodsmain ul li:nth-of-type(1){
+	font-family:.PingFangSC-Regular;
+	font-size: 12px;
+	color: #696969;
+	letter-spacing: 0;
+}
+.goodsmain ul li:nth-of-type(2){
+	font-family: .PingFangSC-Regular;
+	font-size: 16px;
+	color: #000000;
+	letter-spacing: 0;
+}
+.goodsmain ul li:nth-of-type(3) span:nth-of-type(1){
+	font-family: .PingFang-SC-Medium;
+	font-size: 14px;
+	color: #BE141C;
+	letter-spacing: 0;
+} 
+.goodsmain ul li:nth-of-type(3) del{
+	margin-left: 0.1rem;
+	font-family: .PingFangSC-Regular;
+	font-size: 12px;
+	color: #9B9B9B;
+	letter-spacing: 0;
+}
+.huodong{
+	height: .96rem;
+	padding: .32rem;
+	margin-bottom: .16rem;
+}
+.huodong span{
+	display: inline-block;
+} 
+.huodong span:nth-of-type(1){
+	background: #3F2021;
+	height: .42rem;
+	width: .6rem;
+	font-family: .PingFangSC-Regular;
+	font-size: 12px;
+	color: #FFFFFF;
+	letter-spacing: 0;
+	line-height: .42rem;
+	text-align: center;
+}
+.huodong span:nth-of-type(2){
+	font-family: .PingFangSC-Regular;
+	font-size: 12px;
+	color: #422324;
+	letter-spacing: 0;
+}
+.detail{
+	background: #fff;
+}
+.fangxin p{
+	font-family: .PingFang-SC-Medium;
+	font-size: 14px;
+	color: #3F2021;
+	letter-spacing: 0;
+	height: .8rem;
+	line-height: .8rem;
+	padding: 0 .32rem;
+	border-bottom:1px solid #E0E0E0;;
+}
+.tubiao ul{
+	margin-left: .48rem;
+	padding: 0.56rem 0;
+	overflow: hidden;
+}
+.tubiao li{
+	float: left;
+	margin: 0 .24rem;
+}
+.tubiao li img{
+	width: .48rem;
+	height: .48rem;
+	margin-left: .32rem;
+}
+.tubiao li p{
+	font-family: .PingFang-SC-Medium;
+	font-size: 14px;
+	color: #3F2021;
+	letter-spacing: 0;
+	line-height: .8rem;
+	height: .8rem;
+}
+.alldetail p{
+	font-family: .PingFang-SC-Medium;
+	font-size: 14px;
+	color: #B88658;
+	letter-spacing: 0;
+	height: .8rem;
+	line-height: .8rem;
+	text-align: center;
+	border-bottom: 1px solid #E0E0E0;
+}
+.alldetail{
+	overflow: hidden;
+	margin-bottom: .16rem;
+}
+.alldetail ul{
+	float: left;
+}
+.alldetail ul:nth-of-type(1){
+	margin-left: .32rem;
+	width: 1.76rem;
+}
+.alldetail ul:nth-of-type(2){
+	width: 4.76rem;
+}
+.alldetail li{
+	font-family: .PingFang-SC-Medium;
+	font-size: 12px;
+	color: #000000;
+	letter-spacing: 0;
+	height: .68rem;
+	line-height: .34rem;
+}
+.alldetail .jifen{
+	clear: both;
+	margin-left: .32rem;
+	height: .68rem;
+	line-height: .68rem;
+}
+.chanpin{
+	padding: .32rem;
+	background: #FFF;
+}
+.chanpin h1{
+	font-family: .PingFang-SC-Medium;
+	font-size: 14px;
+	color: #3D1E1F;
+	letter-spacing: 0;
+	line-height: .8rem;
+	height: .8rem;
+	text-align: center;
+	margin-bottom: .4rem;
+}
+.chanpin p{
+	font-family: .PingFang-SC-Medium;
+	font-size: 12px;
+	color: #888888;
+	letter-spacing: 0;
+	line-height: 30px;
+}
+.wrapper .imgg{
+	position: fixed;
+	top: 0.6rem;
+	left: 0.4rem;
+	width: 0.6rem;
+	height: 0.6rem;
+}
+.wrapper .imgg>img{
+	width: 0.4rem;
+	height: 0.4rem;
+}
 </style>
