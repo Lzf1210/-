@@ -51,7 +51,7 @@ export default {
             handleHome_xiaoshiget:'home/handleHome_xiaoshiget',
         }),
         handleGo(){
-            this.$router.push('/goods')
+            this.$router.push('/goods/:id')
         }
     },
     mounted() {

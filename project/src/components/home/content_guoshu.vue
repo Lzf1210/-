@@ -51,7 +51,7 @@ export default {
             handleHome_guoshuget:'home/handleHome_guoshuget',
         }),
         handleGo(){
-            this.$router.push('/goods')
+            this.$router.push('/goods/:id')
         }
     },
     mounted() {

@@ -51,7 +51,7 @@ export default {
             handleHome_goodsaget:'home/handleHome_goodsaget',
         }),
         handleGo(){
-            this.$router.push('/goods')
+            this.$router.push('/goods/:id')
         }
     },
     mounted() {
