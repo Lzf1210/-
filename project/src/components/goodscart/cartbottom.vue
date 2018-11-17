@@ -44,7 +44,7 @@
 			handleGoPay(){
 				for(var i=0;i< this.goodsList.length;i++){
 					if(this.goodsList[i].flag == true){
-					  this.observer.$emit("change2",true)
+					  this.$router.push({name:"order"});
 					}
 				}
 			}

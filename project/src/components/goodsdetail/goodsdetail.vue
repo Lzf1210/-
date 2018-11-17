@@ -2,14 +2,12 @@
 	<div class="wrapper" ref="detailWrapper">
         <div class="content">
 		
-	
-	
-	<div class="goodsdetail">
+	<div class="goodsdetail" v-for="(item,index) in goodsDetailList">
 		
 		<div class="swiper-container">
 		    <div class="swiper-wrapper">
-		        <div class="swiper-slide" v-for="(item,index) in src">
-		        	<img :src="item"/>
+		        <div class="swiper-slide" v-for="(imgs,index) in item.imageList">
+		        	<img :src="imgs"/>
 		        </div>
 		    </div>
 		    <!-- 如果需要分页器 -->
@@ -17,9 +15,9 @@
 		</div>
 		<div class="goodsmain">
 			<ul>
-				<li>竹笙</li>
-				<li>豆腐脑味味增汤</li>
-				<li><span>￥3.42</span><del>￥3.42</del></li>
+				<li>{{item.goodsName}}</li>
+				<li></li>
+				<li><span>￥{{item.goodsPrice}}</span><del>￥3.42</del></li>
 			</ul>
 			<div class="huodong">
 				<span>活动</span>
@@ -94,31 +92,31 @@
 				</ul>
 				<ul>
 					<li>
-						<span>豆腐味味噌汤</span>
+						<span>{{item.goodsName}}</span>
 					</li>
 					<li>
-						<span>19g/盒</span>
+						<span>{{item.goodsDetail}}</span>
 					</li>
 					<li>
-						<span>低温保存</span>
+						<span>{{item.saveStyle}}</span>
 					</li>
 					<li>
-						<span>360天</span>
+						<span>{{item.saveTime}}</span>
 					</li>
 					<li>
 						<span>山东欣和神州一食品有限公司</span>
 					</li>
 					<li>
-						<span>SC107655684654649</span>
+						<span>{{item.goodsNo}}</span>
 					</li>
 					<li>
-						<span>山东省烟台市</span>
+						<span>{{item.manuFacturer}}</span>
 					</li>
 					<li>
-						<span>Q/ASE 00002S</span>
+						<span>{{item.goodsStandNo}}</span>
 					</li>
 					<li>
-						<span>24盒/箱</span>
+						<span>{{item.goodsDetail}}</span>
 					</li>
 					<li>
 						<span>可依据个人口味加入热水冲调，放置2-3分钟后食用。</span>
@@ -154,22 +152,20 @@
 					<img src="../../../static/img/back.png" @click="handleBack()">
 				</div>
 	</div>
-    
+       
 </template>
 
 <script>
 import "../../../node_modules/swiper/dist/css/swiper.css";
 import Swiper from "swiper";
 import BScroll from "better-scroll";
+import Vuex from "vuex";
+import axios from "axios";
 export default {
   components: {},
   data() {
     return {
-      src: [
-        "static/goodsimg/味噌汤.png",
-        "static/goodsimg/味噌汤@2x.png",
-        "static/goodsimg/味噌汤@3x.png"
-      ]
+      
     };
   },
   mounted() {
@@ -178,24 +174,33 @@ export default {
       // tap: true,
       pullUpLoad: true
     });
-    new Swiper(".swiper-container", {
-      direction: "horizontal", // 垂直切换选项
-      loop: false, // 循环模式选项
+					slideShadows: true
+				},
+			})
 
-      // 如果需要分页器
-      pagination: {
-        el: ".swiper-pagination"
-      }
-    });
   },
   created() {
-    console.log(this.$route.params.id);
+//    axios({
+// 		 method:"get",
+// 		 url:"http://localhost:3000/details?id="+this.$route.query.id,
+// 		 }).then((data)=>{
+// 			 console.log(data);
+// 		 })
+   this.handleGetDetail(this.$route.query.id)//获取详情页信息
   },
   methods: {
     handleBack() {
       this.$router.back();
-    }
-  }
+    },
+		...Vuex.mapActions({
+			handleGetDetail:"goodsdetail/handleGetDetail"
+		})
+  },
+	computed:{
+			goodsDetailList:state=>state.goodsdetail.goodsDetailList
+		})
+		
+	}
 };
 </script>
 
@@ -203,14 +208,12 @@ export default {
 .wrapper {
   position: absolute;
   top: 0.4rem;
-  bottom: 0.98rem;
+  bottom:0.98rem;
   width: 100%;
   overflow: hidden;
 }
 
 .goodsdetail {
-  /* padding-top: 0.4rem; */
-  background: #f8f8f8;
   height: 100%;
   width: 100%;
   /* position: fixed;
@@ -220,12 +223,17 @@ export default {
 .swiper-container {
   width: 100%;
 }
-.swiper-container img {
-  width: 100%;
-}
-.goodsmain {
-  background: white;
-}
+.swiper-slide {
+		width: 7.5rem;
+		height: 4rem;
+		display: flex;
+		justify-content: center;
+	}
+
+	.swiper-slide>img {
+		height: 100%;
+	}
+
 .goodsmain ul {
   padding: 0.32rem 0;
   margin: 0 0.32rem;
@@ -384,10 +392,15 @@ export default {
   left: 0.4rem;
   width: 0.6rem;
   height: 0.6rem;
+	background: white;
+	border-radius: 50%;
+	padding-top: 0.1rem;
+	padding-left: 0.05rem;
 }
 .wrapper .imgg > img {
   width: 0.4rem;
   height: 0.4rem;
+	display: inline-block;
 }
 </style>
 
