@@ -32,19 +32,23 @@
 					{
 						imgsrc:"../../../static/classifyImg/details3_02.png",
 						name:"新鲜水果",
+						id:2
 						
 					},
 					{
 						imgsrc:"../../../static/classifyImg/details3_03.png",
 						name:"叶菜类",
+						id:3
 					},
 					{
 						imgsrc:"../../../static/classifyImg/details3_04.png",
 						name:"豆制品类",
+						id:4
 					},
 					{
 						imgsrc:"../../../static/classifyImg/details3_05.png",
 						name:"茄果瓜花",
+						id:5
 					},
 					
 				]

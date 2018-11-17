@@ -32,11 +32,13 @@
 					{
 						imgsrc:"../../../static/classifyImg/details5_02.png",
 						name:"健康禽蛋",
+						id:2
 						
 					},
 					{
 						imgsrc:"../../../static/classifyImg/details5_03.png",
 						name:"速冻牛肉",
+						id:3
 					}
 					
 				]

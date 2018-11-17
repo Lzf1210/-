@@ -32,11 +32,13 @@
 					{
 						imgsrc:"../../../static/classifyImg/details4_02.png",
 						name:"鱼虾冻品",
+						id:2
 						
 					},
 					{
 						imgsrc:"../../../static/classifyImg/details4_03.png",
 						// name:"干果蜜饯",
+						id:3
 					}
 					
 				]

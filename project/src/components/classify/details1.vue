@@ -32,23 +32,28 @@
 					{
 						imgsrc:"../../../static/classifyImg/details1_02.png",
 						name:"安心米面",
+						id:2
 						
 					},
 					{
 						imgsrc:"../../../static/classifyImg/details1_03.png",
 						name:"南北干货",
+						id:3
 					},
 					{
 						imgsrc:"../../../static/classifyImg/details1_04.png",
 						name:"火锅底料",
+						id:4
 					},
 					{
 						imgsrc:"../../../static/classifyImg/details1_05.png",
 						name:"面点小食",
+						id:5
 					},
 					{
 						imgsrc:"../../../static/classifyImg/details1_06.png",
 						name:"健康食油",
+						id:6
 					}
 				]
 			}
