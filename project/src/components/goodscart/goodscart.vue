@@ -11,7 +11,6 @@
 		<transition name="fade">
 			<mark-com v-show="show"></mark-com>
 		</transition>
-		
 
 	</div>
 </template>
@@ -27,7 +26,7 @@ export default {
 		"cartheader-com":cartheader,
 		"cartgoodsdetails-com":cartgoodsdetails,
 		"cartbottom-com":cartbottom,
-    "mark-com":mark,
+        "mark-com":mark,
 		"prompt-com":prompt
 	},
 	methods:{
@@ -36,18 +35,14 @@ export default {
 	data(){
 		return{
 			show:false,
-			showw:false
 		}
 	},
 	created(){
-		this.observer.$on("change2",(val)=>{
+		this.observer.$on("change5",(val)=>{
 			this.show = val;
 		}),
 		this.observer.$on("change3",(val)=>{
 			this.show = val;
-		}),
-		this.observer.$on("change4",(val)=>{
-			this.showw = val;
 		})
 	}
 }

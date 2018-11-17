@@ -5,7 +5,7 @@ import classify from "./classify"
 import discounts from "./discounts"
 import goodscart from "./goodscart"
 import mine from "./mine"
-
+import goodsdetail from './goodsdetail'
 import axios from "axios"
 
 
@@ -27,14 +27,15 @@ const getters = {
 const store = new Vuex.Store({
 	state,
 	mutations,
-	actions,
+	actions,	
 	getters,
 	modules: {
 		home,
 		classify,
 		discounts,
 		goodscart,
-		mine
+		mine,
+		goodsdetail,
 	}
 })
 export default store;

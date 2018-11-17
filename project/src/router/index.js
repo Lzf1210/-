@@ -30,12 +30,11 @@ import xiaoshi from '../components/home/content_xiaoshi.vue'
 import guoshu from '../components/home/content_guoshu.vue'
 
 import Goods from '../components/goodsdetail/goods.vue'
-<<<<<<< HEAD
+
 
 import goPay from '../components/goodscart/goPay.vue'
-=======
-import Goodsdetail from '../components/goodsdetail/goodsdetail.vue'
->>>>>>> wp
+import Order from '../components/goodscart/order.vue'
+
 
 // classify
 import details from "../components/classify/details.vue"
@@ -152,9 +151,16 @@ const router = new Router({
             ]
 		},
 		{
-			name: "goodscart",
+			
 			path: "/goodscart",
+			name: "goodscart",
 			component: Goodscart
+		},
+		{
+			
+			path: "/order",
+			name: "order",
+			component: Order
 		},
 		{
 			name: "mine",
@@ -210,7 +216,7 @@ const router = new Router({
 		},
 		{
 			name: "goods",
-			path: "/goods/:id",
+			path: "/goods",
 			component: Goods,
 		},
 		{

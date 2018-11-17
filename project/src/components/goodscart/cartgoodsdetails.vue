@@ -5,7 +5,7 @@
 			<input type="checkbox" :checked="item.flag" @change="handleToggle(index)"/>
 			<div class="cart_center">
 				<div class="cart_left">
-					<img :src="item.img" @click="handleId(item.id)"/>
+					<img :src="item.imageList[0]" @click="handleId(item.id,goodsList.length,item.num)"/>
 				</div>
 				<div class="goodsinfo">
 					<span>{{item.goodsName}}</span>
@@ -39,11 +39,15 @@
 // 				method:"post",
 // 				url:"http://localhost:3000/goods",
 // 				data:{
-// 					"img": "static/img/草莓醋.png",
-// 					"goodsName": "酱油",
-// 					"goodsSize": "410g/瓶",
-// 					"goodsPrice": 28.8,
-// 					"num": 7
+// 					"imageList": ["https://api.shinshop.com/v1/img/2d5d3d0a50d85e9509a406284267dcb0.jpg","https://api.shinshop.com/v1/img/a6e68e5d3b6b0be6e54ed28717e26e64.jpg","https://api.shinshop.com/v1/img/5f24fc45356e4300dedd09b7ff498512.jpg"],
+// 					"goodsName": "欣.和家顺礼盒",
+// 					"goodsDetail": "12件/个",
+// 					"goodsPrice": "￥158.00",
+// 					"saveStyle": "阴凉通风处",
+// 					"saveTime":"240天",
+// 					"manuFacturer":"烟台欣和味达美食品有限公司",
+// 					"goodsNo":"SC10337063600220",
+// 					"goodsStandNo":"GB/T 18186"
 // 				}
 // 			}).then((data)=>{
 // 				console.log(data);
@@ -64,8 +68,8 @@
 				handleReduce:"goodscart/handleReduce",
 				handleAdd:"goodscart/handleAdd"
 			}),
-			handleId(val){
-				this.$router.push({name:"goods",params:{id:val}})
+			handleId(val1,val2,val3){
+				this.$router.push({name:"goods",query:{id:val1,Num:val2,num:val3}})
 			}
 		},
 		filters:{

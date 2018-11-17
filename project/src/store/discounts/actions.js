@@ -7,7 +7,7 @@ export default {
 				url: "http://localhost:3000/imgs?_page=" + params + "&_limit=4",
 			}).then((data) => {
 				commit("handleGetImg", data.data)
-                console.log(data.data)
+                // console.log(data.data)
 			})
 		
 

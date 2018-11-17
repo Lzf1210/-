@@ -3,12 +3,11 @@ export default {
 	handleGetDetail({commit},params) {
 		
 			axios({
-				method: "get",
-				url: "",
-			}).then((data) => {
-				commit("handleGetImg", data)
-
-			})
+				method:"get",
+				url:"http://localhost:3000/details?id="+params,
+				}).then((data)=>{
+					commit("handleGetDetail",data.data)
+				})
 		
 
 	}

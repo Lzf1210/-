@@ -15,7 +15,9 @@
 			<input type="text">
 		</p>
 		<button>确认支付</button>
+		<div class="buut">
 			<img src="../../../static/img/back.png" @click="handleBack()">
+		</div>
 	</div>
 	
 	</div>
@@ -72,10 +74,20 @@
 	text-align: center;
 	line-height:0.88rem;
 	margin-top: 0.5rem;
+	border: none;
+}
+.buut{
+	width: 0.5rem;
+	height: 0.5rem;
+	background: white;
+	position: fixed;
+	left: 0.7rem;
+	top: 0.5rem;
+	border-radius: 50%;
+	padding-top: 0.05rem;
+	padding-left: 0.1rem;
 }
 .goPay>img{
-	position: fixed;
-	left: 1rem;
-	top: 0.5rem;
+	
 }
 </style>

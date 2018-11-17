@@ -4,12 +4,12 @@ export default {
     handleGetGoods({commit}){
 		axios({
 			methods:"get",
-			url:"http://localhost:3000/goods"
+			url:"http://localhost:3000/details"
 		}).then((data)=>{
 			data.data.filter((item)=>{
 				item.flag=false;
 			})
-			console.log(data.data)
+			// console.log(data.data)
 			commit("handleGetGoods",data.data)
 		});
 	},
@@ -23,13 +23,13 @@ export default {
 		for(var a = 0;a < state.list.length;a++){
 			axios({
 				method:"delete",
-				url:"http://localhost:3000/goods/"+state.list[a],
+				url:"http://localhost:3000/details/"+state.list[a],
 				
 			}).then((data)=>{
 				
 				axios({
 					methods:"get",
-					url:"http://localhost:3000/goods"
+					url:"http://localhost:3000/details"
 				}).then((data)=>{
 					data.data.filter((item)=>{
 						item.flag=false;

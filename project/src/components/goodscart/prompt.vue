@@ -43,7 +43,7 @@
 	width: 100%;
 	height: 6.28rem;
 	background:white;
-	z-index: 3;
+	z-index: 4;
 	position: fixed;
 	bottom: 0;
 	left: 0;
