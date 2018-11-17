@@ -34,7 +34,11 @@ import guoshu from '../components/home/content_guoshu.vue'
 
 import Goods from '../components/goodsdetail/goods.vue'
 
+
 import goPay from '../components/goodscart/goPay.vue'
+
+import Goodsdetail from '../components/goodsdetail/goodsdetail.vue'
+
 
 // classify
 import details from "../components/classify/details.vue"

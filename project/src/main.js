@@ -11,16 +11,6 @@ import './iconstyle/iconfont.css'
 import './iconstyle/iconfont.js'
 import './iconstyle/demo.css'
 
-//图片懒加载（测试）
-// import VueLazyLoad from 'vue-lazyload'
-// 
-// Vue.use(VueLazyload);
-
-
-
-
-
-
 import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
 Vue.use(ElementUI);
