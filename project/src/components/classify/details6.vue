@@ -32,11 +32,12 @@
 					{
 						imgsrc:"../../../static/classifyImg/details6_02.png",
 						name:"厨房用品",
-						
+						id:2
 					},
 					{
 						imgsrc:"../../../static/classifyImg/details6_03.png",
 						name:"家庭日用",
+						id:3
 					}
 					
 				]

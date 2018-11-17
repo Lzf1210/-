@@ -1,6 +1,10 @@
 <template>
 	<div class="header">
-		<input class="inputBox" type="text" placeholder="想吃点什么吗？">
+		<div class="header_input">
+			<img src="../../../static/classifyImg/search_01.png" alt="">
+			<input type="text" placeholder="想吃点什么吗？">
+		</div>
+		
 	</div>
 </template>
 
@@ -17,16 +21,33 @@
 		border-bottom:2px solid #B1B1B1;
 		
 	}
-	.inputBox{
+	
+	.header_input{
 		width: 5.12rem;
 		height: .6rem;
 		margin-left:1.2rem;
 		margin-top:.15rem;
-		background:#EFEFEF url(../../../static/classifyImg/search_01.png) no-repeat 1.3rem .15rem;
-		 background-size:16px 16px;
-		border:none;
+		background:#EFEFEF;
 		border-radius: .3rem;
-		text-align: center;
+		font-size: 16px;
+		color: #949494;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	.header_input>img{
+		display: inline-block;
+		width: .4rem;
+		height: .4rem;
+	}
+	.header_input>input{
+		width: 2.24rem;
+		height: .44rem;
+		margin-left: .2rem;
+		background:#EFEFEF;
+		border: none;
+		outline: none;
+		font-family: PingFangSC-Regular;
 		font-size: 16px;
 		color: #949494;
 	}

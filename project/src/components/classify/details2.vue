@@ -32,11 +32,13 @@
 					{
 						imgsrc:"../../../static/classifyImg/details2_02.png",
 						name:"坚果炒货",
+						id:2
 						
 					},
 					{
 						imgsrc:"../../../static/classifyImg/details2_03.png",
 						name:"干果蜜饯",
+						id:3
 					},
 					
 				]
