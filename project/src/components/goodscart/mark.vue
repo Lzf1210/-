@@ -1,5 +1,5 @@
 <template>
-    <div class="mark" v-show="show">
+    <div class="mark">
 
     </div>
 </template>
@@ -8,7 +8,7 @@
 export default {
     data(){
 		return{
-			show:false
+			
 		}
 	},
 	methods:{
@@ -21,6 +21,6 @@ export default {
 
 <style scoped>
 .mark{width:100%;height:100%;position: absolute;left:0;top:0;background:#000000;z-index:4;opacity: 0.5;}
-.fade-enter,.fade-leave-to{transform: translateY(200%);}
-.fade-enter-active,.fade-leave-active{transition:all 1s}
+.lala-enter,.lala-leave-to{transform: translateY(200%);}
+.lala-enter-active,.lala-leave-active{transition:all 1s}
 </style>

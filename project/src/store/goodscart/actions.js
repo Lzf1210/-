@@ -6,9 +6,9 @@ export default {
 			methods:"get",
 			url:"http://localhost:3000/details"
 		}).then((data)=>{
-			data.data.filter((item)=>{
-				item.flag=false;
-			})
+// 			data.data.filter((item)=>{
+// 				item.flag=false;
+// 			})
 			// console.log(data.data)
 			commit("handleGetGoods",data.data)
 		});

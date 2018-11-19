@@ -20,7 +20,7 @@
 	export default{
 		data(){
 			return{
-				show:false
+				show:true
 			}
 		},
 		computed:{
@@ -33,7 +33,12 @@
 				this.show = false;
 				this.observer.$emit("change3",false)
 			}
-		}
+		},
+// 		created(){
+// 			this.observer.$on("change5",(val)=>{
+// 				this.show = val;
+// 			})
+		// }
 		
 }
 </script>
@@ -43,7 +48,7 @@
 	width: 100%;
 	height: 6.28rem;
 	background:white;
-	z-index: 4;
+	z-index: 5;
 	position: fixed;
 	bottom: 0;
 	left: 0;
