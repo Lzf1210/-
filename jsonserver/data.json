@@ -309,13 +309,14 @@
       "goodsName": "酱油",
       "goodsSize": "410g/瓶",
       "goodsPrice": 28.8,
-      "num": "12",
+      "num": 12,
       "saveStyle": "常温",
       "saveTime": "1080天",
       "manuFacturer": "济南宜和食品有限公司",
       "goodsNo": "SC10337018100497",
       "goodsStandNo": "Q/YHJ 0002S",
-      "id": 0
+      "id": 0,
+      "flag": false
     },
     {
       "imageList": [
@@ -332,7 +333,8 @@
       "goodsNo": "SC10337018100497",
       "goodsStandNo": "Q/YHJ 0002S",
       "num": 14,
-      "id": 1
+      "id": 1,
+      "flag": false
     },
     {
       "imageList": [
@@ -348,8 +350,9 @@
       "manuFacturer": "济南宜和食品有限公司",
       "goodsNo": "SC10337018100497",
       "goodsStandNo": "GB/T 18187",
-      "num": 12,
-      "id": 2
+      "num": 16,
+      "id": 2,
+      "flag": false
     },
     {
       "imageList": [
@@ -366,7 +369,8 @@
       "goodsNo": "SC10137028500335",
       "goodsStandNo": "Q/VGK 0001S",
       "num": 10,
-      "id": 3
+      "id": 3,
+      "flag": false
     },
     {
       "imageList": [
@@ -383,7 +387,8 @@
       "goodsNo": "SC12437098200412",
       "goodsStandNo": "Q/TSJB 0001S",
       "num": 8,
-      "id": 4
+      "id": 4,
+      "flag": false
     },
     {
       "imageList": [
@@ -400,7 +405,8 @@
       "goodsNo": "SC10615012100785",
       "goodsStandNo": "GB 7101",
       "num": 7,
-      "id": 5
+      "id": 5,
+      "flag": false
     }
   ],
   "home_fushi": [

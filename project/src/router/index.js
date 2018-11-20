@@ -37,7 +37,7 @@ import Goods from '../components/goodsdetail/goods.vue'
 
 import goPay from '../components/goodscart/goPay.vue'
 import Order from '../components/goodscart/order.vue'
-
+import paySuccess from '../components/goodscart/paySuccess.vue'
 
 // classify
 import details from "../components/classify/details.vue"
@@ -250,7 +250,11 @@ const router = new Router({
 			path:"/login",
 			component:login
 		},
-		
+		{
+			name:"paySuccess",
+			path:"/paySuccess",
+			component:paySuccess
+		},
 		{
 			//匹配所有
 			path: "**",

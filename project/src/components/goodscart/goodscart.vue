@@ -5,13 +5,6 @@
 		<transition name="bom">
 		<cartbottom-com></cartbottom-com>
 		</transition>
-		<transition name="silde">
-			<prompt-com v-show="show"></prompt-com>
-		</transition>
-		<transition name="fade">
-			<mark-com v-show="show"></mark-com>
-		</transition>
-
 	</div>
 </template>
 
@@ -19,15 +12,11 @@
 import cartheader from "./cartheader.vue"
 import cartgoodsdetails from "./cartgoodsdetails.vue"
 import cartbottom from "./cartbottom.vue"
- import mark from "./mark.vue"
- import prompt from "./prompt.vue"
 export default {
     components:{
 		"cartheader-com":cartheader,
 		"cartgoodsdetails-com":cartgoodsdetails,
-		"cartbottom-com":cartbottom,
-        "mark-com":mark,
-		"prompt-com":prompt
+		"cartbottom-com":cartbottom
 	},
 	methods:{
 		
@@ -38,9 +27,9 @@ export default {
 		}
 	},
 	created(){
-		this.observer.$on("change5",(val)=>{
-			this.show = val;
-		}),
+// 		this.observer.$on("change5",(val)=>{
+// 			this.show = val;
+// 		}),
 		this.observer.$on("change3",(val)=>{
 			this.show = val;
 		})

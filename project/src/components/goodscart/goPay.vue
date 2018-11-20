@@ -8,13 +8,13 @@
 		</p>
 		<p>
 			<label>支付金额:</label>
-			<input type="text">
+			<input type="text" :value="goodsCount.goodsNumPrice | price">
 		</p>
 		<p>
 			<label>商品介绍:</label>
 			<input type="text">
 		</p>
-		<button>确认支付</button>
+		<button @click="go()">确认支付</button>
 		<div class="buut">
 			<img src="../../../static/img/back.png" @click="handleBack()">
 		</div>
@@ -24,11 +24,25 @@
 </template>
 
 <script>
+	import Vuex from "vuex";
 	export default{
 		methods:{
 		handleBack(){
 			this.$router.back();
+		},
+		go(){
+			this.$router.push("/paySuccess")
 		}
+		},
+		computed:{
+			...Vuex.mapGetters({
+				goodsCount:"goodscart/goodsCount"
+			})
+		},
+		filters:{
+			"price":(val)=>{
+				return "￥" + val
+			}
 		}
 	}
 </script>
