@@ -176,9 +176,9 @@ export default {
     });
 					slideShadows: true
 				},
-			})
+		
 
-  },
+  
   created() {
 //    axios({
 // 		 method:"get",
@@ -198,9 +198,9 @@ export default {
   },
 	computed:{
 			goodsDetailList:state=>state.goodsdetail.goodsDetailList
-		})
+		}
 		
-	}
+	
 };
 </script>
 

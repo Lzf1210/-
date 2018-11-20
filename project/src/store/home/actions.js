@@ -2,25 +2,14 @@ import axios from "axios";
 
 export default {
     handleHome_fushiget({commit},params){
-        // axios({
-        //     method:'get',
-        //     url:'http://localhost:3000/goods',
-        //     data:{
-        //         id : 1,
-        //     }
-        // })
-        // .then((data)=>{
-        //     // console.log(data.data);
-        //     commit('handleHome_fushiget',data.data)
-        // })
-        
         axios({
-            method:"get",
-            url:"http://localhost:3000/home_fushi?&_id=2&_page="+params+"&_limit=4",
+            method:"post",
+            url:"/mp/goods/searchallgoods",
+            // url:"/mp/goods/searchallgoods",
         }).then((data)=>{
-            console.log(params)
+            // data.foreach(function(index){return index})
+            // console.log(data.data.goodsPrice)
                 commit("handleHome_fushiget",data.data)
-                console.log(data.data)
         })
     },
     handleHome_tiaoweiget({commit},params){

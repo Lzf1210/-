@@ -19,14 +19,14 @@
 		height: .9rem;
 		margin-top: .4rem;
 		border-bottom:2px solid #B1B1B1;
-		
+		display: flex;
+		align-items: center;
+		justify-content: center
 	}
 	
 	.header_input{
 		width: 5.12rem;
 		height: .6rem;
-		margin-left:1.2rem;
-		margin-top:.15rem;
 		background:#EFEFEF;
 		border-radius: .3rem;
 		font-size: 16px;
@@ -37,8 +37,8 @@
 	}
 	.header_input>img{
 		display: inline-block;
-		width: .4rem;
-		height: .4rem;
+		width: .35rem;
+		height: .35rem;
 	}
 	.header_input>input{
 		width: 2.24rem;

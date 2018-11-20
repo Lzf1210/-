@@ -2,7 +2,8 @@
     <div class="mineOrder">
         <router-link :to="{name:'allOrderheader',query:{id:-1}}">
             <h2>
-                全部订单<span>&gt;</span></h2>
+                全部订单<span>&gt;</span>
+            </h2>
         </router-link>
         <ul class="orderSelect">
             <li v-for="(item,index) in orders">
@@ -45,15 +46,10 @@ export default {
                     img : "../../../static/img/shouhou.png",
                     title : "售后服务"
                 }
-            ]
+            ],
+
         }
     },
-    methods : {
-        allOrder(){
-            this.$router.push("/allOrderheader")
-            
-        }
-    }
 }
 </script>
 

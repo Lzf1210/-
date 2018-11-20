@@ -52,7 +52,8 @@ import details6 from "../components/classify/details6.vue"
 Vue.use(Router)
 
 const router = new Router({
-	routes: [{
+	routes: [
+		{
 			path: "/",
 			redirect: "/home/fushi"
 		},

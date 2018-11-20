@@ -1,5 +1,5 @@
 <template>
-	<div id="page home">
+	<div id="page classify">
 		<header-com></header-com>
 		<sidebar-com></sidebar-com>
 		<router-view></router-view>
