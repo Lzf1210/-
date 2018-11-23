@@ -174,8 +174,24 @@ export default {
       // tap: true,
       pullUpLoad: true
     });
+		var mySwiper = new Swiper('.swiper-container', {
+                loop:true,
+                autoplay: {
+                    delay: 1200,//1秒切换一次
+                },
+				effect: 'coverflow',
+				slidesPerView: 2,
+				centeredSlides: true,
+				coverflowEffect: {
+					rotate: 30,
+					stretch: 10,
+					depth: 60,
+					modifier: 2,
 					slideShadows: true
 				},
+			})
+
+	},
 		
 
   
@@ -197,8 +213,11 @@ export default {
 		})
   },
 	computed:{
-			goodsDetailList:state=>state.goodsdetail.goodsDetailList
-		}
+		...Vuex.mapState({
+					goodsDetailList:state=>state.goodsdetail.goodsDetailList
+		})
+		
+	}
 		
 	
 };

@@ -41,7 +41,7 @@
             v-for="(item,index) in home_fushi"
             @click="handleGo()"
             >
-                <img :src="item.imageList"/>
+                <img :src="'http://ceshi.qfjava.cn/'+item.imageList"/>
                 <p>{{item.goodsName}}</p>
                 <p>{{item.goodsDetail}}</p>
                 <p>{{item.goodsPrice | home_price}}</p>
@@ -52,7 +52,7 @@
             v-for="(item,index) in home_fushi"
             @click="handleGo()"
             >
-                <img :src="item.imageList"/>
+                <img :src="'http://ceshi.qfjava.cn/'+item.imageList"/>
                 <p>{{item.goodsName}}</p>
                 <p>{{item.goodsDetail}}</p>
                 <p>{{item.goodsPrice | home_price}}</p>
@@ -63,7 +63,7 @@
             v-for="(item,index) in home_fushi"
             @click="handleGo()"
             >
-                <img :src="item.imageList"/>
+                <img :src="'http://ceshi.qfjava.cn/'+item.imageList"/>
                 <p>{{item.goodsName}}</p>
                 <p>{{item.goodsDetail}}</p>
                 <p>{{item.goodsPrice | home_price}}</p>

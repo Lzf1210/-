@@ -21,7 +21,7 @@
 		</div>
 		<div class="mark" v-show="show" @click="handleSuccess()">
 			<div class="deleteSuccess">
-			<p>添加成功</p>
+				<p>添加成功</p>
 				<p><img src="../../../static/goodscart/del.png"></p>
 			</div>
 		</div>
@@ -35,9 +35,9 @@
 		data() {
 			return {
                 sum:0,
-								Num:0,
-								id:"",
-								show:false
+				Num:0,
+				id:"",
+				show:false
 			};
 		},
         methods:{
@@ -84,16 +84,24 @@
 		top: 0.4rem;
 		left: 0;
 	}
-	.mark .deleteSuccess{width:6.06rem;height:3rem;background: white;
-	margin-left: 0.8rem;
-	margin-top: 4.5rem;
-	border-radius: .2rem;
+	.mark .deleteSuccess{
+		width:6.06rem;
+		height:3rem;
+		background: white;
+		margin-left: 0.8rem;
+		margin-top: 4.5rem;
+		border-radius: .2rem;
+		display: flex; 
+		flex-direction: column;
+		align-items: center;
+		justify-content: space-around
 	}
-  .deleteSuccess>p:nth-child(1){font-size: 16px;line-height: 1rem;padding-left:2.2rem;padding-top: 0.2rem;}
-	.deleteSuccess>p:nth-child(2){line-height: 1.3rem;padding-left:2.3rem;padding-top: 0.3rem;}	
+  .deleteSuccess>p:nth-child(1){font-size: 20px;padding-top:10px;}
+	/* .deleteSuccess>p:nth-child(2){line-height: 1.3rem;padding-left:2.3rem;padding-top: 0.3rem;}	 */
 	.deleteSuccess>p:nth-child(2)>img{
 		width: 1rem;
 		height: 1rem;
+		margin-bottom:10px;
 	}
 	.shop{
 		width: 0.4rem;

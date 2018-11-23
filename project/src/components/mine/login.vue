@@ -4,8 +4,7 @@
 			<div class="log_top">
 				<h2>手机验证码登录</h2>
 			</div>
-			<form  method="post" enctype="multipart/form-data"
- class="input_con">
+			<form  method="post" enctype="multipart/form-data" class="input_con">
 				<div>
 					<label>
 						<input type="text" class="mobile" placeholder="请输入手机号" name="mobile" v-model="objPhone.mobile">
@@ -117,7 +116,6 @@
 							})
 							this.tishi = "手机号第一次登录将为您注册";
 							this.showTishi = true;
-
 							setTimeout(()=>{
 								this.$router.push('/home')		
 							},4000)

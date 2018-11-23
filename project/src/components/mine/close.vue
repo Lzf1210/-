@@ -1,5 +1,6 @@
 <template>
     <div class="close">
+        
         <h3 @click="cancel()">
             <img src="../../../static/img/fanhui.png" alt="">
         </h3>
@@ -8,7 +9,9 @@
             <p @click="cancel()">取消</p>
             <p @click="exit()">确定</p>
         </div>
+        
     </div>
+    
 </template>
 
 <script>
@@ -18,7 +21,13 @@ export default {
             this.observer.$emit("handleTwoChange",false)
         },
         exit(){
-            this.$router.push("/login");
+            setTimeout(()=>{
+                this.$router.push("/open");
+                setTimeout(()=>{
+                    this.$router.push("/login");
+                },2000)
+            },1000)
+            
         }
     }
 }

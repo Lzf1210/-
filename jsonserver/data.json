@@ -302,24 +302,6 @@
   "details": [
     {
       "imageList": [
-        "https://api.shinshop.com/v1/img/2d5d3d0a50d85e9509a406284267dcb0.jpg",
-        "https://api.shinshop.com/v1/img/a6e68e5d3b6b0be6e54ed28717e26e64.jpg",
-        "https://api.shinshop.com/v1/img/5f24fc45356e4300dedd09b7ff498512.jpg"
-      ],
-      "goodsName": "酱油",
-      "goodsSize": "410g/瓶",
-      "goodsPrice": 28.8,
-      "num": 12,
-      "saveStyle": "常温",
-      "saveTime": "1080天",
-      "manuFacturer": "济南宜和食品有限公司",
-      "goodsNo": "SC10337018100497",
-      "goodsStandNo": "Q/YHJ 0002S",
-      "id": 0,
-      "flag": false
-    },
-    {
-      "imageList": [
         "https://api.shinshop.com/v1/img/4c809b5679aeb55f1f3c3d7d1b0809ef.jpg",
         "https://api.shinshop.com/v1/img/a995cf6c4f1e86f1b8d43c0c4b2cac0c.jpg",
         "https://api.shinshop.com/v1/img/b2de0412822926908b8de388e671896d.jpg"
@@ -350,7 +332,7 @@
       "manuFacturer": "济南宜和食品有限公司",
       "goodsNo": "SC10337018100497",
       "goodsStandNo": "GB/T 18187",
-      "num": 16,
+      "num": 6,
       "id": 2,
       "flag": false
     },
@@ -404,7 +386,7 @@
       "manuFacturer": "内蒙古科尔沁电子商务有限公司",
       "goodsNo": "SC10615012100785",
       "goodsStandNo": "GB 7101",
-      "num": 7,
+      "num": 14,
       "id": 5,
       "flag": false
     }

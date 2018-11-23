@@ -189,7 +189,7 @@ export default {
         }
       ],
       // nav
-      activeIndex: 3,
+      activeIndex: 0,
       nav_sort: [
           {
               title:"全部分类 ▼", 
@@ -527,7 +527,7 @@ export default {
 }
     /* 重置 和 确定 */
 .nav_filter>p:nth-of-type(2)>button{
-    width: 3.22rem;
+    width: 3.19rem;
     height: .98rem;
     background: #ffffff;
     border:none;

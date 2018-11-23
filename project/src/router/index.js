@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Home from '../components/home/home.vue'
-
+import Open from '../components/mine/open.vue'
 import Discounts from '../components/discounts/discounts.vue'
 import sales from '../components/discounts/sales.vue'
 import times from '../components/discounts/times.vue'
@@ -55,7 +55,7 @@ const router = new Router({
 	routes: [
 		{
 			path: "/",
-			redirect: "/home/fushi"
+			redirect: "/home/jingx"
 		},
 		{
 			path: "/home",
@@ -254,6 +254,11 @@ const router = new Router({
 			name:"paySuccess",
 			path:"/paySuccess",
 			component:paySuccess
+		},
+		{
+			name:"open",
+			path:"/open",
+			component:Open
 		},
 		{
 			//匹配所有
