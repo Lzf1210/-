@@ -51,7 +51,7 @@ export default {
             handleHome_tiaoweiget:'home/handleHome_tiaoweiget',
         }),
         handleGo(){
-            this.$router.push('/goods/:id')
+            this.$router.push('/goods')
         }
     },
     mounted() {
