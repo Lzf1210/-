@@ -34,52 +34,51 @@
 	export default {
 		data() {
 			return {
-                sum:0,
-				Num:0,
-				id:"",
-				show:false
+				sum: 1,
+				Num: 0,
+				id: this.$route.id,
+				show: false
 			};
 		},
-        methods:{
-            handleAdd(){
-                this.sum++
-            },
-            handleReduce(){
-                if(this.sum<=0){
-                    this.sum=0
-                }else{
-                    this.sum--
-                }
-            },
-						handleGo(){
-							  axios({
-							  				method:"patch",
-							  				url:"http://localhost:3000/details/"+this.id,
-							  				data:{
-							  					"num": this.sum
-							  				}
-							  			}).then((data)=>{
-							  				console.log(data);
-												this.show = true;
-							  			});
-						},
-						handleSuccess(){
-							this.show = false;
-						}
-        },
-				created(){
-					this.sum = this.$route.query.num;
-					this.Num = this.$route.query.Num;
-					this.id = this.$route.query.id;
+		methods: {
+			handleAdd() {
+				this.sum++
+			},
+			handleReduce() {
+				if (this.sum <= 0) {
+					this.sum = 0
+				} else {
+					this.sum--
 				}
+			},
+			handleGo() {
+				axios({
+					method: "patch",
+					url: "/mp/cart/addgoods",
+					data: {
+						"num": this.sum,
+                        "id":this.id
+					}
+				}).then((data) => {
+					console.log(data);
+					this.show = true;
+				});
+			},
+			handleSuccess() {
+				this.show = false;
+			}
+		},
+		created() {
+
+		}
 	}
 </script>
 
 <style scoped>
-	.mark{
+	.mark {
 		width: 100%;
 		height: 100%;
-		background:rgba(0,0,0,0.1);
+		background: rgba(0, 0, 0, 0.1);
 		position: fixed;
 		top: 0.4rem;
 		left: 0;
@@ -103,7 +102,8 @@
 		height: 1rem;
 		margin-bottom:10px;
 	}
-	.shop{
+
+	.shop {
 		width: 0.4rem;
 		height: 0.4rem;
 		background: red;
@@ -114,79 +114,93 @@
 		z-index: 5;
 		text-align: center;
 	}
-.goodsfooter{
-	position: fixed;
-	bottom: 0;
-	left:0;
-	width: 100%;
-	background: #FFFFFF;
-	border: 2px solid #D6D6D6;
-	height: .98rem;
-	z-index: 3;
-	  
-}
-.goodsfooter i{
-	font-size: 0.35rem;
-	display: inline;
-}
-.goodsfooter>div:nth-of-type(1)>p{
-	font-size: 12px
-}
-.goodsfooter>div:nth-of-type(2)>p{
-	font-size: 13px
-}
-.goodsfooter>div{
-	float: left;
-}
-.goodsfooter>div:nth-of-type(1){
-	width: 1.18rem;
-	text-align: center;
-}
-.goodsfooter>div:nth-of-type(1) img{
-	margin-left: .42rem;
-}
-.goodsfooter>div:nth-of-type(2){
-	padding-top: 3px;
-	width: 1.16rem;
-	text-align: center;
-}
-.goodsfooter>div:nth-of-type(2) img{
-	margin-left: .36rem;
-}
-.goodsfooter>div:nth-of-type(3){
-	padding-top: .12rem;
-}
-.goodsfooter div:nth-of-type(3) span{
-	display: inline-block;
-	width: .74rem;
-	height: .6rem;
-	text-align: center;
-	font-size: 18px;
-	border: 1px solid #B8CAD2;
-	float: left;
-}
-.goodsfooter>div:nth-of-type(3) input{
-	border: 0;
-	width: .74rem;
-	height: .6rem;
-	float: left;
-	border: 1px solid #B8CAD2;
-	padding-left: .28rem;
-}
-.goodsfooter>div:nth-of-type(4){
-	float: right;
-	background: #3F2021;
-	width: 2.5rem;
-	height: .92rem;
-	font-family: .PingFang-SC-Medium;
-	font-size: 16px;
-	color: #FFFFFF;
-	letter-spacing: 0;
-	line-height: .92rem;
-	text-align: center;
-}
-.goodsfooter>.bottom>span{
-	width:0.18rem;
-	height: 0.15rem;
-}
+
+	.goodsfooter {
+		position: fixed;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		background: #FFFFFF;
+		border: 2px solid #D6D6D6;
+		height: .98rem;
+		z-index: 3;
+
+	}
+
+	.goodsfooter i {
+		font-size: 0.35rem;
+		display: inline;
+	}
+
+	.goodsfooter>div:nth-of-type(1)>p {
+		font-size: 12px
+	}
+
+	.goodsfooter>div:nth-of-type(2)>p {
+		font-size: 13px
+	}
+
+	.goodsfooter>div {
+		float: left;
+	}
+
+	.goodsfooter>div:nth-of-type(1) {
+		width: 1.18rem;
+		text-align: center;
+	}
+
+	.goodsfooter>div:nth-of-type(1) img {
+		margin-left: .42rem;
+	}
+
+	.goodsfooter>div:nth-of-type(2) {
+		padding-top: 3px;
+		width: 1.16rem;
+		text-align: center;
+	}
+
+	.goodsfooter>div:nth-of-type(2) img {
+		margin-left: .36rem;
+	}
+
+	.goodsfooter>div:nth-of-type(3) {
+		padding-top: .12rem;
+	}
+
+	.goodsfooter div:nth-of-type(3) span {
+		display: inline-block;
+		width: .74rem;
+		height: .6rem;
+		text-align: center;
+		font-size: 18px;
+		border: 1px solid #B8CAD2;
+		float: left;
+	}
+
+	.goodsfooter>div:nth-of-type(3) input {
+		border: 0;
+		width: .74rem;
+		height: .6rem;
+		float: left;
+		border: 1px solid #B8CAD2;
+		padding-left: .28rem;
+	}
+
+	.goodsfooter>div:nth-of-type(4) {
+		float: right;
+		background: #3F2021;
+		width: 2.5rem;
+		height: .92rem;
+		font-family: .PingFang-SC-Medium;
+		font-size: 16px;
+		color: #FFFFFF;
+		letter-spacing: 0;
+		line-height: .92rem;
+		text-align: center;
+	}
+
+	.goodsfooter>.bottom>span {
+		width: 0.18rem;
+		height: 0.15rem;
+	}
 </style>

@@ -100,7 +100,7 @@
 	}
 	.times {
 
-		padding: 1.47rem 0 .98rem 0;
+		padding: 1.87rem 0 .98rem 0;
 		height: 100%;
 		overflow: auto;
 	}

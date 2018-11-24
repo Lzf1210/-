@@ -174,7 +174,8 @@ export default {
       // tap: true,
       pullUpLoad: true
     });
-		var mySwiper = new Swiper('.swiper-container', {
+    //轮播
+			var mySwiper = new Swiper('.swiper-container', {
                 loop:true,
                 autoplay: {
                     delay: 1200,//1秒切换一次

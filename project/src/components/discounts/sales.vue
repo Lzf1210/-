@@ -11,12 +11,12 @@
 				<span>热门单品价格直降，购买超划算</span>
 				<div class="salesGoods">
 					<div class="goods" v-for="(item,index) in imgList">
-                        <router-link :to='{name:"goods",params:{id:item.id,goodsName:item.goodsName,goodsDetail:item.goodsDetail,goodsDiscountsPrice:item.goodsDiscountsPrice}}'>
+                        <router-link :to='{name:"goods",query:{id:item.id}}'>
                             <img :src="item.goodsDetail" class="imgs">
                         </router-link>
 						<h3>{{item.goodsName}}</h3>
 						<h4>{{item.goodsPrice}}</h4>
-                        <router-link :to='{name:"goods",params:{id:item.id,goodsName:item.goodsName,goodsDetail:item.goodsDetail,goodsDiscountsPrice:item.goodsDiscountsPrice}}'>
+                        <router-link :to='{name:"goods",query:{id:item.id}}'>
                         	<h5>立即购买</h5>
                         </router-link>
 						<h6>特惠</h6>
@@ -37,11 +37,11 @@
 	export default {
 		data() {
 			return {
-				pageNum:1
+				
 			};
 		},
 		created() {
-			this.handleGetImg(this.pageNum) //页面加载前从数据库获取详情信息    
+			this.handleGetImg() //页面加载前从数据库获取详情信息    
 		},
 		computed: {
 			...Vuex.mapState({
@@ -62,10 +62,6 @@
 				pullUpLoad: true
 			});
 
-			this.scroll.on("pullingUp", () => {
-				this.handleGetImg(++this.pageNum)
-
-			})
 
 		},
         updated () {
@@ -90,7 +86,7 @@
 	}
 
 	.sales {
-		padding: 1.47rem .32rem .98rem;
+		padding: 2.27rem .32rem .98rem;
 		height: 100%;
 		overflow: auto;
 	}

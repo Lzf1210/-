@@ -55,10 +55,10 @@
 		width: 100%;
 		position: fixed;
 		left: 0;
-		top: 0.4rem;
+		top:0;
 		z-index: 10;
 		background: #fff;
-
+        padding-top: .4rem;
 	}
 
 	.header div {
