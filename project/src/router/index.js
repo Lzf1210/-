@@ -32,7 +32,7 @@ import fushi from '../components/home/content_fushi.vue'
 import xiaoshi from '../components/home/content_xiaoshi.vue'
 import guoshu from '../components/home/content_guoshu.vue'
 
-import Goods from '../components/goodsdetail/goods.vue'
+import goods from '../components/goodsdetail/goods.vue'
 
 
 import goPay from '../components/goodscart/goPay.vue'
@@ -238,7 +238,7 @@ const router = new Router({
 		{
 			name: "goods",
 			path: "/goods",
-			component: Goods,
+			component: goods,
 		},
 		{
 			name:"goPay",

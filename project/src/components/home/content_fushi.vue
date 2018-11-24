@@ -51,7 +51,7 @@ export default {
             handleHome_fushiget:'home/handleHome_fushiget',
         }),
         handleGo(){
-            this.$router.push('/goods/:id')
+            this.$router.push('/goods')
         }
     },
     mounted() {
