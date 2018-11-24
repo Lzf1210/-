@@ -1,10 +1,10 @@
 <template>
     <div class="header">
         <div class='header_t'>
-            <img src="./img/Page 1 Copy 2.png" alt="">
-            <input type="text" placeholder="想吃点什么吗?">
+            <img src="./img/Page 1 Copy 2.png" alt="" @click="search()">
+            <input type="text" placeholder="想吃点什么吗?" class="search" name="search" v-model="search">
             <img src="./img/Group 2.png" alt="">
-            <div class="search">
+            <div class="search-img">
                 <div class="search_l"></div>
             <div class="search_r"></div>
             </div> 
@@ -404,7 +404,7 @@ export default {
 }
 
 /* 搜索按钮*/
-.search {
+.search-img {
   position: absolute;
   left: 1.5rem;
   top: 0.7rem;

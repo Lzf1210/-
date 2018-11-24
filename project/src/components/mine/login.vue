@@ -4,7 +4,7 @@
 			<div class="log_top">
 				<h2>手机验证码登录</h2>
 			</div>
-			<form  method="post" enctype="multipart/form-data" class="input_con">
+			<form  method="post" class="input_con">
 				<div>
 					<label>
 						<input type="text" class="mobile" placeholder="请输入手机号" name="mobile" v-model="objPhone.mobile">
@@ -44,8 +44,11 @@
 				objPhone: {
 					mobile: '',
 					password: '',
-					code: ''
+					code:'',
 				},
+				// mobile: '',
+				// password: '',
+				// code:'',
 
 			}
 
@@ -54,7 +57,7 @@
 			//验证手机号码部分
 			sendcode() {
 				console.log(this.objPhone.mobile);
-				var reg = 11&&/^((13|14|15|17|18)[0-9]{1}\d{8})$/;
+				var reg = /^1[3|4|5|8][0-9]\d{4,8}$/;
 				if (this.objPhone.mobile == '') {
 					this.objPhone.mobile = "手机号不能为空";
 				} else if (!reg.test(this.objPhone.mobile)) {
@@ -67,7 +70,7 @@
 						method: "get",
 						url: "/mp/user/sendcode?mobile="+this.objPhone.mobile,
 					}).then((data) => {
-						this.mobilecode = data.data[0].code;
+						console.log(data)
 					})
 				}
 			},
@@ -83,50 +86,39 @@
 				}
 			},
 			handleLogin() {
-				var reg = 11&&/^((13|14|15|17|18)[0-9]{1}\d{8})$/;
+				var reg = /^1[3|4|5|8][0-9]\d{4,8}$/;
 				if (this.objPhone.mobile == '') {
 					this.objPhone.mobile = "手机号不能为空";
-					this.objPhone.password = "密码不能为空";
-				} else if (this.objPhone.password == "") {
-					this.objPhone.password = "密码不能为空";
-				} else if(!reg.test(this.objPhone.mobile)){
+					// this.objPhone.password = "密码不能为空";
+				}else if(!reg.test(this.objPhone.mobile)){
 					this.objPhone.mobile = "请输入正确的手机号";
 				}else{
 					var objPhone = this.objPhone;
 					/*接口请求*/
 					axios({
 						method: "get",
-						url: "/mp/user/sendcode?mobile="+this.objPhone.mobile
+						url: "/mp/user/reg?mobile="+this.objPhone.mobile+"&password="+this.objPhone.password+"&code=123456",
 					}).then((data) => {
-						
-						if (data.data =='' ) {
-							axios({
-								method:"post",
-								url:"/mp/user/reg",
-								headers:{
-       								'Content-type': 'application/x-www-form-urlencoded'
-  								},
-								data:{
-									"mobile":this.objPhone.mobile,
-									"password":this.objPhone.password,
-									"code":this.objPhone.code
-								}
-							}).then((data) => { 
-								console.log(data)
-							})
-							this.tishi = "手机号第一次登录将为您注册";
+						this.showTishi = true;
+						this.tishi = data.data.data;
+						console.log(data)
+
+						if (data.data.data =='注册成功' ) {
+							this.tishi = "手机号第一次登录将为您自动注册";
 							this.showTishi = true;
 							setTimeout(()=>{
-								this.$router.push('/home')		
+								this.$router.push('/home/jingx')	
+								console.log(111)	
 							},4000)
-							this.$router.push('/home')
-						}else if (data.data[0].password != this.objPhone.password) {
-							this.objPhone.password = "密码输入错误";
-						} else if (data.data[0].mobile == this.objPhone.mobile && 
-						data.data[0].password == this.objPhone.password && 
-						data.data[0].code == this.objPhone.code) {
-							this.$router.push('/home')
+							// this.$router.push('/home')
 						}
+						// else if (data.data[0].password != this.objPhone.password) {
+						// 	this.objPhone.password = "密码输入错误";
+						// } else if (data.data[0].mobile == this.objPhone.mobile && 
+						// data.data[0].password == this.objPhone.password && 
+						// data.data[0].code == this.objPhone.code) {
+						// 	// this.$router.push('/home')
+						// }
 
 					 })
 				 }
@@ -178,7 +170,7 @@
 		background: #E8E8E8;
 		font-size: .28rem;
 		margin-left: .38rem;
-		/* color: red; */
+		
 	}
 
 	.password,
@@ -190,7 +182,6 @@
 		outline: none;
 		font-size: .28rem;
 		margin-left: .38rem;
-		/* color: red; */
 	}
 
 	.input_con>div:nth-child(1)>.input_btn1 {
@@ -210,7 +201,9 @@
 		color: #777777;
 		line-height: .28rem;
 		margin-bottom: .66rem;
+		
 	}
+	.input_con>.p_show{text-align: right;color:#3d1e20;font-size:14px}
 
 	.input_con>.input_btn2 {
 		width: 5.8rem;
