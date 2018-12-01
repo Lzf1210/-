@@ -10,9 +10,6 @@ export default {
 				console.log(data)
 			})
 		
-		   
-        
-        
         //http://jianglianglong.qfjava.cn:8080/mp
 	}
 }
