@@ -1,3 +1,4 @@
 ﻿export default {
-   goodsList:[]
+   goodsList:[],
+   activeIndex:0
 }

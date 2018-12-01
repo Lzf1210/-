@@ -56,7 +56,8 @@ export default {
             this.$router.push("/mine")
         },
         changeBg(index){
-            this.activeIndex = index
+            this.activeIndex = index;
+            
         }
     },
     created(){

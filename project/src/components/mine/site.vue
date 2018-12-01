@@ -16,19 +16,19 @@
         <form action="" method="post">
             <p>
                 <label for="name">收货人</label>
-                <input type="text" id="name" name="name" >
+                <input type="text" id="name" name="name" v-model="name">
             </p>
             <p>
                 <label for="phone">手机号</label>
-                <input type="text" id="phone" name="phone" >
+                <input type="text" id="phone" name="phone" v-model="phone">
             </p>
             <p>
                 <label for="address">收货地址</label>
-                <input type="text" id="address" name="address" >
+                <input type="text" id="address" name="address" v-model="address">
             </p>
             <p>
                 <label for="detail">详细地址</label>
-                <input type="text" id="detail" name="detail" >
+                <input type="text" id="detail" name="detail" v-model="detail">
             </p>
             <p>
                 <label for="addressType">地址类型</label>
@@ -46,7 +46,7 @@
                 </el-switch>
             </p>
             <div class="deladdress">
-                <button type="button">删除此收货地址</button>
+                <button type="button" @click="saveAddress()">保存</button>
             </div>
         </form>
         
@@ -55,21 +55,47 @@
 </template>
 
 <script>
+import axios from "axios";
 export default {
     data(){
         return {
             title:["公司","家"],
             changeIndex : 0,
-            value1: true,
-            value2: true
+            value1: 0,
+            value2: 1,
+            name:"",
+            phone:"",
+            address:"",
+            detail:"",
+            addressType:"",
         }
     },
     methods : {
         changeBg(index){
             this.changeIndex = index;
+            // let title = this.title.toString().charAt(index);
+            // console.log(this.title[index])
         },
         back(){
             this.$router.back("/mine")
+        },
+        saveAddress(){
+            let Index = this.changeIndex;
+            console.log(this.name,this.phone,this.address,this.detail,this.title[Index],this.value2)
+            axios({
+                method:"post",
+                url:"/mp/address/addaddress",
+                data:{
+                    name:this.name,
+                    phone:this.phone,
+                    address:this.address,
+                    detail:this.detail,
+                    addressType:this.title[Index],
+                    defaultAddress:this.value2
+                }
+            }).then((data)=>{
+                console.log(data)
+            })
         }
     }
 }

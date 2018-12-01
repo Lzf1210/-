@@ -26,4 +26,5 @@ export default {
 .page{
 	padding-top:.98rem;
 }
+
 </style>

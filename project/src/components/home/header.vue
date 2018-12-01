@@ -303,6 +303,9 @@ export default {
     };
   },
   methods: {
+    search(){
+        
+    },
     hanleActiveIndex(index) {
       this.activeIndex = index;
     },

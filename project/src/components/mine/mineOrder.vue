@@ -6,7 +6,7 @@
             </h2>
         </router-link>
         <ul class="orderSelect">
-            <li v-for="(item,index) in orders">
+            <li v-for="(item,index) in orders" @click="sendData(index)">
                 <router-link :to="{name:item.name,query:{id:index}}">
                     <img :src="item.img">
                     {{item.title}}
@@ -24,22 +24,26 @@ export default {
                 {
                     name : "payment",
                     img : "../../../static/img/daifukuan.png",
-                    title : "待付款"
+                    title : "待付款",
+                    id:1
                 },
                 {
                     name : "shipments",
                     img : "../../../static/img/daifahuo.png",
-                    title : "待发货"
+                    title : "待发货",
+                    id:3
                 },
                 {
                     name : "receiving",
                     img : "../../../static/img/daishouhuo.png",
-                    title : "待收货"
+                    title : "待收货",
+                    id:2
+
                 },
                 {
                     // name : "evaluate",
                     img : "../../../static/img/daipingjia.png",
-                    title : "待评价"
+                    title : "待评价",
                 },
                 {
                     // name : "serve",
@@ -50,6 +54,16 @@ export default {
 
         }
     },
+    methods:{
+        sendData(index){
+            axios({
+				method:"get",
+				url:"/mp/order/myorder?id="+index,
+			}).then((data)=>{
+				console.log(data)
+			});
+        }
+    }
 }
 </script>
 

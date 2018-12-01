@@ -1,4 +1,5 @@
 <template>
+
 	<div class="myself">
 		<div class="myself_com">
 			<div class="myself_top">
@@ -7,51 +8,52 @@
 				</div>
 				<h2>编辑个人信息</h2>
 			</div>
-			<div class="myself_my">
-				<div>
-					<!-- <img src="../../../static/img/me.png" alt=""> -->
-					<el-upload
-						class="avatar-uploader"
-						action="https://jsonplaceholder.typicode.com/posts/"
-						:show-file-list="false"
-						:on-success="handleAvatarSuccess"
-						:before-upload="beforeAvatarUpload">
-						<img v-if="imageUrl" :src="imageUrl" class="avatar">
-						<i v-else class="el-icon-plus avatar-uploader-icon"></i>
-					</el-upload>
-
-
-
-				</div>
-				<p>更换个人头像</p>
-			</div>
+			
 			<form class="myself_n">
-					<p>
-						<label for="username">用户名</label>
-						<input type="text" name="username" id="username" value="" placeholder="用户名6-20个字符,  储存后无法修改">
-					</p>	
-					<p>
-						<label for="sex">性别</label>
-						<button type="button" v-for="(item,index) in title"  
-						@click="changeBg(index)"
-						:class="changeIndex == index?'changeActive':''">{{item}}</button>
-					</p>
-					<p>
-						<label for="mobile">手机号</label>
-						<input type="text" name="mobile" id="mobile">
-					</p>				
-					<p>
-						<label for="email">E-mail</label>
-						<input type="text" name="email" id="email" placeholder="填写邮箱号">
-					</p>
-				
-					<p>
-						<button type="button" class="my_btn">
-							<router-like to="" @click="cmcm()">保存</router-like>
-						</button>
-					</p>
-						
-					
+				<div class="myself_my">
+					<div>
+						<!-- <img src="../../../static/img/me.png" alt=""> -->
+						<!-- <el-upload
+							class="avatar-uploader"
+							action="/mp/user/update"
+							
+							:show-file-list="false"
+							:on-success="handleAvatarSuccess"
+							>
+							<img v-if="imageUrl" :src="imageUrl" class="avatar">
+							<i v-else class="el-icon-plus avatar-uploader-icon"></i>
+						</el-upload> -->
+
+
+
+						<input type="file" id="image1">
+					</div>
+					<p>更换个人头像</p>
+				</div>
+				<p>
+					<label for="username">用户名</label>
+					<input type="text" name="username" id="username" value="" placeholder="用户名6-20个字符,  储存后无法修改">
+				</p>	
+				<p>
+					<label for="sex">性别</label>
+					<button type="button" v-for="(item,index) in title"  
+					@click="changeBg(index)"
+					:class="changeIndex == index?'changeActive':''">{{item}}</button>
+				</p>
+				<p>
+					<label for="mobile">手机号</label>
+					<input type="text" name="mobile" id="mobile" value="">
+				</p>				
+				<p>
+					<label for="email">E-mail</label>
+					<input type="text" name="email" id="email" placeholder="填写邮箱号">
+				</p>
+			
+				<p>
+					<button type="button" class="my_btn" @click="preserve()">
+						保存
+					</button>
+				</p>			
 			</form>
 			
 		</div>
@@ -59,30 +61,77 @@
 </template>
 
 <script>
+import axios from 'axios';
 export default {
 	 data(){
         return {
             title:["男士","女士"],
             changeIndex : -1,
-            value1: true,
-			value2: true,
-			imageUrl: ''
+			
+			// username:"",
+			// sex:"",
+			// mobile:"",
+			// file:"",
+		
         }
     },
     methods : {
+		
+		preserve(){
+			this.changeIndex = this.changeIndex+1;
+			let image1 = document.getElementById("image1");
+			let images = image1.files[0]
+			let username = document.getElementById("username").value;
+			let mobile = document.getElementById("mobile").value;
+			let sex = document.getElementsByTagName("sex");
+			let sexIndex = this.changeIndex;
+			console.log(username,mobile,sexIndex,image1.files[0])
+			var formdata = new FormData();
+			formdata.append("image1",images)
+			formdata.append("username",username.value)
+			formdata.append("sex",sexIndex)
+			formdata.append("mobile",mobile.value)
+			
+			axios({
+				method:"post",
+				url:"/mp/user/update",
+				data:formdata,
+				// method:"get",
+				// url:"/mp/user/update?username="+username+"&sex="+sexIndex+"&mobile="+mobile+"&image="+image
+				
+			}).then((data)=>{
+				console.log(data)
+			})
+
+
+
+
+
+			// axios({
+			// 	method:"get",
+			// 	url:"/mp/user/update?username="+this.username+"&sex="+this.changeIndex+"&mobile="+this.mobile+"&image="+file,
+			// 	headers:{'Content-Type':'multipart/form-data'}
+			// 	// data:{
+			// 	// 	username:this.username,
+			// 	// 	sex:this.changeIndex+1,
+			// 	// 	mobile:this.mobile
+			// 	// }
+			// }).then((data)=>{
+			// 	console.log(data)
+			// })
+			// console.log(this.username,this.changeIndex,this.mobile,this.file)
+		},
         changeBg(index){
-            this.changeIndex = index;
+			this.changeIndex = index;
+			// console.log(this.changeIndex+1)
         },
         back(){
             this.$router.back("/mine")
 		},
 		handleAvatarSuccess(res, file) {
-        this.imageUrl = URL.createObjectURL(file.raw);
+		this.imageUrl = URL.createObjectURL(file.raw);
+		console.log(file)
       },
-      beforeAvatarUpload(file) {
-        const isJPG = file.type === 'image/jpeg';
-        const isLt2M = file.size / 1024 / 1024 < 2;
-      }
     }
 }
 </script>
@@ -152,7 +201,7 @@ export default {
 	.myself_my {
 		width: 100%;
 		height: 2.44rem;
-		margin-top:.8rem;
+		margin:.8rem 0 .2rem;
 	}
 
 	.myself_my>div {
@@ -182,8 +231,8 @@ export default {
 		display: flex;align-items: center;
 		margin:0 auto
 	}
-	.myself_n>p:nth-child(2)>button{width:1.04rem;height:.52rem;border:1px solid #B98652;margin-left:10%;background: #fff;color:#B98652;font-size:10px;outline: none}
-	.myself_n>p:nth-child(2)>.changeActive{background: #B98652;color:#fff}
+	.myself_n>p:nth-child(3)>button{width:1.04rem;height:.52rem;border:1px solid #B98652;margin-left:10%;background: #fff;color:#B98652;font-size:10px;outline: none}
+	.myself_n>p:nth-child(3)>.changeActive{background: #B98652;color:#fff}
 
 
 

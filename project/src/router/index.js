@@ -55,7 +55,14 @@ const router = new Router({
 	routes: [
 		{
 			path: "/",
-			redirect: "/home/jingx"
+			redirect: "/login",
+			component:login,
+			meta: {auth: true}
+		},
+		{
+			name:"login",
+			path:"/login",
+			component:login,
 		},
 		{
 			path: "/home",
@@ -246,11 +253,6 @@ const router = new Router({
 			component:goPay
 		},
 		{
-			name:"login",
-			path:"/login",
-			component:login
-		},
-		{
 			name:"paySuccess",
 			path:"/paySuccess",
 			component:paySuccess
@@ -263,9 +265,24 @@ const router = new Router({
 		{
 			//匹配所有
 			path: "**",
-			component: Home
+			component: login
 		}
 	]
 })
+
+// router.beforeEach((to,from,next)=>{
+// 	let flag = false;
+// 	let routers = ["order","goodscart","site","mine"];
+// 	if(routers.indexOf(to.name)>=0){
+// 		if(!flag){
+// 			router.push("/login")
+// 		}else{
+// 			next();
+// 		}
+// 	}else{
+// 		next();
+// 	}
+// })
+
 
 export default router;
