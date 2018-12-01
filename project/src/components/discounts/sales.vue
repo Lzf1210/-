@@ -11,10 +11,10 @@
 				<span>热门单品价格直降，购买超划算</span>
 				<div class="salesGoods">
 					<div class="goods" v-for="(item,index) in imgList">
-						<img src="../../../static/discounts/images/生菜@2x.png" class="imgs">
+						<img src="../../../static/discounts/images/details_02.png" class="imgs">
 						<h3>{{item.goodsName}}</h3>
 						<h4>{{item.goodsPrice}}</h4>
-						<h5>立即购买</h5>
+						<h5 @click="handleAddGoodsCart(item.id)">立即购买</h5>
 						<h6>特惠</h6>
 						<p>￥{{item.goodsDiscountsPrice}}</p>
 						<div class="shu"></div>
@@ -47,7 +47,8 @@
 		},
 		methods: {
 			...Vuex.mapActions({
-				handleGetImg: "discounts/handleGetImg"
+				handleGetImg: "discounts/handleGetImg",
+                handleAddGoodsCart:"discounts/handleAddGoodsCart",
 			}),
 
 		},
