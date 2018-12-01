@@ -9,7 +9,7 @@
             v-for="(item,index) in home_goodsa"
             @click="handleGo()"
             >
-                <img :src="item.imageList"/>
+                <img :src="'http://ceshi.qfjava.cn/'+item.imageList"/>
                 <p>{{item.goodsName}}</p>
                 <p>{{item.goodsDetail}}</p>
                 <p>{{item.goodsPrice | home_price}}</p>
@@ -51,7 +51,7 @@ export default {
             handleHome_goodsaget:'home/handleHome_goodsaget',
         }),
         handleGo(){
-            this.$router.push('/goods/:id')
+            this.$router.push('/goods')
         }
     },
     mounted() {

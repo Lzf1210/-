@@ -9,7 +9,19 @@
 			</div>
 			<div class="myself_my">
 				<div>
-					<img src="../../../static/img/me.png" alt="">
+					<!-- <img src="../../../static/img/me.png" alt=""> -->
+					<el-upload
+						class="avatar-uploader"
+						action="https://jsonplaceholder.typicode.com/posts/"
+						:show-file-list="false"
+						:on-success="handleAvatarSuccess"
+						:before-upload="beforeAvatarUpload">
+						<img v-if="imageUrl" :src="imageUrl" class="avatar">
+						<i v-else class="el-icon-plus avatar-uploader-icon"></i>
+					</el-upload>
+
+
+
 				</div>
 				<p>更换个人头像</p>
 			</div>
@@ -35,7 +47,7 @@
 				
 					<p>
 						<button type="button" class="my_btn">
-							<router-like to>保存</router-like>
+							<router-like to="" @click="cmcm()">保存</router-like>
 						</button>
 					</p>
 						
@@ -53,7 +65,8 @@ export default {
             title:["男士","女士"],
             changeIndex : -1,
             value1: true,
-            value2: true
+			value2: true,
+			imageUrl: ''
         }
     },
     methods : {
@@ -62,7 +75,14 @@ export default {
         },
         back(){
             this.$router.back("/mine")
-        }
+		},
+		handleAvatarSuccess(res, file) {
+        this.imageUrl = URL.createObjectURL(file.raw);
+      },
+      beforeAvatarUpload(file) {
+        const isJPG = file.type === 'image/jpeg';
+        const isLt2M = file.size / 1024 / 1024 < 2;
+      }
     }
 }
 </script>
@@ -94,6 +114,31 @@ export default {
 
 
 
+
+
+
+	.avatar-uploader .el-upload {
+		border: 1px dashed #d9d9d9;
+		border-radius: 6px;
+		cursor: pointer;
+		position: relative;
+		overflow: hidden;
+	}
+	.el-upload>img{
+		width:1.6rem;
+		height:1.6rem;
+	}
+	.avatar-uploader-icon {
+		font-size: 28px;
+		color: #8c939d;
+		width: .8rem;
+		height: .8rem;
+		text-align: center;
+	}
+
+
+
+
 	.myself_top>h2 {
 		width: 2.6rem;
 		height: .88rem;
@@ -111,9 +156,13 @@ export default {
 	}
 
 	.myself_my>div {
-		width: 1.56rem;
-		height: 1.56rem;
-		margin: .32rem auto 0
+		width: 1.6rem;
+		height: 1.6rem;
+		margin:0 auto;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		background: url(../../../static/img/me.png) no-repeat
 	}
 	.myself_my>p {
 		width: 1.44rem;

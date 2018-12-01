@@ -192,7 +192,10 @@ export default {
 				},
 			})
 
-  },
+	},
+		
+
+  
   created() {
 //    axios({
 // 		 method:"get",
@@ -212,10 +215,12 @@ export default {
   },
 	computed:{
 		...Vuex.mapState({
-			goodsDetailList:state=>state.goodsdetail.goodsDetailList
+					goodsDetailList:state=>state.goodsdetail.goodsDetailList
 		})
 		
 	}
+		
+	
 };
 </script>
 

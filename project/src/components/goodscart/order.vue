@@ -1,9 +1,11 @@
 <template>
-	<div class="order" v-show="show">
+	<div class="order">
 		<div class="header">
 			<img src="../../../static/goodscart/back.png" @click="handleAck()"/>
 			<h1>确认订单</h1>
 		</div>
+		<div class="wrapper" ref="wrapper">
+		<div class="conent">
 		<div class="address">
 			<ul>
 				<li><p>收货人：黄女士</p><p>12312312312</p></li>
@@ -14,7 +16,7 @@
 		<div class="list">
 			<div class="listheader">
 				<p>商品清单</p>
-				<p>共&nbsp;<span>2</span>&nbsp;件</p>
+				<p>共&nbsp;<span>{{goodsCount.goodsNumCount}}</span>&nbsp;件</p>
 			</div>
 			<div class="shoplist">
 				<ul>
@@ -45,7 +47,17 @@
 		<div class="youhuijuan">
 			<ul>
 				<li><span>优惠券</span><span>可输入优惠码添加新的券</span><span>无可用</span><div><img src="../../../static/goodscart/back.png" class="jiantou"/></div></li>
-				<li><span>积分</span><span>有200积分，可抵2.00元</span><div><img src="../../../static/goodscart/Slice@1x.png"/></div></li>
+				<li><span>积分</span><span>有200积分，可抵2.00元</span>
+				<div>
+				<el-switch
+                    v-model="value1"
+                    active-color="green"
+
+                    inactive-color="gray">
+                </el-switch>
+
+				</div>
+				</li>
 			</ul>
 		</div>
 		<div class="fapiao">
@@ -55,48 +67,105 @@
 		<div class="xiaoji">
 			<input type="text" value="订单备注"/>
 			<ul>
-				<li><span>商品合计</span><span class="red">¥40.32</span></li>
-				<li><span>促销优惠</span><span class="green">-¥4.48</span></li>
+				<li><span>商品合计</span><span class="red">¥{{goodsCount.goodsNumPrice}}</span></li>
+				<li><span>促销优惠</span><span class="green">-¥0.00</span></li>
 				<li><span>好食狂欢节-全场九折</span></li>
 				<li><span>优惠券</span><span class="green">-¥0.00</span></li>
 				<li><span>积分抵扣</span><span class="green">-¥0.00</span></li>
-				<li><span>运费</span><span class="red">¥15.00</span></li>
-				<li><span>运费</span><span class="red">¥55.32</span></li>
+				<li><span>运费</span><span class="red">¥0.00</span></li>
+				<li><span>应付金额</span><span class="red">¥{{goodsCount.goodsNumPrice}}</span></li>
 			</ul>
+		</div>
+		</div>
 		</div>
 		<div class="footer">
 			<div class="footermain">
 				<div class="left">
-					<p>应付<span>¥55.32</span></p>
-					<p>共一件商品</p>
+					<p>应付<span>¥{{goodsCount.goodsNumPrice}}</span></p>
+					<p>共{{goodsCount.goodsNumCount}}件商品</p>
 				</div>
 				<div class="right" @click="handleGo()">提交订单</div>
 			</div>
 		</div>
+		<transition name="lala">
+		<mark-com v-show="show"></mark-com>
+		</transition>
+		<transition name="silde">
+		<prompt-com v-show="show"></prompt-com>
+		</transition>
 	</div>
 </template>
 
 <script>
+	import mark from "./mark.vue";
+	import prompt from "./prompt.vue";
+	import BScroll from "better-scroll";
+	import Vuex from "vuex";
 	export default{
+		components:{
+			"mark-com":mark,
+			"prompt-com":prompt
+		},
 		data(){
 			return{
-				show:true
+					show:false,
+					title:["公司","家"],
+					changeIndex : 0,
+					value1: true,
+					value2: true
 			}
 		},
 		created(){
-			this.observer.$on("change2",(val)=>{
-				this.show = val; 
+			this.observer.$on("change3",(val)=>{
+				this.show = val;
 			})
 		},
 		methods:{
 			handleGo(){
+				this.show = true;
 				this.observer.$emit("change5",true)
 			},
 			handleAck(){
-				// this.$router.push({name:"goodscart"});
 				this.$router.go(-1);
-			}
+			},
+			changeBg(index){
+            this.changeIndex = index;
+            }
+		},
+		mounted(){
+			this.scroll = new BScroll(this.$refs.wrapper,{
+			click:true,
+			pullUpload:true	
+			});
+		},
+		computed:{
+			...Vuex.mapGetters({
+				goodsCount:"goodscart/goodsCount",
+			}),
+			...Vuex.mapState({
+				goodsList:state=>state.goodscart.goodsList
+			})
 		}
+		/*
+		
+			actions 
+			handleChangeNewInfo({commit}){
+				commit('handleChangeNewInfo');
+			}
+			mutations
+			handleChangeNewInfo(state){
+				var goodlist = state.goodlist;
+				var goodsNewArray = [];
+				for(var index in goodlist){
+					if(goodlist[index].flag){
+						goodsNewArray.push(goodlist[index]);
+					}
+				}
+				state.goodsNewArray = goodsNewArray;
+			}
+			
+			
+		*/
 	}
 </script>
 
@@ -127,6 +196,17 @@
 	font-size: 18px;
 	color: #222222;
 	letter-spacing: 0;
+}
+.wrapper{
+		overflow: hidden;
+		position: absolute;
+		top: 1.2rem;
+		bottom:1.3rem;
+		width: 100%;
+	}
+.content{
+	width: 100%;
+	height: 100;
 }
 .address{
 	height: .9rem;

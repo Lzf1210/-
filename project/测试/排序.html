@@ -1,0 +1,45 @@
+<el-tabs v-model="activeName" @tab-click="priceFun" >
+    <el-tab-pane label="按销量排序" name="hot"></el-tab-pane>
+    <el-tab-pane label="按价格由高到低" name="toLow"></el-tab-pane>
+    <el-tab-pane label="按价格由低到高" name="toHigh"></el-tab-pane>
+</el-tabs>
+
+
+ methods:{
+      priceFun:function(tab,event){
+        if(tab.name=="toHigh"){
+          console.log(tab.name);
+          function compare(property){
+            return function(a,b){
+                var value1 = a[property];
+                var value2 = b[property];
+                  console.log('价格由高到低');
+                  return value1 - value2;//价由高到低
+                }
+            }
+          return this.productList.sort(compare('price'));
+        }
+        else if(tab.name=="toLow"){
+          function compare(property){
+              return function(a,b){
+                  var value1 = a[property];
+                  var value2 = b[property];
+                    console.log('价格由高到低');
+                    return value2 - value1;//价由低到高
+                  }
+              }
+          return this.productList.sort(compare('price'));
+        }
+        else if(tab.name=="hot"){
+          function compare(property){
+              return function(a,b){
+                  var value1 = a[property];
+                  var value2 = b[property];
+                    console.log('价格由高到低');
+                    return value1 - value2;//按销量
+                  }
+              }
+              console.log("按销量");
+          return this.productList.sort(compare('pid'));
+        }
+      }, 

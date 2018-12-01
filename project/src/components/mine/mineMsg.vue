@@ -6,11 +6,11 @@
     <div class="mineMsg">
         <div class="nom">
             <div class="mineImg">
-                <img src="../../../static/img/me.png" alt="">
+                <img :src="userImage" alt="">
             </div>
             <div class="mineName">
-                <p>12345678987</p>
-                <p>黄女士</p>
+                <p class="mobile">{{mobile}}</p>
+                <p class="userName">{{userName}}</p>
             </div>
         </div>
         <ul class="coupon">
@@ -36,9 +36,14 @@
 export default {
     data(){
         return {
-            
+            userImage:"../../../static/img/me.png",
+            userName:"黄女士",
+            mobile:"123123123123",
         }
-    }
+    },
+    // created:{
+        
+    // }
 }
 </script>
 

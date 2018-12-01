@@ -181,20 +181,13 @@
 		outline: none;
 		
 	}
-	/* .cartgoodsdetails>.cartgoodsdetail>.cart_center>.cart_right>button:nth-of-type(3){
-		display: block;
-		height: 0.50rem;
-		width: 0.50rem;
-		border-left: 1px solid #C0C0C0;
-		font-size: 13px;
-	} */
 	.cartgoodsdetails>.cartgoodsdetail>.cart_center>.cart_right>input{
 		/* display: block; */
 		height: 0.47rem;
 		width: 0.56rem;
 		font-size: 13px;
 		text-align: center;
-		border:0;
+		border:1;
 		outline: none
 	}
 	.cartgoodsdetails>.cartgoodsdetail>.cart_bottom{

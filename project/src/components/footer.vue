@@ -87,14 +87,14 @@ export default {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    text-decoration: none
+    text-decoration: none;
 }
 .footer>ul>li>a>.iconfont{
    font-size:20px;
    line-height: 22px;
 }
 .footer>ul>.footerActive .iconfont{
-    color:#3f2021;
+    color:#EFB31F;
     
 }
 </style>

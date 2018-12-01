@@ -2,7 +2,7 @@
 	<div class="safety">
 		<div class="safety_con">
 			<div class="safety_top">
-				<div>
+				<div @click="back()">
 					<img src="../../../static/img/back.png">
 				</div>
 				<h2>安全中心</h2>
@@ -33,7 +33,18 @@
 </template>
 
 <script>
-	
+export default {
+    data(){
+        return {
+            
+        }
+    },
+    methods : {
+		back(){
+			this.$router.back("/mine")
+		}
+	}
+}
 </script>
 
 <style scoped>
@@ -55,20 +66,18 @@
 	padding-top: .4rem;
 }
 .safety_top>div:nth-child(1){
-	width: .24rem;
-	height: .40rem;
-	margin-left:.31rem;
-	margin-top: .23rem;
+	height:.88rem;
+	width:.88rem;
+	display: flex;
+	justify-content: center;
+	align-items: center
 	
 }
-.safety_top>div:nth-child(1)>img{
-	width: 100%;
-	height: 100%;
-}
+
 .safety_top>h2{
 	width: 2.6rem;
 	height: .88rem;
-	margin-left:2.49rem;
+	margin-left:2.18rem;
 	font-size: .36rem;
 	color: #222222 ;
 	line-height: .88rem;

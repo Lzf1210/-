@@ -71,7 +71,7 @@ export default {
 </script>
 
 <style scoped>
-.top{height:.4rem;width:100%;background:)}
+.top{height:.4rem;width:100%;background:#fff}
 .allOrderheader{height:100%;width:100%;position: absolute;left:0;z-index: 2;background: #FCFCFC}
 .allOrderheader>.title>h2{margin-left:38%;font-size:.34rem;font-family:PingFangSC-Regular}
 .allOrderheader>.title{height:.88rem;width:100%;display: flex;padding:0 4.4%;align-items: center;border-bottom:2px solid #E1E1E1;background: #fff}

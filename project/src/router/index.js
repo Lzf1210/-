@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Home from '../components/home/home.vue'
-
+import Open from '../components/mine/open.vue'
 import Discounts from '../components/discounts/discounts.vue'
 import sales from '../components/discounts/sales.vue'
 import times from '../components/discounts/times.vue'
@@ -32,12 +32,12 @@ import fushi from '../components/home/content_fushi.vue'
 import xiaoshi from '../components/home/content_xiaoshi.vue'
 import guoshu from '../components/home/content_guoshu.vue'
 
-import Goods from '../components/goodsdetail/goods.vue'
+import goods from '../components/goodsdetail/goods.vue'
 
 
 import goPay from '../components/goodscart/goPay.vue'
 import Order from '../components/goodscart/order.vue'
-
+import paySuccess from '../components/goodscart/paySuccess.vue'
 
 // classify
 import details from "../components/classify/details.vue"
@@ -52,9 +52,10 @@ import details6 from "../components/classify/details6.vue"
 Vue.use(Router)
 
 const router = new Router({
-	routes: [{
+	routes: [
+		{
 			path: "/",
-			redirect: "/home/fushi"
+			redirect: "/home/jingx"
 		},
 		{
 			path: "/home",
@@ -237,7 +238,7 @@ const router = new Router({
 		{
 			name: "goods",
 			path: "/goods",
-			component: Goods,
+			component: goods,
 		},
 		{
 			name:"goPay",
@@ -249,7 +250,16 @@ const router = new Router({
 			path:"/login",
 			component:login
 		},
-		
+		{
+			name:"paySuccess",
+			path:"/paySuccess",
+			component:paySuccess
+		},
+		{
+			name:"open",
+			path:"/open",
+			component:Open
+		},
 		{
 			//匹配所有
 			path: "**",
