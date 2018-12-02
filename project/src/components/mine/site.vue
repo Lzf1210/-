@@ -96,7 +96,7 @@ export default {
             }).then((data)=>{
                 console.log(data)
             })
-        }
+       }
     }
 }
 </script>
