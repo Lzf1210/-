@@ -11,14 +11,10 @@
 				<span>热门单品价格直降，购买超划算</span>
 				<div class="salesGoods">
 					<div class="goods" v-for="(item,index) in imgList">
-                        <router-link :to='{name:"goods",query:{id:item.id}}'>
-                            <img :src="item.goodsDetail" class="imgs">
-                        </router-link>
+						<img src="../../../static/discounts/images/details_02.png" class="imgs">
 						<h3>{{item.goodsName}}</h3>
 						<h4>{{item.goodsPrice}}</h4>
-                        <router-link :to='{name:"goods",query:{id:item.id}}'>
-                        	<h5>立即购买</h5>
-                        </router-link>
+						<h5 @click="handleAddGoodsCart(item.id)">立即购买</h5>
 						<h6>特惠</h6>
 						<p>￥{{item.goodsDiscountsPrice}}</p>
 						<div class="shu"></div>
@@ -37,7 +33,7 @@
 	export default {
 		data() {
 			return {
-				
+
 			};
 		},
 		created() {
@@ -51,9 +47,10 @@
 		},
 		methods: {
 			...Vuex.mapActions({
-				handleGetImg: "discounts/handleGetImg"
+				handleGetImg: "discounts/handleGetImg",
+                handleAddGoodsCart:"discounts/handleAddGoodsCart",
 			}),
-            
+
 		},
 		mounted() {
 			this.scroll = new BScroll(this.$refs.salesWrapper, {
@@ -64,19 +61,20 @@
 
 
 		},
-        updated () {
-        	//重新计算高度
-        	this.scroll.refresh();
-        	//当数据加载完毕以后通知better-scroll
-        	this.scroll.finishPullUp();
-        }
+		updated() {
+			//重新计算高度
+			this.scroll.refresh();
+			//当数据加载完毕以后通知better-scroll
+			this.scroll.finishPullUp();
+		}
 	}
 </script>
 
 <style scoped>
-    *{
-        text-decoration:none;
-    }
+	* {
+		text-decoration: none;
+	}
+
 	.wrapper {
 		position: absolute;
 		top: 0;
@@ -157,7 +155,7 @@
 		background: #FCEEE5;
 	}
 
-	.goods .imgs{
+	.goods .imgs {
 		height: 3.4rem;
 		width: 3rem;
 		margin-top: .14rem;
