@@ -1,7 +1,7 @@
  <template>
 	<div class="sidebar">
 		<ul>
-			<li v-for="(item,index) in list" @click="change(index)" :class="active == index ? 'active' : ''">
+			<li v-for="(item,index) in list"  @click="change(index);clickList(item.id)" :class="active == index ? 'active' : ''">
 				<router-link :to="{name:item.name}">
 					{{item.title}}
 				</router-link>
@@ -12,7 +12,9 @@
 </template>
 
 <script>
-	export default{
+	import Vuex from "vuex";
+
+	export default {
 		
 		data(){
 			return{
@@ -56,8 +58,12 @@
 		methods:{
 			change(index){
 				this.active = index;
-			}
-		},
+			},
+			...Vuex.mapActions({
+				clickList:"classify/clickList"
+			})
+		}
+		
 		
 	}
 	
