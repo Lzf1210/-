@@ -7,7 +7,8 @@
 		<div class="swiper-container">
 		    <div class="swiper-wrapper">
 		        <div class="swiper-slide">
-		        	<img  :src="'http://ceshi.qfjava.cn/'+goodsDetailList.imageList"/>
+		        	<!-- <img  :src="'http://ceshi.qfjava.cn/'+goodsDetailList.imageList"/> -->
+							<img :src="'http://ceshi.qfjava.cn/'+goodsDetailList.imageList"/>
 		        </div>
 		    </div>
 		    <!-- 如果需要分页器 -->

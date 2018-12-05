@@ -5,7 +5,7 @@
 			<input type="checkbox" :checked="item.flag" @change="handleToggle(index)"/>
 			<div class="cart_center">
 				<div class="cart_left">
-					<img :src="item.imageList[0]" @click="handleId(item.id,goodsList.length,item.num)"/>
+					<img :src="'http://ceshi.qfjava.cn/'+item.imageList" @click="handleId(item.id,goodsList.length,item.num)"/>
 				</div>
 				<div class="goodsinfo">
 					<span>{{item.goodsName}}</span>

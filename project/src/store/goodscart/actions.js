@@ -7,7 +7,7 @@ export default {
 			url:"/mp/cart/findallgoods"
 		}).then((data)=>{
 			console.log(data.data)
-			// commit("handleGetGoods",data.data)
+			commit("handleGetGoods",data.data)
 		});
 	},
 	handleGoodsDel({commit}){
