@@ -2,7 +2,7 @@
     <div class="header">
         <div class='header_t'>
             <img src="./img/Page 1 Copy 2.png" alt="" @click="search()">
-            <input type="text" placeholder="想吃点什么吗?" class="search" name="search" v-model="search">
+            <input type="text" placeholder="想吃点什么吗?" class="search" name="search" v-model="searchs">
             <img src="./img/Group 2.png" alt="">
             <div class="search-img">
                 <div class="search_l"></div>
@@ -101,7 +101,7 @@ export default {
   },
   data() {
     return {
-        search:"",
+        searchs:"",
         // 遮罩
         show:false,
         // 滑块

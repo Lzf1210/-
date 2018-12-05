@@ -7,7 +7,7 @@
             <div 
             class="content_c" 
             v-for="(item,index) in home_goodsa"
-            @click="handleGo()"
+            @click="handleGo(index)"
             >
                 <img :src="'http://ceshi.qfjava.cn/'+item.imageList"/>
                 <p>{{item.goodsName}}</p>
@@ -50,8 +50,8 @@ export default {
         ...Vuex.mapActions({
             handleHome_goodsaget:'home/handleHome_goodsaget',
         }),
-        handleGo(){
-            this.$router.push('/goods')
+        handleGo(index){
+            this.$router.push({path:'/goods',query:{id:index}})
         }
     },
     mounted() {
