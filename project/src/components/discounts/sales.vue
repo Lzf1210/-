@@ -77,14 +77,14 @@
 
 	.wrapper {
 		position: absolute;
-		top: 0;
+		top: 0.4rem;
 		bottom: 0;
 		width: 100%;
 		overflow: hidden;
 	}
 
 	.sales {
-		padding: 2.27rem .32rem .98rem;
+		padding: 1.87rem .32rem .98rem;
 		height: 100%;
 		overflow: auto;
 	}
