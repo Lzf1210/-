@@ -17,6 +17,7 @@
 </template>
 
 <script>
+import axios from "axios"
 export default {
     data(){
         return {
@@ -36,14 +37,15 @@ export default {
                 {
                     name : "receiving",
                     img : "../../../static/img/daishouhuo.png",
-                    title : "待收货",
+                    title : "已付款",
                     id:2
 
                 },
                 {
-                    // name : "evaluate",
+                    name : "evaluate",
                     img : "../../../static/img/daipingjia.png",
-                    title : "待评价",
+                    title : "已发货",
+                    id:4
                 },
                 {
                     // name : "serve",
@@ -58,7 +60,7 @@ export default {
         sendData(index){
             axios({
 				method:"get",
-				url:"/mp/order/myorder?id="+index,
+				url:"/mp/order/myorder?status="+this.orders[index].id,
 			}).then((data)=>{
 				console.log(data)
 			});

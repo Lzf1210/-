@@ -20,6 +20,7 @@
 
 <script>
 import Vuex from "vuex";
+import axios from "axios";
 import BScroll from "better-scroll"
 export default {
     data(){
@@ -32,19 +33,23 @@ export default {
                 },
                 {
                     name : "payment",
-                    title : "待付款"
+                    title : "待付款",
+                    id:1
                 },
                 {
                     name : "shipments",
-                    title : "待发货"
+                    title : "待发货",
+                    id:3
                 },
                 {
                     name : "receiving",
-                    title : "待收货"
+                    title : "已付款",
+                    id:2,
                 },
                 {
                     // name : "evaluate",
-                    title : "待评价"
+                    title : "已发货",
+                    id:4
                 },
                 
             ],
@@ -57,7 +62,12 @@ export default {
         },
         changeBg(index){
             this.activeIndex = index;
-            
+            axios({
+				method:"get",
+				url:"/mp/order/myorder?status="+this.orders[index].id,
+			}).then((data)=>{
+				console.log(data)
+			});
         }
     },
     created(){

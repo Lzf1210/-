@@ -83,16 +83,16 @@ export default {
             let Index = this.changeIndex;
             console.log(this.name,this.phone,this.address,this.detail,this.title[Index],this.value2)
             axios({
-                method:"post",
-                url:"/mp/address/addaddress",
-                data:{
-                    name:this.name,
-                    phone:this.phone,
-                    address:this.address,
-                    detail:this.detail,
-                    addressType:this.title[Index],
-                    defaultAddress:this.value2
-                }
+                method:"get",
+                url:"/mp/address/addaddress?name="+this.name+"&phone="+this.phone+"&address="+this.address+"&detail="+this.detail+"&addressType="+this.title[Index]+"&defaultAddress="+this.value2,
+                // data:{
+                //     name:this.name,
+                //     phone:this.phone,
+                //     address:this.address,
+                //     detail:this.detail,
+                //     addressType:this.title[Index],
+                //     defaultAddress:this.value2
+                // }
             }).then((data)=>{
                 console.log(data)
             })
@@ -105,7 +105,7 @@ export default {
 .top{height:.4rem;width:100%;}
 .site{width:100%;height:100%;position:fixed;left:0;z-index:2;background: #fff}
 .site>.title{height:.88rem;width:100%;display: flex;justify-content: space-between;padding:0 4.4%;align-items: center}
-.site>.title>p:nth-child(2){font-size:.34rem;font-family:PingFangSC-Regular}
+.site>.title>p:nth-child(2){font-size:.34rem;font-family:PingFangSC-Regular;flex: 1;text-align: center}
 .site>.title>p:nth-child(3){font-size:.26rem;font-family:PingFangSC-Regular}
 .site>form>p{height:1.14rem;width:100%;display:flex;align-items: center;border-top:2px solid #E1E1E1;padding:0 4.4%;}
 .site>form>p>input{height:1.1rem;width:100%;border:0;font-size:.28rem;color:#888888;font-family: PingFangSC-Regular;outline: none}

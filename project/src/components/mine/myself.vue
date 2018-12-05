@@ -1,3 +1,4 @@
+
 <template>
 
 	<div class="myself">
@@ -9,24 +10,11 @@
 				<h2>编辑个人信息</h2>
 			</div>
 			
-			<form class="myself_n">
+			<form class="myself_n" enctype="multipart/form-data">
 				<div class="myself_my">
 					<div>
-						<!-- <img src="../../../static/img/me.png" alt=""> -->
-						<!-- <el-upload
-							class="avatar-uploader"
-							action="/mp/user/update"
-							
-							:show-file-list="false"
-							:on-success="handleAvatarSuccess"
-							>
-							<img v-if="imageUrl" :src="imageUrl" class="avatar">
-							<i v-else class="el-icon-plus avatar-uploader-icon"></i>
-						</el-upload> -->
-
-
-
-						<input type="file" id="image1">
+						<img src="" id="imgs">
+						<input type="file" id="image1" name="image1">
 					</div>
 					<p>更换个人头像</p>
 				</div>
@@ -61,13 +49,17 @@
 </template>
 
 <script>
+import Vuex from "vuex";
 import axios from 'axios';
+import ajax from "../../ajax.js"
+import jq from "../../jquery-1.11.3.js"
+
 export default {
 	 data(){
         return {
             title:["男士","女士"],
             changeIndex : -1,
-			
+			imageUrl:""
 			// username:"",
 			// sex:"",
 			// mobile:"",
@@ -79,51 +71,34 @@ export default {
 		
 		preserve(){
 			this.changeIndex = this.changeIndex+1;
-			let image1 = document.getElementById("image1");
-			let images = image1.files[0]
-			let username = document.getElementById("username").value;
-			let mobile = document.getElementById("mobile").value;
-			let sex = document.getElementsByTagName("sex");
+			let image1 = $("#image1");
+			let username = $("#username").val();
+			let mobile = $("#mobile").val();
+			let sex = $("sex");
 			let sexIndex = this.changeIndex;
-			console.log(username,mobile,sexIndex,image1.files[0])
 			var formdata = new FormData();
-			formdata.append("image1",images)
-			formdata.append("username",username.value)
+			formdata.append("image1",image1[0].files[0])
+			formdata.append("username",username)
 			formdata.append("sex",sexIndex)
-			formdata.append("mobile",mobile.value)
-			
-			axios({
-				method:"post",
+			formdata.append("mobile",mobile)
+			$.ajax({
+				type:"post",
 				url:"/mp/user/update",
 				data:formdata,
-				// method:"get",
-				// url:"/mp/user/update?username="+username+"&sex="+sexIndex+"&mobile="+mobile+"&image="+image
-				
-			}).then((data)=>{
-				console.log(data)
+				dataType:"json",
+				cache:false,
+				processData: false,
+				contentType: false,
+				success:function(data){
+					console.log(data)
+					if(data.data == "修改成功"){
+						// this.$router.back('/mine')
+					}
+				}
 			})
-
-
-
-
-
-			// axios({
-			// 	method:"get",
-			// 	url:"/mp/user/update?username="+this.username+"&sex="+this.changeIndex+"&mobile="+this.mobile+"&image="+file,
-			// 	headers:{'Content-Type':'multipart/form-data'}
-			// 	// data:{
-			// 	// 	username:this.username,
-			// 	// 	sex:this.changeIndex+1,
-			// 	// 	mobile:this.mobile
-			// 	// }
-			// }).then((data)=>{
-			// 	console.log(data)
-			// })
-			// console.log(this.username,this.changeIndex,this.mobile,this.file)
 		},
         changeBg(index){
 			this.changeIndex = index;
-			// console.log(this.changeIndex+1)
         },
         back(){
             this.$router.back("/mine")
@@ -152,7 +127,6 @@ export default {
 		background: #FAFAFA;
 		padding-top: .4rem;
 	}
-
 	.myself_top>div:nth-child(1) {
 		width: .8rem;
 		height: .88rem;
@@ -160,12 +134,6 @@ export default {
 		align-items: center;
 		justify-content: center
 	}
-
-
-
-
-
-
 	.avatar-uploader .el-upload {
 		border: 1px dashed #d9d9d9;
 		border-radius: 6px;
@@ -184,14 +152,10 @@ export default {
 		height: .8rem;
 		text-align: center;
 	}
-
-
-
-
 	.myself_top>h2 {
 		width: 2.6rem;
 		height: .88rem;
-		margin-left: 1.85rem;
+		margin-left: 1.88rem;
 		font-size: .36rem;
 		color: #222222;
 		line-height: .88rem;

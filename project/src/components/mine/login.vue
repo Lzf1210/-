@@ -19,7 +19,7 @@
 				</div>
 				<div>
 					<label>
-						<input type="text" class="code" placeholder="输入验证码" v-model="objPhone.codee" name="codee">
+						<input type="text" class="code" placeholder="输入验证码" v-model="objPhone.codee" name="code">
 					</label>
 				</div>
 				<p>首次手机号登录将为您注册</p>
@@ -54,7 +54,7 @@
 			//验证手机号码部分
 			sendcode() {
 				console.log(this.objPhone.mobile);
-				var reg = /^1[3|4|5|8][0-9]\d{4,8}$/;
+				var reg = /^1[3|4|5|7|8][0-9]\d{4,8}$/;
 				if (this.objPhone.mobile == '') {
 					this.objPhone.mobile = "手机号不能为空";
 				} else if (!reg.test(this.objPhone.mobile)) {
@@ -65,10 +65,7 @@
 					this.timer();
 					axios({
 						method: "get",
-						url: "/mp/user/sendcode",
-						data:{
-							mobile:this.objPhone.mobile
-						}
+						url: "/mp/user/sendcode?mobile="+this.objPhone.mobile,
 					}).then((data) => {
 						console.log(data)
 					})
@@ -88,7 +85,7 @@
 			handleLogin() {
 				
 				
-				var reg = /^1[3|4|5|8][0-9]\d{4,8}$/;
+				var reg = /^1[3|4|5|7|8][0-9]\d{4,8}$/;
 				if (this.objPhone.mobile == '') {
 					this.objPhone.mobile = "手机号不能为空";
 					// this.objPhone.password = "密码不能为空";
@@ -99,19 +96,20 @@
 					/*接口请求*/
 					axios({
 						method: "get",
-						url: "/mp/user/reg?mobile="+this.objPhone.mobile+"&password="+this.objPhone.password+"&code="+this.objPhone.codee,
+
+						// http://jianglianglong.qfjava.cn:8080/mp/user/reg
+						url: "/mp/user/reg?mobile="+this.objPhone.mobile+"&password="+this.objPhone.password+"&code="+this.objPhone.codee
 					}).then((data) => {
 						// this.showTishi = true;
 						// this.tishi = data.data.data;
-						console.log(data)
-						if(data.data.data == "登陆成功"){
-							Toast({
-								message: '登陆成功',
-								iconClass: 'icon icon-success'
-							});
-							this.$router.push("/home/jingx")
-						}
-						
+						console.log(data.data.data)
+						Toast({
+							message: '登陆成功',
+							iconClass: 'icon icon-success'
+						});
+						setTimeout(()=>{
+							this.$router.push('/home/jingx')
+						},2000)
 								
 	// 							this.$message({
 	// 								message: '登录成功',
@@ -124,15 +122,15 @@
 					
 						
 
-				// 		// if (data.data.data =='注册成功' ) {
-				// 		// 	this.tishi = "手机号第一次登录将为您自动注册";
-				// 		// 	this.showTishi = true;
-				// 		// 	setTimeout(()=>{
-				// 		// 		this.$router.push('/home/jingx')	
-				// 		// 		console.log(111)	
-				// 		// 	},4000)
-				// 			// this.$router.push('/home')
-				// 		// }
+						// if (data.data.data =='注册成功' ) {
+						// 	this.tishi = "手机号第一次登录将为您自动注册";
+						// 	this.showTishi = true;
+						// 	setTimeout(()=>{
+						// 		this.$router.push('/home/jingx')	
+						// 		console.log(111)	
+						// 	},4000)
+						// 	this.$router.push('/home')
+						// }
 				// 		// else if (data.data[0].password != this.objPhone.password) {
 				// 		// 	this.objPhone.password = "密码输入错误";
 				// 		// } else if (data.data[0].mobile == this.objPhone.mobile && 
