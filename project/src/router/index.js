@@ -104,11 +104,13 @@ const router = new Router({
 			path: "/classify",
 			name: "classify",
 			component: Classify,
+			redirect:"/details",
 			children: [
 				{
-					path: "/classify/details",
+					path: "/details",
 					name: "details",
 					component: details,
+					
 				},
 				{
 					path: "details1",

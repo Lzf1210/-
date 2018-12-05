@@ -21,7 +21,7 @@
 </template>
 
 <script>
-	
+	import Vuex from "vuex";
 	export default{
 		data(){
 			return {
@@ -59,6 +59,11 @@
 					}
 				]
 			}
+		},
+		computed:{
+			...Vuex.mapState({
+				list:state=>state.classify.list
+			})
 		}
 	}
 	
