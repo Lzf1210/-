@@ -5,7 +5,7 @@ export default {
         axios({
             method:"get",
             // http://jianglianglong.qfjava.cn:8080/mp/goods/searchallgoods
-            url:"/mp/goods/searchallgoods?&id=1&_page="+params+"&_limit=4",
+            url:"/mp/goods/searchallgoods?&id=1&_page="+params+"&_limit-1s",
         }).then((data)=>{
             // console.log(params)
                 commit("handleHome_fushiget",data.data)
