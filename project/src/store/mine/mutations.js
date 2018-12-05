@@ -1,7 +1,8 @@
+import state from "./state"
 import axios from "axios";
 export default {
-    handleGetGoods(state,params){
-        state.goodsList = params;
+    handleGetMsg(state,params){
+        state.minemsg = params;
         
     }
  

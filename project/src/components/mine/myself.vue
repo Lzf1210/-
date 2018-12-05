@@ -12,7 +12,7 @@
 			
 			<form class="myself_n" enctype="multipart/form-data">
 				<div class="myself_my">
-					<div>
+					<div id="preview">
 						<img src="" id="imgs">
 						<input type="file" id="image1" name="image1">
 					</div>
@@ -92,7 +92,7 @@ export default {
 				success:function(data){
 					console.log(data)
 					if(data.data == "修改成功"){
-						// this.$router.back('/mine')
+						
 					}
 				}
 			})
@@ -168,7 +168,7 @@ export default {
 		margin:.8rem 0 .2rem;
 	}
 
-	.myself_my>div {
+	.myself_my>#preview {
 		width: 1.6rem;
 		height: 1.6rem;
 		margin:0 auto;

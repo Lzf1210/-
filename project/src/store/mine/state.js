@@ -1,4 +1,4 @@
 ﻿export default {
-   goodsList:[],
+   mine:[],
    activeIndex:0
 }
