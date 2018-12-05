@@ -1,7 +1,9 @@
-// import state from "./state"
 export default {
 	handleGetDetail(state,params) {
-        this.state.goodsDetailList.push(params)
-	}
+		// console.log(params,111)
+		
+		state.goodsDetailList=params;
+	    
+	},
     
 }

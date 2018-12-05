@@ -101,6 +101,7 @@ export default {
   },
   data() {
     return {
+        search:"",
         // 遮罩
         show:false,
         // 滑块
@@ -418,7 +419,7 @@ export default {
   border-radius: 50%;
   border: 1px solid #999999;
   position: absolute;
-  left: rem;
+  /* left: rem; */
 }
 .search_r {
   width: 2px;

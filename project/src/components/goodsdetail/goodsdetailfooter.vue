@@ -1,6 +1,6 @@
 <template>
 	<div class="goodsfooter">
-		<div>
+		<div @click="handleGogo()">
 			<i class="iconfont icon-daohanggouwuche"></i>
 			<p>购物车</p>
 		</div>
@@ -36,7 +36,7 @@
 			return {
 				sum: 1,
 				Num: 0,
-				id: this.$route.id,
+				id: "",
 				show: false
 			};
 		},
@@ -53,23 +53,25 @@
 			},
 			handleGo() {
 				axios({
-					method: "patch",
-					url: "/mp/cart/addgoods",
-					data: {
-						"num": this.sum,
-                        "id":this.id
-					}
+					method: "get",
+					url: "/mp/cart/addgoods?num="+this.sum+"&goodsId="+this.id,
+					// data: {
+					// 	"num": this.sum,
+                    //     "goodsId":this.id
+					// }
 				}).then((data) => {
-					console.log(data);
-					this.show = true;
+				    this.show = true;
 				});
 			},
 			handleSuccess() {
 				this.show = false;
+			},
+			handleGogo(){
+				this.$router.push("/goodscart")
 			}
 		},
 		created() {
-
+			this.id=this.$route.query.id
 		}
 	}
 </script>
