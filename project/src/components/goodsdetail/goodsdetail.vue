@@ -2,12 +2,12 @@
 	<div class="wrapper" ref="detailWrapper">
         <div class="content">
 		
-	<div class="goodsdetail" v-for="(item,index) in goodsDetailList">
+	<div class="goodsdetail">
 		
 		<div class="swiper-container">
 		    <div class="swiper-wrapper">
 		        <div class="swiper-slide">
-		        	<img src={item.imageList}/>
+		        	<img src={goodsDetailList.imageList}/>
 		        </div>
 		    </div>
 		    <!-- 如果需要分页器 -->
@@ -15,9 +15,9 @@
 		</div>
 		<div class="goodsmain">
 			<ul>
-				<li>{{item.goodsName}}</li>
+				<li>{{goodsDetailList.goodsName}}</li>
 				<li></li>
-				<li><span>￥{{item.goodsPrice}}</span><del>￥3.42</del></li>
+				<li><span>￥{{goodsDetailList.goodsPrice}}</span><del>￥3.42</del></li>
 			</ul>
 			<div class="huodong">
 				<span>活动</span>
@@ -92,31 +92,31 @@
 				</ul>
 				<ul>
 					<li>
-						<span>{{item.goodsName}}</span>
+						<span>{{goodsDetailList.goodsName}}</span>
 					</li>
 					<li>
-						<span>{{item.goodsDetail}}</span>
+						<span>{{goodsDetailList.goodsDetail}}</span>
 					</li>
 					<li>
-						<span>{{item.saveStyle}}</span>
+						<span>{{goodsDetailList.saveStyle}}</span>
 					</li>
 					<li>
-						<span>{{item.saveTime}}</span>
+						<span>{{goodsDetailList.saveTime}}</span>
 					</li>
 					<li>
 						<span>山东欣和神州一食品有限公司</span>
 					</li>
 					<li>
-						<span>{{item.goodsNo}}</span>
+						<span>{{goodsDetailList.goodsNo}}</span>
 					</li>
 					<li>
-						<span>{{item.manuFacturer}}</span>
+						<span>{{goodsDetailList.manuFacturer}}</span>
 					</li>
 					<li>
-						<span>{{item.goodsStandNo}}</span>
+						<span>{{goodsDetailList.goodsStandNo}}</span>
 					</li>
 					<li>
-						<span>{{item.goodsDetail}}</span>
+						<span>{{goodsDetailList.goodsDetail}}</span>
 					</li>
 					<li>
 						<span>可依据个人口味加入热水冲调，放置2-3分钟后食用。</span>

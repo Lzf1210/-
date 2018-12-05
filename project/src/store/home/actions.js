@@ -21,7 +21,7 @@ export default {
         }).then((data)=>{
             // console.log(params)
                 commit("handleHome_fushiget",data.data)
-                console.log(data.data)
+                // console.log(data.data)
         })
     },
     handleHome_tiaoweiget({commit},params){

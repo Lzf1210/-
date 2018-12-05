@@ -7,9 +7,9 @@
             <div 
             class="content_c" 
             v-for="(item,index) in home_tiaowei"
-            @click="handleGo()"
+            @click="handleGo(index)"
             >
-                <img :src="item.imageList"/>
+                <img :src="'http://ceshi.qfjava.cn/'+item.imageList"/>
                 <p>{{item.goodsName}}</p>
                 <p>{{item.goodsDetail}}</p>
                 <p>{{item.goodsPrice | home_price}}</p>
@@ -50,8 +50,8 @@ export default {
         ...Vuex.mapActions({
             handleHome_tiaoweiget:'home/handleHome_tiaoweiget',
         }),
-        handleGo(){
-            this.$router.push('/goods')
+        handleGo(index){
+            this.$router.push({path:'/goods',query:{id:index}})
         }
     },
     mounted() {

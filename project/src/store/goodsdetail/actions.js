@@ -1,11 +1,13 @@
 import axios from "axios";
 export default {
 	handleGetDetail({commit},params) {
+		console.log(params)
 			axios({
 				method:"get",
-				url:"http://localhost:3000/details?id="+params,
+				url:"/mp/goods/searchgoodsbyid?goodsId="+params,
 				}).then((data)=>{
 					commit("handleGetDetail",data.data)
+					
 				})
 		
 
