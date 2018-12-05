@@ -6,8 +6,8 @@
 		
 		<div class="swiper-container">
 		    <div class="swiper-wrapper">
-		        <div class="swiper-slide" v-for="(imgs,index) in item.imageList">
-		        	<img :src="imgs"/>
+		        <div class="swiper-slide">
+		        	<img src={item.imageList}/>
 		        </div>
 		    </div>
 		    <!-- 如果需要分页器 -->
@@ -184,11 +184,11 @@ export default {
 				slidesPerView: 2,
 				centeredSlides: true,
 				coverflowEffect: {
-					rotate: 30,
-					stretch: 10,
-					depth: 60,
-					modifier: 2,
-					slideShadows: true
+				rotate: 30,
+				stretch: 10,
+				depth: 60,
+				modifier: 2,
+				slideShadows: true
 				},
 			})
 
@@ -203,9 +203,10 @@ export default {
 // 		 }).then((data)=>{
 // 			 console.log(data);
 // 		 })
-   this.handleGetDetail(this.$route.query.id)//获取详情页信息
+	 this.handleGetDetail(this.$route.query.id)//获取详情页信息
+	 console.log(this.goodsDetailList)
   },
-  methods: {
+  methods: {	
     handleBack() {
       this.$router.back();
     },
@@ -215,9 +216,14 @@ export default {
   },
 	computed:{
 		...Vuex.mapState({
-					goodsDetailList:state=>state.goodsdetail.goodsDetailList
+			goodsDetailList:state=>{
+				console.log(state)
+				return state.goodsdetail.goodsDetailList
+			}
+			// goodsDetailList:state=>state.goodsdetail.goodsDetailList,
+			
+			
 		})
-		
 	}
 		
 	
@@ -230,7 +236,7 @@ export default {
   top: 0.4rem;
   bottom:0.98rem;
   width: 100%;
-  overflow: hidden;
+  
 }
 
 .goodsdetail {
