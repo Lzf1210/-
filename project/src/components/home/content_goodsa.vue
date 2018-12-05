@@ -51,7 +51,8 @@ export default {
             handleHome_goodsaget:'home/handleHome_goodsaget',
         }),
         handleGo(index){
-            this.$router.push({path:'/goods',query:{id:index}})
+            let Index = index+1;
+            this.$router.push({path:'/goods',query:{id:Index}})
         }
     },
     mounted() {

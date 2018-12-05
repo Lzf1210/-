@@ -39,7 +39,7 @@
                 <div 
             class="content_c" 
             v-for="(item,index) in home_fushi"
-            @click="handleGo()"
+            @click="handleGo(index)"
             >
                 <img :src="'http://ceshi.qfjava.cn/'+item.imageList"/>
                 <p>{{item.goodsName}}</p>
@@ -50,7 +50,7 @@
                 <div 
             class="content_c" 
             v-for="(item,index) in home_fushi"
-            @click="handleGo()"
+            @click="handleGo(index)"
             >
                 <img :src="'http://ceshi.qfjava.cn/'+item.imageList"/>
                 <p>{{item.goodsName}}</p>
@@ -61,7 +61,7 @@
                 <div 
             class="content_c" 
             v-for="(item,index) in home_fushi"
-            @click="handleGo()"
+            @click="handleGo(index)"
             >
                 <img :src="'http://ceshi.qfjava.cn/'+item.imageList"/>
                 <p>{{item.goodsName}}</p>
@@ -108,8 +108,8 @@ export default {
         ...Vuex.mapActions({
             handleHome_fushiget:'home/handleHome_fushiget',
         }),
-        handleGo(){
-            this.$router.push('/goods')
+        handleGo(index){
+            this.$router.push({path:'/goods',query:{id:index}})
         },
         handle_tiaowei(){
             this.$router.push('/home/tiaowei')
