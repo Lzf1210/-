@@ -5,7 +5,7 @@
 		<div class="myself_com">
 			<div class="myself_top">
 				<div class="touxiang" @click="back()">
-					<img src="../../../static/img/back.png">
+					<img src="http://qianfeng1.qfjava.cn:8502/mp/static/img/back.png">
 				</div>
 				<h2>编辑个人信息</h2>
 			</div>
@@ -50,8 +50,8 @@
 
 <script>
 import Vuex from "vuex";
-import axios from 'axios';
-import ajax from "../../ajax.js"
+import axios from "axios";
+import { Toast } from 'mint-ui';
 import jq from "../../jquery-1.11.3.js"
 
 export default {
@@ -81,6 +81,8 @@ export default {
 			formdata.append("username",username)
 			formdata.append("sex",sexIndex)
 			formdata.append("mobile",mobile)
+			this.changeIndex = -1;
+			let _this = this;
 			$.ajax({
 				type:"post",
 				url:"/mp/user/update",
@@ -90,10 +92,19 @@ export default {
 				processData: false,
 				contentType: false,
 				success:function(data){
-					console.log(data)
-					if(data.data == "修改成功"){
+					
+					console.log(data.data)
+				
+						Toast({
+							message: '保存成功',
+							iconClass: 'icon icon-success'
+						});
+						setTimeout(()=>{
+							_this.$router.push("/mine")
+						},2000)
 						
-					}
+					
+					
 				}
 			})
 		},
@@ -167,7 +178,10 @@ export default {
 		height: 2.44rem;
 		margin:.8rem 0 .2rem;
 	}
-
+	#image1{
+		width: 20px;height:20px;
+		opacity: 0
+	}
 	.myself_my>#preview {
 		width: 1.6rem;
 		height: 1.6rem;

@@ -2,7 +2,7 @@
     <div class="banner_jx">
         <div class="swiper-container">
             <div class="swiper-wrapper">
-              <div class="swiper-slide" v-for="(item,index) in banner_list"><img :src="item"/></div>
+              <div class="swiper-slide" v-for="(item,index) in banner_list"><img :src="item?item:''"/></div>
             </div>
             <!-- 如果需要分页器 -->
             <div class="swiper-pagination"></div>
@@ -16,7 +16,7 @@ import "../../../node_modules/swiper/dist/css/swiper.css";
 export default {
   data() {
     return{
-      banner_list:['static/home/img/Rectangle5@2x(1).png','static/home/img/Rectangle5@2x(1).png','static/home/img/Rectangle5@2x(1).png']
+      banner_list:['http://qianfeng1.qfjava.cn:8502/mp/static/home/Rectangle5@2x(1).png','http://qianfeng1.qfjava.cn:8502/mp/static/home/Rectangle5@2x(1).png','http://qianfeng1.qfjava.cn:8502/mp/static/home/Rectangle5@2x(1).png']
     };
   },
   mounted() {

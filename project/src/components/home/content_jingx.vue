@@ -5,23 +5,23 @@
             <banner-com></banner-com>
             <div class="nav_jx">
                 <div>
-                    <img src="static/home/img/Page1-1.png" alt="">
+                    <img src="http://qianfeng1.qfjava.cn:8502/mp/static/home/Page1-1.png" alt="">
                     <a href="##">美烹宅配</a>
                 </div>
                 <div>
-                    <img src="static/home/img/Page2-1.png" alt="">
+                    <img src="http://qianfeng1.qfjava.cn:8502/mp/static/home/Page2-1.png" alt="">
                     <a href="##">美烹新品</a>
                 </div>
                 <div>
-                    <img src="static/home/img/Page3-1.png" alt="">
+                    <img src="http://qianfeng1.qfjava.cn:8502/mp/static/home/Page3-1.png" alt="">
                     <a href="##">美烹环保</a>
                 </div>
                 <div>
-                    <img src="static/home/img/Page4-1.png" alt="">
+                    <img src="http://qianfeng1.qfjava.cn:8502/mp/static/home/Page4-1.png" alt="">
                     <a href="##">企业团购</a>
                 </div>
                 <div>
-                    <img src="static/home/img/Page5-1.png" alt="">
+                    <img src="http://qianfeng1.qfjava.cn:8502/mp/static/home/Page5-1.png" alt="">
                     <a href="##">美烹优惠</a>
                 </div>
             </div>
@@ -32,16 +32,16 @@
                  <div class="jx_ccc"></div>
             <p class="jx_con">美烹好食</p>
                 <div class="jx_haoshi">
-                    <a href="##"><img src="static/home/img/Rectangle6Copy@2x(2).png" alt=""></a>
-                    <a href="##"><img src="static/home/img/Rectangle6Copy@2x(1).png" alt=""></a>
+                    <a href="##"><img src="http://qianfeng1.qfjava.cn:8502/mp/static/home/Rectangle6Copy@2x(2).png" alt=""></a>
+                    <a href="##"><img src="http://qianfeng1.qfjava.cn:8502/mp/static/home/Rectangle6Copy@2x(1).png" alt=""></a>
                 </div>
             <p class="jx_con" @click="handle_chanpin()">明星产品></p>
                 <div 
             class="content_c" 
             v-for="(item,index) in home_fushi"
-            @click="handleGo(index)"
+            @click="handleGo(item.id)"
             >
-                <img :src="'http://ceshi.qfjava.cn/'+item.imageList"/>
+                <img :src="'http://ceshi.qfjava.cn/'+(item.imageList?item.imageList:'')"/>
                 <p>{{item.goodsName}}</p>
                 <p>{{item.goodsDetail}}</p>
                 <p>{{item.goodsPrice | home_price}}</p>
@@ -50,9 +50,9 @@
                 <div 
             class="content_c" 
             v-for="(item,index) in home_fushi"
-            @click="handleGo(index)"
+            @click="handleGo(item.id)"
             >
-                <img :src="'http://ceshi.qfjava.cn/'+item.imageList"/>
+               <img :src="'http://ceshi.qfjava.cn/'+(item.imageList?item.imageList:'')"/>
                 <p>{{item.goodsName}}</p>
                 <p>{{item.goodsDetail}}</p>
                 <p>{{item.goodsPrice | home_price}}</p>
@@ -61,9 +61,9 @@
                 <div 
             class="content_c" 
             v-for="(item,index) in home_fushi"
-            @click="handleGo(index)"
+            @click="handleGo(item.id)"
             >
-                <img :src="'http://ceshi.qfjava.cn/'+item.imageList"/>
+               <img :src="'http://ceshi.qfjava.cn/'+(item.imageList?item.imageList:'')"/>
                 <p>{{item.goodsName}}</p>
                 <p>{{item.goodsDetail}}</p>
                 <p>{{item.goodsPrice | home_price}}</p>
@@ -108,8 +108,8 @@ export default {
         ...Vuex.mapActions({
             handleHome_fushiget:'home/handleHome_fushiget',
         }),
-        handleGo(index){
-            this.$router.push({path:'/goods',query:{id:index}})
+        handleGo(val){
+            this.$router.push({path:'/goods',query:{id:val}})
         },
         handle_tiaowei(){
             this.$router.push('/home/tiaowei')

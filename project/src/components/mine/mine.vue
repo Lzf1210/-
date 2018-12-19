@@ -54,8 +54,9 @@ export default {
 .top{height:.4rem;width:100%;background:#3E1E1F;}
 .mine {
     width: 100%;
+    height:100%;
 }
-.mine-com {
+.mine-con {
     width: 100%;
     height:100%;
 }

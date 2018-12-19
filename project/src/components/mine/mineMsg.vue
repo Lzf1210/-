@@ -6,7 +6,7 @@
     <div class="mineMsg">
         <div class="nom" >
             <div class="mineImg">
-                <img :src="'http://ceshi.qfjava.cn/'+minemsg.userImage" alt="">
+                <img :src="'http://ceshi.qfjava.cn/'+(minemsg.userImage?minemsg.userImage:'')" alt="">
             </div>
             <div class="mineName">
                 <p class="mobile">{{minemsg.mobile}}</p>
@@ -35,29 +35,21 @@
 <script>
 import Vuex from "vuex";
 import axios from "axios";
-export default {
-    // data(){
-    //     return {
-    //         userImage:"../../../static/img/me.png",
-    //         userName:"黄女士",
-    //         mobile:"123123123123",
-    //     }
-    // },
-   
-    created() {
-        this.handleGetMsg()
+export default { 
+    created(){
+        this.handleGetMsg();  
     },
      computed:{
         ...Vuex.mapState({
 				minemsg:state=>state.mine.minemsg
-			})
+            }),
     },
     methods:{
         ...Vuex.mapActions({
 				handleGetMsg:"mine/handleGetMsg"
-				
 			}),
-    }
+    },
+    
     
 }
 </script>
@@ -67,8 +59,10 @@ export default {
 .mineMsg{height:3.6rem;width:100%;background:#3E1E1F;overflow: hidden;}
 .nom{height:1.6rem;width:100%;margin:5.4% 0 6.1%;display: flex;}
 .mineImg{width:1.6rem;height:1.6rem;margin:0 4.3%;border-radius:.8rem;overflow: hidden;}
-.mineImg>img{width:100%;}
+.mineImg>img{width:100%;height:100%;}
 .mineName{width:30%;font-size:.30rem;display: flex;justify-content:space-around;flex-direction: column;color:#fff;font-family:PingFangSC-Regular;font-weight: 300;letter-spacing:1px}
+.mineName>.mobile{height:.4rem;}
+.mineName>.userName{height:.4rem;}
 .coupon{height:1rem;display: flex;justify-content: space-around;align-items: center;}
 .coupon>li{width:33%;text-align: center;}
 .coupon>li>p:nth-child(1){font-size:.32rem;color:#EFB31F}

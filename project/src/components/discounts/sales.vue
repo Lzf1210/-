@@ -11,7 +11,7 @@
 				<span>热门单品价格直降，购买超划算</span>
 				<div class="salesGoods">
 					<div class="goods" v-for="(item,index) in imgList">
-						<img src="../../../static/discounts/images/details_02.png" class="imgs">
+						<img src="http://qianfeng1.qfjava.cn:8502/mp/static/discounts/images/details_02.png" class="imgs">
 						<h3>{{item.goodsName}}</h3>
 						<h4>{{item.goodsPrice}}</h4>
 						<h5 @click="handleAddGoodsCart(item.id)">立即购买</h5>
@@ -29,6 +29,7 @@
 
 <script>
 	import Vuex from "vuex";
+	import axios from "axios"
 	import BScroll from "better-scroll";
 	export default {
 		data() {
@@ -38,19 +39,28 @@
 		},
 		created() {
 			this.handleGetImg() //页面加载前从数据库获取详情信息    
+
 		},
 		computed: {
 			...Vuex.mapState({
 				imgList: state => state.discounts.imgList,
-
+				
 			})
 		},
 		methods: {
 			...Vuex.mapActions({
 				handleGetImg: "discounts/handleGetImg",
-                handleAddGoodsCart:"discounts/handleAddGoodsCart",
+               
 			}),
-
+		handleAddGoodsCart(id){
+			axios({
+				method: "post",
+				url:"/mp/discounts/buydiscounts?id="+id,
+			}).then((data) => {
+				this.$router.push("/order")
+			})
+			
+		}
 		},
 		mounted() {
 			this.scroll = new BScroll(this.$refs.salesWrapper, {

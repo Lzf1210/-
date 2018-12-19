@@ -18,22 +18,26 @@
 
 <script>
 	import Vuex from "vuex";
+	import axios from "axios"
 	export default{
 		data(){
 			return{
 				show:"true",
+				
 			}
 		},
 		computed:{
 			...Vuex.mapState({
 				allSelect:state=>state.goodscart.allSelect,
 				goodsList:state=>state.goodscart.goodsList,
-				list:state=>state.goodscart.list
+				list:state=>state.goodscart.list,
+				goodsId:state=>state.goodscart.goodsId
 			}),
 			...Vuex.mapGetters({
 				goodsCount:"goodscart/goodsCount"
 			})
 		},
+		
 		methods:{
 			...Vuex.mapActions({
 				handleGoodsDel:"goodscart/handleGoodsDel"
@@ -43,12 +47,25 @@
 			}),
 			handleGoPay(){
 				for(var i=0;i< this.goodsList.length;i++){
+					
 					if(this.goodsList[i].flag == true){
-					  this.$router.push({name:"order"});
+					 
+					  this.goodsId.push(this.goodsList[i].id);
 					}
 				}
+				console.log(this.goodsId)
+				// this.$router.push({name:"order",query:{id:this.goodsId}});
+				
+				axios({
+					method:"get",
+					url:"/mp/order/addorder?goodsId="+this.goodsId,
+					}).then((data)=>{
+						console.log(data.data)
+						// commit("getOrderId",data.data)
+						this.$router.push("/order")
+						
+				})
 			}
-			
 		},
 		created(){
 			this.observer.$on("change",(val)=>{

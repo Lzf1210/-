@@ -3,27 +3,27 @@
 		<div class="safety_con">
 			<div class="safety_top">
 				<div @click="back()">
-					<img src="../../../static/img/back.png">
+					<img src="http://qianfeng1.qfjava.cn:8502/mp/static/img/back.png">
 				</div>
 				<h2>安全中心</h2>
 			</div>
 			<div class="safety_form">
 				<div>
-					<img src="../../../static/img/right.png">
+					<img src="http://qianfeng1.qfjava.cn:8502/mp/static/img/right.png">
 					<p>登录密码</p>
 					<span>修改</span>
 				</div>
 				<div>
-					<img src="../../../static/img/right.png">
+					<img src="http://qianfeng1.qfjava.cn:8502/mp/static/img/right.png">
 					<p>手机验证</p>
 				</div>
 				<div>
-					<img src="../../../static/img/no.png">
+					<img src="http://qianfeng1.qfjava.cn:8502/mp/static/img/no.png">
 					<p>邮箱验证</p>
 					<span>暂不支持此功能</span>
 				</div>
 				<div>
-					<img src="../../../static/img/no.png">
+					<img src="http://qianfeng1.qfjava.cn:8502/mp/static/img/no.png">
 					<p>支付密码</p>
 					<span>设置</span>
 				</div>

@@ -25,11 +25,11 @@ import Vuex from "vuex";
 import BScroll from "better-scroll"
 export default {
     created() {
-        this.handleGetGoods();
+       this.handleAllGoods();
     },
     methods : {
 			...Vuex.mapActions({
-				handleGetGoods:"mine/handleGetGoods"
+				handleAllGoods:"mine/handleAllGoods"
 				
 			})
     },

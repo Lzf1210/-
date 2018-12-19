@@ -5,9 +5,9 @@ export default {
         axios({
             method:"get",
             // http://jianglianglong.qfjava.cn:8080/mp/goods/searchallgoods
-            url:"/mp/goods/searchgoodsbytypeid?typeId=2&_page="+params+"&_limit-1",
+            url:"/mp/goods/searchgoodsbytypeid?typeId=1&_page="+params+"&_limit-1",
         }).then((data)=>{
-            // console.log(params)
+            console.log(data)
                 commit("handleHome_fushiget",data.data)
         })
     },
@@ -15,7 +15,7 @@ export default {
         axios({
             method:"get",
             // url:"http://localhost:3000/home_tiaowei?&id=1&_page="+params+"&_limit=4",
-            url:"/mp/goods/searchgoodsbytypeid?typeId=1&_page="+params+"&_limit=4",
+            url:"/mp/goods/searchgoodsbytypeid?typeId=2&_page="+params+"&_limit=4",
         }).then((data)=>{
             // console.log(params)
                 commit("handleHome_tiaoweiget",data.data)

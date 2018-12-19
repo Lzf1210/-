@@ -2,16 +2,17 @@
     <div class="payment" >
         <div class="wrapper" ref="wrapper">
         	<div class="cartgoodsdetails content">
-				<div class="cartgoodsdetail" v-for="(item,index) in goodsList">
+				<div class="cartgoodsdetail" v-for="(item,index) in paymentGoodsList">
 					<!-- <input type="checkbox" :checked="item.flag"/> -->
 					<div class="cart_center">
 						<div class="cart_left">
-							<img :src="item.img"/>
+							<img :src="'http://ceshi.qfjava.cn/'+item.imageList"/>
 						</div>
 						<div class="goodsinfo">
 							<span>{{item.goodsName}}</span>
-							<span>{{item.goodsSize}}</span>
+							<span>{{item.goodsDetail}}</span>
 							<span>{{item.goodsPrice | sum}}</span>
+							<span class="num"> &nbsp;x {{item.num}}件</span>
 						</div>
 					</div>
 				</div>
@@ -30,18 +31,18 @@ export default {
 		}
 	},
     created() {
-		this.handleGetGoods();
+		this.handlePaymentGoods();
 		
     },
     methods : {
 			...Vuex.mapActions({
-				handleGetGoods:"mine/handleGetGoods"
+				handlePaymentGoods:"mine/handlePaymentGoods"
 				
 			})
     },
     computed:{
 			...Vuex.mapState({
-				goodsList:state=>state.mine.goodsList
+				paymentGoodsList:state=>state.mine.paymentGoodsList
 			})
 	},
 	filters:{
@@ -127,6 +128,6 @@ export default {
 		font-size: 16px;
 		color: #BE141C;
 	}
-	
+	.num{position: relative;left:1.5rem;top:-.395rem;}
 
 </style>

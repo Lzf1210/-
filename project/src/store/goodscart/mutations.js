@@ -6,6 +6,7 @@ export default {
 	   
    },
    handleAllToggleSelected(state){
+	   console.log(state)
 	   state.allSelect = !state.allSelect;
 	   state.goodsList.map((item)=>{
 		   item.flag = state.allSelect
@@ -35,5 +36,17 @@ export default {
    handleAdd(state,index){
    		state.goodsList[index].num++
    },
- 
+   handleOrder(state,params) {
+	state.goodsOrder=params;
+	
+},
+handleDiscount(state,params){
+	state.goodsDiscount=params
+},
+handlePrice(state,params){
+	state.goodsPrice=params
+},
+getOrderId(state,parmas){
+	state.goodsGetOrderId=parmas
+}
 }

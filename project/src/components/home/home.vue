@@ -21,40 +21,6 @@ import header from './header.vue';
 export default {
     components:{
         'header-com':header,
-    },
-    data(){
-        return{
-            // comName:content_fushi,
-        }
-    },
-    created(){
-        // console.log(this.$route.query.id);
-        // switch (this.$route.query.id) {
-        //     case 1:
-        //         this.comName = content_tiaowei;
-        //         break;
-        //     case 2:
-        //         this.comName = content_fushi;
-        //         break;
-        //     case 3:
-        //         this.comName = content_xiaoshi;
-        //         break;
-        //     case 4:
-        //         this.comName = content_guoshu;
-        //         break;
-        //     case 5:
-        //         this.comName = content_jingx;   
-        //         break;
-        //     case 6:
-        //         this.comName = content_goodsa;
-        //         break;  
-        
-        //     default:
-        //         break;
-        // }
-    },
-    methods:{
-        
     }
 }
 </script>

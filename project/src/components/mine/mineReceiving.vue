@@ -2,11 +2,11 @@
     <div class="receiving">
         <div class="wrapper" ref="wrapper">
         <div class="cartgoodsdetails content">
-		<div class="cartgoodsdetail" v-for="(item,index) in goodsList">
+		<div class="cartgoodsdetail" v-for="(item,index) in receivingGoodsList">
 			<!-- <input type="checkbox" :checked="item.flag"/> -->
 			<div class="cart_center">
 				<div class="cart_left">
-					<img :src="item.img"/>
+					<img :src="'http://ceshi.qfjava.cn/'+item.imageList"/>
 				</div>
 				<div class="goodsinfo">
 					<span>{{item.goodsName}}</span>
@@ -27,20 +27,20 @@ import Vuex from "vuex";
 import BScroll from "better-scroll"
 export default {
     created() {
-        this.handleGetGoods();
+        this.handleReceivingGoods();
     },
     methods : {
         back(){
             this.$router.back("/mine")
         },
 			...Vuex.mapActions({
-				handleGetGoods:"mine/handleGetGoods"
+				handleReceivingGoods:"mine/handleReceivingGoods"
 				
 			})
     },
     computed:{
 			...Vuex.mapState({
-				goodsList:state=>state.mine.goodsList
+				receivingGoodsList:state=>state.mine.receivingGoodsList
 			})
 	},
 	filters:{

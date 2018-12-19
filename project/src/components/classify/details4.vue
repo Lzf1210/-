@@ -1,7 +1,7 @@
 <template>
 	<div class="details4">
 		<div class="banner">
-			<img src="../../../static/classifyImg/banner_05.png" alt="">
+			<img src="http://qianfeng1.qfjava.cn:8502/mp/static/classifyImg/banner_05.png" alt="">
 		</div>
 		<div class="leader">
 			<div class="borderl"></div>
@@ -24,19 +24,19 @@
 			return {
 				lists : [
 					{
-						imgsrc:"../../../static/classifyImg/details4_01.png",
+						imgsrc:"http://qianfeng1.qfjava.cn:8502/mp/static/classifyImg/details4_01.png",
 						name : "全部",
 						id:1
 							
 					},
 					{
-						imgsrc:"../../../static/classifyImg/details4_02.png",
+						imgsrc:"http://qianfeng1.qfjava.cn:8502/mp/static/classifyImg/details4_02.png",
 						name:"鱼虾冻品",
 						id:2
 						
 					},
 					{
-						imgsrc:"../../../static/classifyImg/details4_03.png",
+						imgsrc:"http://qianfeng1.qfjava.cn:8502/mp/static/classifyImg/details4_03.png",
 						// name:"干果蜜饯",
 						id:3
 					}

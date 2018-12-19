@@ -1,7 +1,7 @@
 <template>
 	<div class="details3">
 		<div class="banner">
-			<img src="../../../static/classifyImg/banner_04.png" alt="">
+			<img src="http://qianfeng1.qfjava.cn:8502/mp/static/classifyImg/banner_04.png" alt="">
 		</div>
 		<div class="leader">
 			<div class="borderl"></div>
@@ -24,29 +24,29 @@
 			return {
 				lists : [
 					{
-						imgsrc:"../../../static/classifyImg/details3_01.png",
+						imgsrc:"http://qianfeng1.qfjava.cn:8502/mp/static/classifyImg/details3_01.png",
 						name : "全部",
 						id:1
 							
 					},
 					{
-						imgsrc:"../../../static/classifyImg/details3_02.png",
+						imgsrc:"http://qianfeng1.qfjava.cn:8502/mp/static/classifyImg/details3_02.png",
 						name:"新鲜水果",
 						id:2
 						
 					},
 					{
-						imgsrc:"../../../static/classifyImg/details3_03.png",
+						imgsrc:"http://qianfeng1.qfjava.cn:8502/mp/static/classifyImg/details3_03.png",
 						name:"叶菜类",
 						id:3
 					},
 					{
-						imgsrc:"../../../static/classifyImg/details3_04.png",
+						imgsrc:"http://qianfeng1.qfjava.cn:8502/mp/static/classifyImg/details3_04.png",
 						name:"豆制品类",
 						id:4
 					},
 					{
-						imgsrc:"../../../static/classifyImg/details3_05.png",
+						imgsrc:"http://qianfeng1.qfjava.cn:8502/mp/static/classifyImg/details3_05.png",
 						name:"茄果瓜花",
 						id:5
 					},

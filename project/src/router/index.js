@@ -2,15 +2,20 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Home from '../components/home/home.vue'
 import Open from '../components/mine/open.vue'
+//discounts
 import Discounts from '../components/discounts/discounts.vue'
 import sales from '../components/discounts/sales.vue'
 import times from '../components/discounts/times.vue'
-import cheap from '../components/discounts/cheap.vue'
-
-import Goodscart from '../components/goodscart/goodscart.vue'
+// classify
 import Classify from '../components/classify/classify.vue'
-
-
+import details from "../components/classify/details.vue"
+import details1 from "../components/classify/details1.vue"
+import details2 from "../components/classify/details2.vue"
+import details3 from "../components/classify/details3.vue"
+import details4 from "../components/classify/details4.vue"
+import details5 from "../components/classify/details5.vue"
+import details6 from "../components/classify/details6.vue"
+//mine
 import Mine from '../components/mine/mine.vue'
 import login from '../components/mine/login.vue'
 import allOrderheader from '../components/mine/allOrderheader.vue'
@@ -19,34 +24,24 @@ import payment from '../components/mine/minePayment.vue'
 import allorder from '../components/mine/allorder.vue'
 import shipments from '../components/mine/mineShipments.vue'
 import receiving from '../components/mine/mineReceiving.vue'
-
+import evaluate from '../components/mine/mineEvaluate.vue'
 import myself from '../components/mine/myself.vue'
 import safety from '../components/mine/safety.vue'
-
-
-
+//goodscart && home
+import Goodscart from '../components/goodscart/goodscart.vue'
 import jingx from '../components/home/content_jingx.vue'
 import goodsa from '../components/home/content_goodsa.vue'
 import tiaowei from '../components/home/content_tiaowei.vue'
 import fushi from '../components/home/content_fushi.vue'
 import xiaoshi from '../components/home/content_xiaoshi.vue'
 import guoshu from '../components/home/content_guoshu.vue'
-
 import goods from '../components/goodsdetail/goods.vue'
-
-
 import goPay from '../components/goodscart/goPay.vue'
 import Order from '../components/goodscart/order.vue'
 import paySuccess from '../components/goodscart/paySuccess.vue'
 
-// classify
-import details from "../components/classify/details.vue"
-import details1 from "../components/classify/details1.vue"
-import details2 from "../components/classify/details2.vue"
-import details3 from "../components/classify/details3.vue"
-import details4 from "../components/classify/details4.vue"
-import details5 from "../components/classify/details5.vue"
-import details6 from "../components/classify/details6.vue"
+
+
 
 
 Vue.use(Router)
@@ -179,21 +174,6 @@ const router = new Router({
 			name: "mine",
 			path: "/mine",
 			component: Mine,
-			children: [
-				
-				
-				
-				// {
-				//   name:"evaluate",
-				//   path: "/evaluate",
-				//   component: evaluate
-				// },
-				// {
-				//   name:"serve",
-				//   path: "/serve",
-				//   component: serve
-				// }
-			]
 		},
 		{
 			path: "/myself",
@@ -235,6 +215,11 @@ const router = new Router({
 				  name:"receiving",
 				  component: receiving,
 				}, 
+				{
+				  name:"evaluate",
+				  path: "/evaluate",
+				  component: evaluate
+				},
 			]
 		},
 
@@ -272,19 +257,6 @@ const router = new Router({
 	]
 })
 
-// router.beforeEach((to,from,next)=>{
-// 	let flag = false;
-// 	let routers = ["order","goodscart","site","mine"];
-// 	if(routers.indexOf(to.name)>=0){
-// 		if(!flag){
-// 			router.push("/login")
-// 		}else{
-// 			next();
-// 		}
-// 	}else{
-// 		next();
-// 	}
-// })
 
 
 export default router;

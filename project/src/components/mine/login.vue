@@ -111,13 +111,7 @@
 							this.$router.push('/home/jingx')
 						},2000)
 								
-	// 							this.$message({
-	// 								message: '登录成功',
-	// 								type: 'success'
-	// 								})
-	// this.$store.commit('$_setStorage', {mobile:this.objPhone.mobile})
-	// this.$store.commit('$_setLogin', '1')
-	// this.$router.push("/home/jingx")
+	
 							
 					
 						
@@ -131,13 +125,13 @@
 						// 	},4000)
 						// 	this.$router.push('/home')
 						// }
-				// 		// else if (data.data[0].password != this.objPhone.password) {
-				// 		// 	this.objPhone.password = "密码输入错误";
-				// 		// } else if (data.data[0].mobile == this.objPhone.mobile && 
-				// 		// data.data[0].password == this.objPhone.password && 
-				// 		// data.data[0].code == this.objPhone.code) {
-				// 		// 	// this.$router.push('/home')
-				// 		// }
+						// else if (data.data[0].password != this.objPhone.password) {
+						// 	this.objPhone.password = "密码输入错误";
+						// } else if (data.data[0].mobile == this.objPhone.mobile && 
+						// data.data[0].password == this.objPhone.password && 
+						// data.data[0].code == this.objPhone.code) {
+						// 	// this.$router.push('/home')
+						// }
 
 					 })
 				 }
@@ -151,7 +145,7 @@
 	.login {
 		width: 100%;
 		height: 100%;
-		background: url(../../../static/img/login_3.png) no-repeat;
+		background: url(http://qianfeng1.qfjava.cn:8502/mp/static/img/login_3.png) no-repeat;
 		position: fixed;
 		left:0;
 		z-index:3;

@@ -10,7 +10,7 @@
             </li>
             <li @click="close()" class="">
                 <a href="#">
-                    <img src="../../../static/img/tuichu.png" alt="">
+                    <img src="http://qianfeng1.qfjava.cn:8502/mp/static/img/tuichu.png" alt="">
                     退出登录
                 </a>
             </li>
@@ -27,22 +27,22 @@ export default {
             account : [
                 {
                     name : "myself",
-                    img : "../../../static/img/gerenxinxi.png",
+                    img : "http://qianfeng1.qfjava.cn:8502/mp/static/img/gerenxinxi.png",
                     title : "个人信息"
                 },
                 {
                     name : "site",
-                    img : "../../../static/img/shouhuodizhi.png",
+                    img : "http://qianfeng1.qfjava.cn:8502/mp/static/img/shouhuodizhi.png",
                     title : "收货地址"
                 },
                 {
                     name : "safety",
-                    img : "../../../static/img/anquanzhongxin.png",
+                    img : "http://qianfeng1.qfjava.cn:8502/mp/static/img/anquanzhongxin.png",
                     title : "安全中心"
                 },
                 {
                     // name : "options",
-                    img : "../../../static/img/shezhi.png",
+                    img : "http://qianfeng1.qfjava.cn:8502/mp/static/img/shezhi.png",
                     title : "设置"
                 },
             ],

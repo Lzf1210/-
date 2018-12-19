@@ -2,7 +2,7 @@
     <div class="close">
         
         <h3 @click="cancel()">
-            <img src="../../../static/img/fanhui.png" alt="">
+            <img src="http://qianfeng1.qfjava.cn:8502/mp/static/img/fanhui.png" alt="">
         </h3>
         <h2>确定要退出当前登录吗？</h2>
         <div class="confirm">

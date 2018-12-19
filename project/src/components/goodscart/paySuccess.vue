@@ -1,14 +1,14 @@
 <template>
 	<div class="pay">
 		<div class="immg">
-			<img src="../../../static/goodscart/l.png"/>
+			<img src="http://qianfeng1.qfjava.cn:8502/mp/static/goodscart/l.png"/>
 		</div>
 		<div class="paypicture">
-			<img src="../../../static/goodscart/lalala.png" />
+			<img src="http://qianfeng1.qfjava.cn:8502/mp/static/goodscart/lalala.png" />
 		</div>
 		<p>扫码下单</p>
 		<div class="back">
-			<img src="../../../static/img/back.png"  @click="handleBack()"/>
+			<img src="http://qianfeng1.qfjava.cn:8502/mp/static/img/back.png"  @click="handleBack()"/>
 		</div>
 	</div>
 </template>
@@ -31,7 +31,7 @@
 		width: 100%;
 		height: 100%;
 		padding-top: 0.4rem;
-		background: url(../../../static/goodscart/666.jpg);
+		background: url(http://qianfeng1.qfjava.cn:8502/mp/static/goodscart/666.jpg);
 		z-index:2;
 	}
 	.pay>.immg{

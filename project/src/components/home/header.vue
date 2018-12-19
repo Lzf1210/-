@@ -1,9 +1,9 @@
 <template>
     <div class="header">
         <div class='header_t'>
-            <img src="./img/Page 1 Copy 2.png" alt="" @click="search()">
+            <img src="http://qianfeng1.qfjava.cn:8502/mp/static/img/Page1Copy 2.png" alt="" @click="search()">
             <input type="text" placeholder="想吃点什么吗?" class="search" name="search" v-model="searchs">
-            <img src="./img/Group 2.png" alt="">
+            <img src="http://qianfeng1.qfjava.cn:8502/mp/static/img/Group2.png" alt="">
             <div class="search-img">
                 <div class="search_l"></div>
             <div class="search_r"></div>

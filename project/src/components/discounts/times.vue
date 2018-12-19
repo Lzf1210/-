@@ -9,7 +9,7 @@
 					<p class="p3"></p>
 				</div>
 				<div class="caseOne">
-					<img src="../../../static/discounts/images/page-1-健康生活_03.png" alt="">
+					<img src="http://qianfeng1.qfjava.cn:8502/mp/static/discounts/images/page-1-健康生活_03.png" alt="">
 					<p>美烹起源</p>
 					<p>近年，美烹在北京进行了一次入户调研，调研结果发现，大部分年轻妈妈会用各种途径去寻
 						找性价比高的产品，价格和安全是所有妈妈们关注的重点。而在烟台，并没有一家能够放心
@@ -20,7 +20,7 @@
 					<p>美烹起源</p>
 					<p>从源头把控生鲜食品安全</p>
 					<div>
-						<img src="../../../static/discounts/images/page-1-_03.jpg">
+						<img src="http://qianfeng1.qfjava.cn:8502/mp/static/discounts/images/page-1-_03.jpg">
 						<section>
 							<h3>美烹自营品牌</h3>
 							<h4>以美烹的选食标准去<br>选择更多的亲民好食</h4>
@@ -32,10 +32,10 @@
 							<h3>自有物流配送</h3>
 							<h4>烟台五区自有物流配送<br>新鲜极速送达</h4>
 						</section>
-						<img src="../../../static/discounts/images/page-1-健康生活_06.jpg">
+						<img src="http://qianfeng1.qfjava.cn:8502/mp/static/discounts/images/page-1-健康生活_06.jpg">
 					</div>
 					<div>
-						<img src="../../../static/discounts/images/page-1-健康生活_09.jpg">
+						<img src="http://qianfeng1.qfjava.cn:8502/mp/static/discounts/images/page-1-健康生活_09.jpg">
 						<section>
 							<h3>美烹自营品牌</h3>
 							<h4>以美烹的选食标准去<br>选择更多的亲民好食</h4>
@@ -45,7 +45,7 @@
 				<div class="caseThree">
 					<p>美烹优势</p>
 					<p>从源头把控生鲜食品安全</p>
-					<img src="../../../static/discounts/images/page-1-健康生活_12.png" alt="" class="caseThree-img">
+					<img src="http://qianfeng1.qfjava.cn:8502/mp/static/discounts/images/page-1-健康生活_12.png" alt="" class="caseThree-img">
 					<section class="sce-con">
 						<h5>生鲜食材<br>农作物、肉禽蛋奶、生鲜果蔬、海产品等</h5>
 						<h6><span>59</span>项农药残留不检出</h6>
@@ -54,7 +54,7 @@
 						<h5>预包装类食品</h5>
 						<h6>不含有漂白剂、膨松剂、着色剂、防腐剂等23个类别，2000多种食品添加剂(配料表添加剂成分检查)</h6>
 					</section>
-					<img src="../../../static/discounts/images/page-1-健康生活_01_03.png" alt="" class="caseThree-img">
+					<img src="http://qianfeng1.qfjava.cn:8502/mp/static/discounts/images/page-1-健康生活_01_03.png" alt="" class="caseThree-img">
 					<section class="sce-con">
 						<h5>生鲜食材<br>农作物、肉禽蛋奶、生鲜果蔬、海产品等</h5>
 						<h6><span>252</span>项农药残留不检出</h6>
@@ -169,7 +169,7 @@
 		height: .38rem;
 
 		line-height: .38rem;
-		background: url(../../../static/discounts/images/page-1-_03.png) no-repeat center;
+		background: url(http://qianfeng1.qfjava.cn:8502/mp/static/discounts/images/page-1-_03.png) no-repeat center;
 		background-size: 100% .24rem;
 	}
 
@@ -196,7 +196,7 @@
 		font-family: PingFangSC-Medium, sans-serif;
 		height: .38rem;
 		line-height: .38rem;
-		background: url(../../../static/discounts/images/page-1-_03.png) no-repeat center;
+		background: url(http://qianfeng1.qfjava.cn:8502/mp/static/discounts/images/page-1-_03.png) no-repeat center;
 		background-size: 100% .24rem;
 		text-align: center;
 	}
@@ -263,7 +263,7 @@
 		font-family: PingFangSC-Medium, sans-serif;
 		height: .38rem;
 		line-height: .38rem;
-		background: url(../../../static/discounts/images/page-1-_03.png) no-repeat center;
+		background: url(http://qianfeng1.qfjava.cn:8502/mp/static/discounts/images/page-1-_03.png) no-repeat center;
 		background-size: 100% .24rem;
 		text-align: center;
 		margin: .64rem 0 .332rem;
@@ -303,7 +303,7 @@
 	.sce-con span {
 		color: #BA874F;
 		padding-left: .38rem;
-		background: url(../../../static/discounts/images/gou_03.png) no-repeat;
+		background: url(http://qianfeng1.qfjava.cn:8502/mp/static/discounts/images/gou_03.png) no-repeat;
 		background-size: 0.38rem 0.21rem;
 	}
 

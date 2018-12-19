@@ -1,7 +1,7 @@
 <template>
 	<div class="cartdetails">
 		<div class="details">
-		 <img src="../../../static/img/lanzi.png"/>
+		 <img src="http://qianfeng1.qfjava.cn:8502/mp/static/img/lanzi.png"/>
 		 <p>购物篮中空空的喔</p>
 		 <div>挑选食材</div>
 		</div>

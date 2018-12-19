@@ -38,7 +38,7 @@ export default {
 </script>
 
 <style scoped>
-. goodscart_home{
+.goodscart_home{
 	width:100%;
 	height:100%; 
 	}

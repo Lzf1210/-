@@ -1,4 +1,7 @@
 <template>
+	<div>
+
+	
 	<div class="wrapper" ref="detailWrapper">
         <div class="content">
 		
@@ -8,7 +11,7 @@
 		    <div class="swiper-wrapper">
 		        <div class="swiper-slide">
 		        	<!-- <img  :src="'http://ceshi.qfjava.cn/'+goodsDetailList.imageList"/> -->
-							<img :src="'http://ceshi.qfjava.cn/'+goodsDetailList.imageList"/>
+							<img :src="'http://ceshi.qfjava.cn/'+(goodsDetailList.imageList?goodsDetailList.imageList:'')"/>
 		        </div>
 		    </div>
 		    <!-- 如果需要分页器 -->
@@ -33,25 +36,25 @@
 				<ul>
 					<li>
 						<div>
-							<img src="static/goodsimg/1.png"/>
+							<img src="http://qianfeng1.qfjava.cn:8502/mp/static/goodsimg/1.png"/>
 						</div>
 						<p>非转基因</p>
 					</li>
 					<li>
 						<div>
-							<img src="static/goodsimg/2.png"/>
+							<img src="http://qianfeng1.qfjava.cn:8502/mp/static/goodsimg/2.png"/>
 						</div>
 						<p>产地直供</p>
 					</li>
 					<li>
 						<div>
-							<img src="static/goodsimg/3.png"/>
+							<img src="http://qianfeng1.qfjava.cn:8502/mp/static/goodsimg/3.png"/>
 						</div>
 						<p>发酵食品</p>
 					</li>
 					<li>
 						<div>
-							<img src="static/goodsimg/4.png"/>
+							<img src="http://qianfeng1.qfjava.cn:8502/mp/static/goodsimg/4.png"/>
 						</div>
 						<p>国际保证</p>
 					</li>
@@ -130,30 +133,30 @@
 				<h1>美烹的产品</h1>
 				<p>美烹生鲜我们提供每日食用的食物与食品。这些食材不稀奇也不难购买，却值得被细细品尝与分享。我们尝试在稀疏平常的日子里去细细探索他们的魅力。所以我们倾注了大量时间挑选每一款食材为您提供最大的便利。这个过程就好比酿造，不能着急不能分心。因此，我们的每一个员工都是匠心酿造者，效法酵素及酿造的精神寻觅好食，将那些被忙碌中忽略的美食一一挖掘在您的眼前。</p>
 		</div>
-		<img src="static/goodsimg/味噌汤.png"/>
+		<img src="http://qianfeng1.qfjava.cn:8502/mp/static/goodsimg/味噌汤.png"/>
 		<div class="chanpin">
 			<h1>美烹的每一克</h1>
 			<p>平凡的原料有着不平凡的价值。所展示的食材生活中随处可见，但是它的每一克都有着你想不到的价值。味噌是一种调味品，以营养丰富味道独特而风靡日本。</p>
 		</div>
-		<img src="static/goodsimg/豆腐.png"/>
+		<img src="http://qianfeng1.qfjava.cn:8502/mp/static/goodsimg/豆腐.png"/>
 		<div class="chanpin">
 			<h1>美烹的工艺</h1>
 			<p>食材和食品都有严谨的挑选过程，排除非必要性的加工过程，尽量保护食材的原有味道。味噌是由发酵过的大豆（黄豆）制成，主要为糊状。是一种调味料，也被用作为汤底。</p>
 		</div>
-		<img src="static/goodsimg/豆腐汤.png"/>
+		<img src="http://qianfeng1.qfjava.cn:8502/mp/static/goodsimg/豆腐汤.png"/>
 		<div class="chanpin">
 			<h1>美烹的工艺</h1>
 			<p>食材和食品都有严谨的挑选过程，排除非必要性的加工过程，尽量保护食材的原有味道。味噌是由发酵过的大豆（黄豆）制成，主要为糊状。是一种调味料，也被用作为汤底。</p>
 		</div>
-		<img src="static/goodsimg/味增汤2.png"/>
+		<img src="http://qianfeng1.qfjava.cn:8502/mp/static/goodsimg/味增汤2.png"/>
 	</div>
         
         </div>
 				<div class="imgg">
-					<img src="../../../static/img/back.png" @click="handleBack()">
+					<img src="http://qianfeng1.qfjava.cn:8502/mp/static/img/back.png" @click="handleBack()">
 				</div>
 	</div>
-       
+       </div>
 </template>
 
 <script>

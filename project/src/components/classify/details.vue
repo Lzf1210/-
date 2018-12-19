@@ -1,7 +1,7 @@
 <template>
 	<div class="details">
 		<div class="banner">
-			<img src="../../../static/classifyImg/banner_01.png" alt="">
+			<img src="http://qianfeng1.qfjava.cn:8502/mp/static/classifyImg/banner_01.png" alt="">
 		</div>
 		<div class="leader">
 			<div class="borderl"></div>
@@ -27,33 +27,33 @@
 			return {
 				lists : [
 					{
-						imgsrc:"../../../static/classifyImg/details_01.png",
+						imgsrc:"http://qianfeng1.qfjava.cn:8502/mp/static/classifyImg/details_01.png",
 						name : "全部",
 						id:1
 							
 					},
 					{
-						imgsrc:"../../../static/classifyImg/details_02.png",
+						imgsrc:"http://qianfeng1.qfjava.cn:8502/mp/static/classifyImg/details_02.png",
 						name:"果干蜜饯",
 						id:2
 					},
 					{
-						imgsrc:"../../../static/classifyImg/details_03.png",
+						imgsrc:"http://qianfeng1.qfjava.cn:8502/mp/static/classifyImg/details_03.png",
 						name:"调味作料",
 						id:3
 					},
 					{
-						imgsrc:"../../../static/classifyImg/details_04.png",
+						imgsrc:"http://qianfeng1.qfjava.cn:8502/mp/static/classifyImg/details_04.png",
 						name:"调味酱料",
 						id:4
 					},
 					{
-						imgsrc:"../../../static/classifyImg/details_05.png",
+						imgsrc:"http://qianfeng1.qfjava.cn:8502/mp/static/classifyImg/details_05.png",
 						name:"调味组合",
 						id:5
 					},
 					{
-						imgsrc:"../../../static/classifyImg/details_06.png",
+						imgsrc:"http://qianfeng1.qfjava.cn:8502/mp/static/classifyImg/details_06.png",
 						name:"发酵食醋",
 						id:6
 					}

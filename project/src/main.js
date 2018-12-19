@@ -23,19 +23,6 @@ Vue.prototype.observer  = center;
 
 
 
-router.beforeEach((to, from, next) => {
-  if (to.matched.some(m => m.meta.auth)) {
-    if (window.localStorage.isLogin === '1') {
-      next()
-    } else if (to.path !== '/') {
-      next({path: '/login'})
-      Vue.prototype.$message.warning('检测到您还未登录,请登录后操作！')
-    }
-  } else {
-    next()
-  }
-})
-
 
 
 /* eslint-disable no-new */

@@ -1,24 +1,25 @@
 <template>
 	<div>
 	<div class="kong"></div>
-	<div class="goPay">
+	<form action="http://ceshi.chenjunbo.xin/payment/weixinpay" method="get" class="goPay">
 		<p>
 			<label>&nbsp;订单号&nbsp;&nbsp;:</label>
-			<input type="text">
+			<input type="text" v-model="goodsGetOrderId">
 		</p>
 		<p>
 			<label>支付金额:</label>
-			<input type="text" :value="goodsCount.goodsNumPrice | price">
+			<input type="text" value="￥1.00">
 		</p>
 		<p>
 			<label>商品介绍:</label>
-			<input type="text">
+			<input type="text" value="美烹">
 		</p>
-		<button @click="go()">确认支付</button>
+		
 		<div class="buut">
-			<img src="../../../static/img/back.png" @click="handleBack()">
+			<img src="http://qianfeng1.qfjava.cn:8502/mp/static/img/back.png" @click="handleBack()">
 		</div>
-	</div>
+		<button>确认支付</button>
+	</form>
 	
 	</div>
 </template>
@@ -26,18 +27,27 @@
 <script>
 	import Vuex from "vuex";
 	export default{
-		methods:{
-		handleBack(){
-			this.$router.back();
-		},
-		go(){
-			this.$router.push("/paySuccess")
-		}
+		
+		created() {
+			this.getOrderId()
 		},
 		computed:{
 			...Vuex.mapGetters({
 				goodsCount:"goodscart/goodsCount"
+			}),
+			...Vuex.mapState({
+				goodsGetOrderId:state=>state.goodscart.goodsGetOrderId
 			})
+		},
+		methods:{
+			handleBack(){
+				this.$router.back();
+			},
+			...Vuex.mapActions({
+					getOrderId:"goodscart/getOrderId"
+				
+			}),
+		
 		},
 		filters:{
 			"price":(val)=>{
@@ -48,11 +58,7 @@
 </script>
 
 <style>
-.top{
-	height: 100%;
-	width: 100%;
-}
-	
+
 
 .kong{
 	width:100%;
@@ -69,7 +75,7 @@
 	padding-right: 1.4rem;
 	overflow: hidden;
 	z-index: 5;
-	background: url(../../../static/goodscart/33.png) center center;
+	background: url(http://qianfeng1.qfjava.cn:8502/mp/static/goodscart/33.png) center center;
 }	
 .goPay>p{
 	width: 100%;

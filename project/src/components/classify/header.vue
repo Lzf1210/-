@@ -1,7 +1,7 @@
 <template>
 	<div class="header">
 		<div class="header_input">
-			<img src="../../../static/classifyImg/search_01.png" alt="">
+			<img src="http://qianfeng1.qfjava.cn:8502/mp/dist/static/classifyImg/search_01.png" alt="">
 			<input type="text" placeholder="想吃点什么吗？">
 		</div>
 		

@@ -24,32 +24,32 @@ export default {
             orders : [
                 {
                     name : "payment",
-                    img : "../../../static/img/daifukuan.png",
+                    img : "http://qianfeng1.qfjava.cn:8502/mp/static/img/daifukuan.png",
                     title : "待付款",
                     id:1
                 },
                 {
                     name : "shipments",
-                    img : "../../../static/img/daifahuo.png",
+                    img : "http://qianfeng1.qfjava.cn:8502/mp/static/img/daifahuo.png",
                     title : "待发货",
                     id:3
                 },
                 {
                     name : "receiving",
-                    img : "../../../static/img/daishouhuo.png",
+                    img : "http://qianfeng1.qfjava.cn:8502/mp/static/img/daishouhuo.png",
                     title : "已付款",
                     id:2
 
                 },
                 {
                     name : "evaluate",
-                    img : "../../../static/img/daipingjia.png",
+                    img : "http://qianfeng1.qfjava.cn:8502/mp/static/img/daipingjia.png",
                     title : "已发货",
                     id:4
                 },
                 {
                     // name : "serve",
-                    img : "../../../static/img/shouhou.png",
+                    img : "http://qianfeng1.qfjava.cn:8502/mp/static/img/shouhou.png",
                     title : "售后服务"
                 }
             ],
@@ -62,7 +62,7 @@ export default {
 				method:"get",
 				url:"/mp/order/myorder?status="+this.orders[index].id,
 			}).then((data)=>{
-				console.log(data)
+				// console.log(data)
 			});
         }
     }

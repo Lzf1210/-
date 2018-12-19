@@ -29,7 +29,7 @@ export default {
 .open{
     width:100%;
     height:100%;
-    background: url(../../../static/img/open.jpg) no-repeat center center;
+    background: url(http://qianfeng1.qfjava.cn:8502/mp/static/img/open.jpg) no-repeat center center;
     position: fixed;
     left:0;
     z-index: 1000;

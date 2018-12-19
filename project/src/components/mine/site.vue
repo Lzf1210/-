@@ -3,7 +3,7 @@
         <div class="top"></div>
         <div class="title">
             <p @click="back()">
-                <img src="../../../static/img/back.png" alt="">
+                <img src="http://qianfeng1.qfjava.cn:8502/mp/static/img/back.png" alt="">
             </p>
             <p>
                 添加收货地址
@@ -13,7 +13,7 @@
                 
             </p>
         </div>
-        <form action="" method="post">
+        <form action="">
             <p>
                 <label for="name">收货人</label>
                 <input type="text" id="name" name="name" v-model="name">
@@ -85,16 +85,18 @@ export default {
             axios({
                 method:"get",
                 url:"/mp/address/addaddress?name="+this.name+"&phone="+this.phone+"&address="+this.address+"&detail="+this.detail+"&addressType="+this.title[Index]+"&defaultAddress="+this.value2,
-                // data:{
-                //     name:this.name,
-                //     phone:this.phone,
-                //     address:this.address,
-                //     detail:this.detail,
-                //     addressType:this.title[Index],
-                //     defaultAddress:this.value2
-                // }
+               
             }).then((data)=>{
-                console.log(data)
+                
+						Toast({
+							message: '修改成功',
+							iconClass: 'icon icon-success'
+						});
+						setTimeout(()=>{
+							_this.$router.push("/mine")
+						},2000)
+						
+					
             })
        }
     }
@@ -103,7 +105,7 @@ export default {
 
 <style>
 .top{height:.4rem;width:100%;}
-.site{width:100%;height:100%;position:fixed;left:0;z-index:2;background: #fff}
+.site{width:100%;height:100%;position:fixed;left:0;top:0;z-index:2;}
 .site>.title{height:.88rem;width:100%;display: flex;justify-content: space-between;padding:0 4.4%;align-items: center}
 .site>.title>p:nth-child(2){font-size:.34rem;font-family:PingFangSC-Regular;flex: 1;text-align: center}
 .site>.title>p:nth-child(3){font-size:.26rem;font-family:PingFangSC-Regular}

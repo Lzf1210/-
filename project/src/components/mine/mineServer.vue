@@ -19,17 +19,17 @@ export default {
             server : [
                 {
                     // name : "like",
-                    img : "../../../static/img/xihuan.png",
+                    img : "http://qianfeng1.qfjava.cn:8502/mp/static/img/xihuan.png",
                     title : "我喜欢的"
                 },
                 {
                     // name : "service",
-                    img : "../../../static/img/kefu.png",
+                    img : "http://qianfeng1.qfjava.cn:8502/mp/static/img/kefu.png",
                     title : "客服"
                 },
                 {
                     // name : "recommend",
-                    img : "../../../static/img/tuijian.png",
+                    img : "http://qianfeng1.qfjava.cn:8502/mp/static/img/tuijian.png",
                     title : "推荐有礼"
                 }
             ]

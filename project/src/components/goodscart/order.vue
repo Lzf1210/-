@@ -1,38 +1,38 @@
 <template>
 	<div class="order">
 		<div class="header">
-			<img src="../../../static/goodscart/back.png" @click="handleAck()"/>
+			<img src="http://qianfeng1.qfjava.cn:8502/mp/static/goodscart/back.png" @click="handleAck()"/>
 			<h1>确认订单</h1>
 		</div>
 		<div class="wrapper" ref="wrapper">
 		<div class="conent">
 		<div class="address">
 			<ul>
-				<li><p>收货人：黄女士</p><p>12312312312</p></li>
-				<li><p>收货地址：北京 北京市 朝阳区 朝阳大街</p></li>
+				<li><p>收货人：{{goodsOrder.name}}</p><p>{{goodsOrder.phone}}</p></li>
+				<li><p>收货地址：{{goodsOrder.address}}</p></li>
 				<li><p>（收货不便时，可选择免费代收货服务）</p></li>
 			</ul>
 		</div>
 		<div class="list">
 			<div class="listheader">
 				<p>商品清单</p>
-				<p>共&nbsp;<span>{{goodsCount.goodsNumCount}}</span>&nbsp;件</p>
+				<p>商品共&nbsp;<span>{{goodsDiscount.length?goodsDiscount.length:0}}</span>&nbsp;件</p>
 			</div>
-			<div class="shoplist">
+			<div class="shoplist"  v-for="(item,index) in goodsDiscount">
 				<ul>
 					<li>
 						<div class="shoplistImg">
-							<img src="../../../static/goodscart/醋.png"/>
+							<img src="http://qianfeng1.qfjava.cn:8502/mp/static/goodscart/醋.png"/>
 						</div>
 						<div class="shangpin">
 							<ul>
+				
 								<li>
-									<p>一果泡醋草莓醋</p>
-									<p>¥11.52</p>
-								</li>
-								<li>
-									<p class="guige">410g/瓶</p>
-									<p class="shuliang">x1</p>
+									<p>{{item.goods.goodsName}}</p>
+									<p>¥{{item.goods.goodsPrice}}</p>
+									<br/>
+									<p class="guige">{{item.goods.goodsDetail}}</p>
+									<p class="shuliang">x {{item.num}}件</p>
 								</li>
 							</ul>
 						</div>
@@ -46,7 +46,7 @@
 		</div>
 		<div class="youhuijuan">
 			<ul>
-				<li><span>优惠券</span><span>可输入优惠码添加新的券</span><span>无可用</span><div><img src="../../../static/goodscart/back.png" class="jiantou"/></div></li>
+				<li><span>优惠券</span><span>可输入优惠码添加新的券</span><span>无可用</span><div><img src="http://qianfeng1.qfjava.cn:8502/mp/static/goodscart/back.png" class="jiantou"/></div></li>
 				<li><span>积分</span><span>有200积分，可抵2.00元</span>
 				<div>
 				<el-switch
@@ -62,18 +62,18 @@
 		</div>
 		<div class="fapiao">
 			<p>发票</p>
-			<p>不开发票<img src="../../../static/goodscart/back.png"/></p>
+			<p>不开发票<img src="http://qianfeng1.qfjava.cn:8502/mp/static/goodscart/back.png"/></p>
 		</div>
 		<div class="xiaoji">
 			<input type="text" value="订单备注"/>
 			<ul>
-				<li><span>商品合计</span><span class="red">¥{{goodsCount.goodsNumPrice}}</span></li>
+				<li><span>商品合计</span><span class="red">¥{{goodsPrice.price}}</span></li>
 				<li><span>促销优惠</span><span class="green">-¥0.00</span></li>
 				<li><span>好食狂欢节-全场九折</span></li>
 				<li><span>优惠券</span><span class="green">-¥0.00</span></li>
 				<li><span>积分抵扣</span><span class="green">-¥0.00</span></li>
 				<li><span>运费</span><span class="red">¥0.00</span></li>
-				<li><span>应付金额</span><span class="red">¥{{goodsCount.goodsNumPrice}}</span></li>
+				<li><span>应付金额</span><span class="red">¥{{goodsPrice.price}}</span></li>
 			</ul>
 		</div>
 		</div>
@@ -81,8 +81,8 @@
 		<div class="footer">
 			<div class="footermain">
 				<div class="left">
-					<p>应付<span>¥{{goodsCount.goodsNumPrice}}</span></p>
-					<p>共{{goodsCount.goodsNumCount}}件商品</p>
+					<p>应付<span>¥{{goodsPrice.price}}</span></p>
+					<p>共{{goodsDiscount.length?goodsDiscount.length:0}}件商品</p>
 				</div>
 				<div class="right" @click="handleGo()">提交订单</div>
 			</div>
@@ -119,6 +119,10 @@
 			this.observer.$on("change3",(val)=>{
 				this.show = val;
 			})
+			this.handleGetGoods();
+			this.handleOrder();
+			this.handleDiscount();
+			this.handlePrice();
 		},
 		methods:{
 			handleGo(){
@@ -130,7 +134,13 @@
 			},
 			changeBg(index){
             this.changeIndex = index;
-            }
+			},
+			...Vuex.mapActions({
+				handleGetGoods:"goodscart/handleGetGoods",
+				handleOrder:"goodscart/handleOrder",
+				handleDiscount:"goodscart/handleDiscount",
+				handlePrice:"goodscart/handlePrice"
+			}),
 		},
 		mounted(){
 			this.scroll = new BScroll(this.$refs.wrapper,{
@@ -141,10 +151,15 @@
 		computed:{
 			...Vuex.mapGetters({
 				goodsCount:"goodscart/goodsCount",
+				
 			}),
 			...Vuex.mapState({
-				goodsList:state=>state.goodscart.goodsList
+				goodsList:state=>state.goodscart.goodsList,
+				goodsOrder:state=>state.goodscart.goodsOrder,
+				goodsDiscount:state=>state.goodscart.goodsDiscount,
+				goodsPrice:state=>state.goodscart.goodsPrice,
 			})
+
 		}
 		/*
 		
@@ -192,7 +207,7 @@
 }
 .order .header h1{
 	margin-left: 3.12rem;
-	font-family: .PingFangSC-Regular;
+	font-family: PingFangSC-Regular;
 	font-size: 18px;
 	color: #222222;
 	letter-spacing: 0;
@@ -221,26 +236,26 @@
 }
 .address li:nth-of-type(1) p:nth-of-type(2){
 	float: right;
-	font-family: .PingFangSC-Regular;
+	font-family: PingFangSC-Regular;
 	font-size: 12px;
 	color: #888888;
 	letter-spacing: 0;
 }
 .address li:nth-of-type(1) p:nth-of-type(1){
-	font-family: .PingFangSC-Regular;
+	font-family: PingFangSC-Regular;
 	font-size: 16px;
 	color: #393939;
 	letter-spacing: 0;
 	float: left;
 }
 .address li:nth-of-type(2){
-	font-family: .PingFangSC-Regular;
+	font-family: PingFangSC-Regular;
 	font-size: 14px;
 	color: #393939;
 	letter-spacing: 0;
 }
 .address li:nth-of-type(3){
-	font-family: .PingFangSC-Regular;
+	font-family: PingFangSC-Regular;
 	font-size: 12px;
 	color: #BA8750;
 	letter-spacing: 0;
@@ -252,14 +267,14 @@
 }
 .list .listheader p:nth-of-type(1){
 	float: left;
-	font-family: .PingFangSC-Regular;
+	font-family: PingFangSC-Regular;
 	font-size: 16px;
 	color: #393939;
 	letter-spacing: 0;
 }
 .list .listheader p:nth-of-type(2){
 	float: right;
-	font-family: .PingFangSC-Regular;
+	font-family: PingFangSC-Regular;
 	font-size: 12px;
 	color: #BA8750;
 	letter-spacing: 0;
@@ -283,32 +298,35 @@
 	height: 1.2rem;
 	margin-bottom: .16rem;
 }
-.shangpin ul li{
-	overflow: hidden;
-}
 .shangpin ul li p:nth-of-type(1){
 	float: left;
-	font-family: .PingFangSC-Regular;
+	font-family: PingFangSC-Regular;
 	font-size: 14px;
 	color: #000000;
 	letter-spacing: 0;
 }
 .shangpin ul li p:nth-of-type(2){
 	float: right;
-	font-family: .PingFangSC-Regular;
+	font-family: PingFangSC-Regular;
 	font-size: 14px;
 	color: #BE141C;
 	letter-spacing: 0;
 }
-.shoplist .shangpin ul li .guige{
-	font-family: .PingFangSC-Regular;
+.shoplist .shangpin ul li>.guige{
+	font-family: PingFangSC-Regular;
 	font-size: 12px;
 	color: #888888;
 	letter-spacing: 0;
+	height:0.9rem;
+	width:100%;
+	padding-top:.2rem;
 }
 .shoplist .shangpin ul li .shuliang{
-	font-family: .PingFangSC-Regular;
-	font-size: 12px;
+	font-family: PingFangSC-Regular;
+	text-align: right;
+	position: relative;
+	bottom:.5rem;
+	font-size: 14px;
 	color: #888888;
 	letter-spacing: 0;
 }
@@ -322,11 +340,11 @@
 	background: #FEE5C7;
 	border: 1px solid #FAFCDC;
 	height: 0.6rem;
-	width: 6.14rem;
-	margin-left: .6rem;
+	width: 5.14rem;
+	margin-left: 1.6rem;
 }
 .zhekou p:nth-of-type(1){
-	font-family: .PingFangSC-Regular;
+	font-family: PingFangSC-Regular;
 	font-size: 12px;
 	color: #FFFFFF;
 	letter-spacing: 0;
@@ -340,7 +358,7 @@
 	margin: .13rem .2rem ;
 }
 .zhekou p:nth-of-type(2){
-	font-family: .PingFangSC-Regular;
+	font-family: PingFangSC-Regular;
 	font-size: 12px;
 	color: #000000;
 	letter-spacing: 0;
@@ -367,7 +385,7 @@
 	width: 55%;
 }
 .youhuijuan li span:nth-of-type(3){
-	font-family: .PingFangSC-Regular;
+	font-family: PingFangSC-Regular;
 	font-size: 12px;
 	color: #BA8750;
 	letter-spacing: 0;
@@ -390,14 +408,14 @@
 	border-bottom: 2px solid #E1E1E1;
 }
 .fapiao p:nth-of-type(1){
-	font-family: .PingFangSC-Regular;
+	font-family:PingFangSC-Regular;
 	font-size: 16px;
 	color: #222222;
 	letter-spacing: 0;
 	float: left;
 }
 .fapiao p:nth-of-type(2){
-	font-family: .PingFangSC-Regular;
+	font-family: PingFangSC-Regular;
 	font-size: 12px;
 	color: #BA8750;
 	letter-spacing: 0;
@@ -414,7 +432,7 @@
 	border: 1px solid #FFFFFF;
 	height: .8rem;
 	width: 6.86rem;
-	font-family: .PingFangSC-Regular;
+	font-family: PingFangSC-Regular;
 	font-size: 12px;
 	color: #888888;
 	letter-spacing: 0;
@@ -430,7 +448,7 @@
 }
 .xiaoji ul li span:nth-of-type(1){
 	float: left;
-	font-family: .PingFangSC-Regular;
+	font-family: PingFangSC-Regular;
 	font-size: 16px;
 	color: #222222;
 	letter-spacing: 0;
@@ -439,19 +457,19 @@
 	float: right;
 }
 .red{
-	font-family: .PingFangSC-Regular;
+	font-family: PingFangSC-Regular;
 	font-size: 14px;
 	color: #BA8750;
 	letter-spacing: 0;
 }
 .green{
-	font-family: .PingFangSC-Regular;
+	font-family: PingFangSC-Regular;
 	font-size: 14px;
 	color: #84B77B;
 	letter-spacing: 0;
 }
 .xiaoji ul li:nth-of-type(3) span{
-	font-family: .PingFangSC-Regular;
+	font-family: PingFangSC-Regular;
 	font-size: 14px;
 	color: #888888;
 	letter-spacing: 0;
@@ -474,7 +492,7 @@
 }
 .right{
 	background: #3E2020;
-	font-family: .PingFangSC-Regular;
+	font-family: PingFangSC-Regular;
 	font-size: 18px;
 	color: #FFFFFF;
 	letter-spacing: 0;
@@ -485,7 +503,7 @@
 	text-align: center;
 }
 .left p:nth-of-type(1){
-	font-family: .PingFangSC-Regular;
+	font-family: PingFangSC-Regular;
 	font-size: 14px;
 	color: #BA8750;
 	letter-spacing: 0;
@@ -493,7 +511,7 @@
 	text-align: right;
 }
 .left p:nth-of-type(2){
-	font-family: .PingFangSC-Regular;
+	font-family: PingFangSC-Regular;
 	font-size: 12px;
 	color: #888888;
 	letter-spacing: 0;

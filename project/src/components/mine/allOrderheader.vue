@@ -3,7 +3,7 @@
         <div class="top"></div>
         <div class="title">
             <p @click="back()">
-                <img src="../../../static/img/back.png" alt="">
+                <img src="http://qianfeng1.qfjava.cn:8502/mp/static/img/back.png" alt="">
             </p>
             <h2>全部订单</h2>
         </div>
@@ -47,7 +47,7 @@ export default {
                     id:2,
                 },
                 {
-                    // name : "evaluate",
+                    name : "evaluate",
                     title : "已发货",
                     id:4
                 },
@@ -62,12 +62,6 @@ export default {
         },
         changeBg(index){
             this.activeIndex = index;
-            axios({
-				method:"get",
-				url:"/mp/order/myorder?status="+this.orders[index].id,
-			}).then((data)=>{
-				console.log(data)
-			});
         }
     },
     created(){

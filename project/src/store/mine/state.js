@@ -1,4 +1,9 @@
 ﻿export default {
    mine:[],
-   activeIndex:0
+   minemsg:[],
+   activeIndex:0,
+   paymentGoodsList:[],
+   receivingGoodsList:[],
+   shipmentsGoodsList:[],
+   evaluateGoodsList:[]
 }

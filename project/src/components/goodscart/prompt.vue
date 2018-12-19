@@ -3,12 +3,12 @@
 		<div class="pay" v-show="show">
 			<div class="payhead">
 				<a>
-				<img src="../../../static/img/fanhui.png" @click="handleout()"/>
+				<img src="http://qianfeng1.qfjava.cn:8502/mp/static/img/fanhui.png" @click="handleout()"/>
 				</a>
 				<span>确认付款</span>
 			</div>
 			<div class="paycenter">
-				&yen;{{goodsCount.goodsNumPrice}}
+				&yen;{{goodsPrice.price}}
 			</div>
 			<router-link to="/goPay">去支付</router-link>
 		</div>
@@ -17,28 +17,34 @@
 
 <script>
 	import Vuex from "vuex";
+	import axios from "axios"
 	export default{
 		data(){
 			return{
 				show:true
 			}
 		},
-		computed:{
-			...Vuex.mapGetters({
-				goodsCount:"goodscart/goodsCount"
-			})
+		created(){
+			this.handlePrice();
 		},
 		methods:{
 			handleout(){
 				this.show = false;
 				this.observer.$emit("change3",false)
-			}
+			},
+			...Vuex.mapActions({
+				handlePrice:"goodscart/handlePrice",
+				
+			}),
+			},
+		computed:{
+			...Vuex.mapGetters({
+				goodsCount:"goodscart/goodsCount"
+			}),
+			...Vuex.mapState({
+				goodsPrice:state=>state.goodscart.goodsPrice,
+			})
 		},
-// 		created(){
-// 			this.observer.$on("change5",(val)=>{
-// 				this.show = val;
-// 			})
-		// }
 		
 }
 </script>

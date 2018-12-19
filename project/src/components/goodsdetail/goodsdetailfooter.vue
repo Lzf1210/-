@@ -5,7 +5,7 @@
 			<p>购物车</p>
 		</div>
 		<div>
-			<img src="static/goodsimg/Page1.png" />
+			<img src="http://qianfeng1.qfjava.cn:8502/mp/static/goodsimg/Page1.png" />
 			<p>喜欢</p>
 		</div>
 		<div class="bottom">
@@ -22,7 +22,7 @@
 		<div class="mark" v-show="show" @click="handleSuccess()">
 			<div class="deleteSuccess">
 				<p>添加成功</p>
-				<p><img src="../../../static/goodscart/del.png"></p>
+				<p><img src="http://qianfeng1.qfjava.cn:8502/mp/static/goodscart/del.png"></p>
 			</div>
 		</div>
 	</div>

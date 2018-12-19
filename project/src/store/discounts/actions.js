@@ -7,22 +7,18 @@ export default {
 				url:"/mp/discounts/getalldiscounts",
 			}).then((data) => {
 				commit("handleGetImg", data.data)
-				console.log(data)
+				console.log(data.data)
 			})
 		
         //http://jianglianglong.qfjava.cn:8080/mp
 	},
-    handleAddGoodsCart({commit},params){
-        console.log(params);
-        axios({
-				method: "post",
-				url:"/mp/cart/addgoods",
-                data:{
-                    goodsId:params,
-                    num:1
-                }
-			}).then((data) => {
-				console.log(data)
-			})
-    }
+    // handleAddGoodsCart({commit},params){
+    //     console.log(params);
+    //     axios({
+	// 			method: "post",
+	// 			url:"/mp/discounts/buydiscounts?id="+params,
+	// 		}).then((data) => {
+	// 			console.log(data.data)
+	// 		})
+	// },
 }
